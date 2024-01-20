@@ -1,6 +1,6 @@
 part of 'notes_bloc.dart';
 
 @immutable
-sealed class NotesState {}
+sealed class NotesBlocState {}
 
-final class NotesInitial extends NotesState {}
+final class NotesBlocInitialState extends NotesBlocState {}
