@@ -19,9 +19,18 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
   ];
 
   void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+    setState(
+      () {
+        _selectedIndex = index;
+        if (index == 0) {
+          Navigator.of(context).pushReplacement(
+              MaterialPageRoute(builder: (context) => QuizThemeScreen()));
+        } else if (index == 1) {
+          Navigator.of(context).pushReplacement(
+              MaterialPageRoute(builder: (context) => NotesScreen()));
+        }
+      },
+    );
   }
 
   @override

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_test/src/feature/presentation/screens/notes_screen.dart';
 import 'package:quiz_test/src/feature/presentation/screens/splash_screen.dart';
 
 void main() {
