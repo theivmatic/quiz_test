@@ -23,7 +23,8 @@ class QuizThemeScreen extends StatelessWidget {
         backgroundColor: const Color.fromRGBO(27, 31, 41, 1),
       ),
       backgroundColor: const Color.fromRGBO(27, 31, 41, 1),
-      body: BottomNavigationBarWidget(),
+      body: Placeholder(),
+      bottomNavigationBar: const BottomNavigationBarWidget(),
     );
     
   }
