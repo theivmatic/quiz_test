@@ -46,7 +46,7 @@ CREATE TABLE $tableNotes (
     return note.copy(id: id);
   }
 
-  Future<Note> readNote(int id) async {
+  Future<Note> readNote({required int id}) async {
     final db = await instance.database;
 
     final maps = await db.query(
@@ -71,14 +71,14 @@ CREATE TABLE $tableNotes (
     return result.map((json) => Note.fromJson(json)).toList();
   }
 
-  Future<int> update(Note note) async {
+  Future<int> update({required Note note}) async {
     final db = await instance.database;
 
     return db.update(tableNotes, note.toJson(),
         where: '${NoteFields.id} = ?', whereArgs: [note.id]);
   }
 
-  Future<int> delete(int id) async {
+  Future<int> delete({required int id}) async {
     final db = await instance.database;
 
     return await db.delete(
