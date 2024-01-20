@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quiz_test/src/feature/presentation/screens/notes_screen.dart';
 import 'package:quiz_test/src/feature/presentation/widgets/bottom_button.dart';
 
 class StartScreen extends StatelessWidget {
@@ -11,7 +12,7 @@ class StartScreen extends StatelessWidget {
       backgroundColor: const Color.fromRGBO(27, 31, 41, 1),
       body: Column(
         children: [
-          const SizedBox(height: 30),
+          const SizedBox(height: 10),
           Center(
             child: Image.asset(
               'assets/images/start_screen_background_image.png',
@@ -29,8 +30,12 @@ class StartScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 30),
-          const BottomButtonWidget(
+          BottomButtonWidget(
             buttonText: 'Продолжить',
+            onPressed: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const NotesScreen()));
+            },
           ),
         ],
       ),

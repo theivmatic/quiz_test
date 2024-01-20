@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_test/src/feature/presentation/screens/notes_screen.dart';
-import 'package:quiz_test/src/feature/presentation/screens/quiz_theme_screen.dart';
-import 'package:quiz_test/src/feature/presentation/screens/start_screen.dart';
+import 'package:quiz_test/src/feature/presentation/screens/splash_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,7 +13,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: NotesScreen(),
+      home: SplashScreen(),
     );
   }
 }
