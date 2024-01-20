@@ -5,14 +5,14 @@ sealed class NotesBlocEvent extends Equatable {
   const NotesBlocEvent();
 }
 
-class AddNote extends NotesBlocEvent {
+class AddNoteEvent extends NotesBlocEvent {
   final String movieTitle;
   final String dutarion;
   final String comment;
   final String url;
   final String movieImage;
 
-  const AddNote(
+  const AddNoteEvent(
       {required this.movieTitle,
       required this.dutarion,
       required this.comment,
@@ -23,32 +23,32 @@ class AddNote extends NotesBlocEvent {
   List<Object?> get props => [movieTitle, dutarion, comment, url, movieImage];
 }
 
-class UpdateNote extends NotesBlocEvent {
+class UpdateNoteEvent extends NotesBlocEvent {
   final Note note;
-  const UpdateNote({required this.note});
+  const UpdateNoteEvent({required this.note});
 
   @override
   List<Object?> get props => [];
 }
 
-class FetchNotes extends NotesBlocEvent {
-  const FetchNotes();
+class FetchNotesEvent extends NotesBlocEvent {
+  const FetchNotesEvent();
 
   @override
   List<Object?> get props => [];
 }
 
-class FetchSpecificNote extends NotesBlocEvent {
+class FetchSpecificNoteEvent extends NotesBlocEvent {
   final int id;
-  const FetchSpecificNote({required this.id});
+  const FetchSpecificNoteEvent({required this.id});
 
   @override
   List<Object?> get props => [id];
 }
 
-class DeleteNote extends NotesBlocEvent {
+class DeleteNoteEvent extends NotesBlocEvent {
   final int id;
-  const DeleteNote({required this.id});
+  const DeleteNoteEvent({required this.id});
 
   @override
   List<Object?> get props => [id];

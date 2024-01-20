@@ -24,10 +24,10 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
         _selectedIndex = index;
         if (index == 0) {
           Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (context) => QuizThemeScreen()));
+              MaterialPageRoute(builder: (context) => const QuizThemeScreen()));
         } else if (index == 1) {
           Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (context) => NotesScreen()));
+              MaterialPageRoute(builder: (context) => const NotesScreen()));
         }
       },
     );

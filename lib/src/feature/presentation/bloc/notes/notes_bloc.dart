@@ -10,7 +10,7 @@ part 'notes_state.dart';
 class NotesBloc extends Bloc<NotesBlocEvent, NotesBlocState> {
   NotesBloc() : super(NotesBlocInitialState()) {
     List<Note> notes = [];
-    on<AddNote>((event, emit) async {
+    on<AddNoteEvent>((event, emit) async {
       await NotesDatabase.instance.create(
         Note(
             movieTitle: event.movieTitle,
@@ -21,25 +21,25 @@ class NotesBloc extends Bloc<NotesBlocEvent, NotesBlocState> {
       );
     });
 
-    on<UpdateNote>((event, emit) async {
+    on<UpdateNoteEvent>((event, emit) async {
       await NotesDatabase.instance.update(
         note: event.note,
       );
     });
 
-    on<FetchNotes>((event, emit) async {
+    on<FetchNotesEvent>((event, emit) async {
       notes = await NotesDatabase.instance.readAllNotes();
       emit(DisplayNotes(note: notes));
     });
 
-    on<FetchSpecificNote>((event, emit) async {
+    on<FetchSpecificNoteEvent>((event, emit) async {
       Note note = await NotesDatabase.instance.readNote(id: event.id);
       emit(DisplaySpecificNotes(note: note));
     });
 
-    on<DeleteNote>((event, emit) async {
+    on<DeleteNoteEvent>((event, emit) async {
       await NotesDatabase.instance.delete(id: event.id);
-      add(const FetchNotes());
+      add(const FetchNotesEvent());
     });
   }
 }
