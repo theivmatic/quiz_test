@@ -38,58 +38,59 @@ class _NotesScreenState extends State<NotesScreen> {
             context.read<NotesBloc>().add(const FetchNotesEvent());
           }
           if (state is DisplayNotes) {
-            return Column(
-              children: [
-                const SizedBox(height: 40),
-                Center(
-                  child: Image.asset('assets/images/notes_image.png'),
-                ),
-                const SizedBox(height: 20),
-                Text(
-                  'Ваш список пока пуст',
-                  style: GoogleFonts.robotoFlex(
-                    textStyle: const TextStyle(
-                      color: Color.fromRGBO(247, 247, 251, 1),
-                      fontSize: 17,
-                      fontWeight: FontWeight.w500,
+            if (state.note.isEmpty) {
+              return Column(
+                children: [
+                  const SizedBox(height: 40),
+                  Center(
+                    child: Image.asset('assets/images/notes_image.png'),
+                  ),
+                  const SizedBox(height: 20),
+                  Text(
+                    'Ваш список пока пуст',
+                    style: GoogleFonts.robotoFlex(
+                      textStyle: const TextStyle(
+                        color: Color.fromRGBO(247, 247, 251, 1),
+                        fontSize: 17,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(height: 15),
-                Text(
-                  'Нажмите «+», чтобы создать заметку',
-                  style: GoogleFonts.robotoFlex(
-                    textStyle: const TextStyle(
-                      color: Color.fromRGBO(189, 193, 203, 1),
-                      fontSize: 13,
-                      fontWeight: FontWeight.w400,
+                  const SizedBox(height: 15),
+                  Text(
+                    'Нажмите «+», чтобы создать заметку',
+                    style: GoogleFonts.robotoFlex(
+                      textStyle: const TextStyle(
+                        color: Color.fromRGBO(189, 193, 203, 1),
+                        fontSize: 13,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(height: 15),
-                Padding(
-                  padding: const EdgeInsets.only(right: 40),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Image.asset('assets/images/arrow_to_button.png'),
-                    ],
+                  const SizedBox(height: 15),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 40),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Image.asset('assets/images/arrow_to_button.png'),
+                      ],
+                    ),
                   ),
-                ),
-                // state.note.isNotEmpty
-                //     ? ListView.builder(
-                //         scrollDirection: Axis.vertical,
-                //         itemCount: state.note.length,
-                //         itemBuilder: (context, index) {
-                //           return GestureDetector(
-                //             onTap: () {},
-                //             child: Container(),
-                //           );
-                //         },
-                //       )
-                //     : const Placeholder(),
-              ],
-            );
+                ],
+              );
+            } else {
+              return ListView.builder(
+                scrollDirection: Axis.vertical,
+                itemCount: state.note.length,
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: () {},
+                    child: Container(),
+                  );
+                },
+              );
+            }
           }
           return const Placeholder();
         },
