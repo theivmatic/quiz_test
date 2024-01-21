@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_test/src/feature/presentation/bloc/notes/notes_bloc.dart';
+import 'package:quiz_test/src/feature/presentation/bloc/observer.dart';
 import 'package:quiz_test/src/feature/presentation/screens/splash_screen.dart';
 
 void main() {
+  Bloc.observer = AppObserver();
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MainApp());
 }

@@ -76,18 +76,18 @@ class _NotesScreenState extends State<NotesScreen> {
                     ],
                   ),
                 ),
-                state.note.isNotEmpty
-                    ? ListView.builder(
-                        scrollDirection: Axis.vertical,
-                        itemCount: state.note.length,
-                        itemBuilder: (context, index) {
-                          return GestureDetector(
-                            onTap: () {},
-                            child: Container(),
-                          );
-                        },
-                      )
-                    : const Placeholder(),
+                // state.note.isNotEmpty
+                //     ? ListView.builder(
+                //         scrollDirection: Axis.vertical,
+                //         itemCount: state.note.length,
+                //         itemBuilder: (context, index) {
+                //           return GestureDetector(
+                //             onTap: () {},
+                //             child: Container(),
+                //           );
+                //         },
+                //       )
+                //     : const Placeholder(),
               ],
             );
           }
@@ -96,7 +96,8 @@ class _NotesScreenState extends State<NotesScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const AddNoteScreen()));
+          Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const AddNoteScreen()));
         },
         backgroundColor: const Color.fromRGBO(251, 43, 93, 1),
         child: const Icon(

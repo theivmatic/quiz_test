@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quiz_test/src/feature/presentation/bloc/notes/notes_bloc.dart';
+import 'package:quiz_test/src/feature/presentation/screens/notes_screen.dart';
+import 'package:quiz_test/src/feature/presentation/widgets/bottom_button.dart';
 
 class AddNoteScreen extends StatefulWidget {
   const AddNoteScreen({super.key});
@@ -9,6 +13,11 @@ class AddNoteScreen extends StatefulWidget {
 }
 
 class _AddNoteScreenState extends State<AddNoteScreen> {
+  final TextEditingController _title = TextEditingController();
+  final TextEditingController _duration = TextEditingController();
+  final TextEditingController _comment = TextEditingController();
+  final TextEditingController _url = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,6 +57,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
         child: Column(
           children: [
             TextFormField(
+              controller: _title,
               decoration: InputDecoration(
                 hintText: 'Название фильма или сериала',
                 hintStyle: GoogleFonts.robotoFlex(
@@ -65,6 +75,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
               ),
             ),
             TextFormField(
+              controller: _duration,
               decoration: InputDecoration(
                 hintText: 'Длительность',
                 hintStyle: GoogleFonts.robotoFlex(
@@ -82,6 +93,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
               ),
             ),
             TextFormField(
+              controller: _comment,
               decoration: InputDecoration(
                 hintText: 'Комментарий',
                 hintStyle: GoogleFonts.robotoFlex(
@@ -99,23 +111,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
               ),
             ),
             TextFormField(
-              decoration: InputDecoration(
-                hintText: 'Длительность',
-                hintStyle: GoogleFonts.robotoFlex(
-                  textStyle: const TextStyle(
-                    color: Color.fromRGBO(131, 131, 131, 1),
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                disabledBorder: InputBorder.none,
-                enabledBorder: InputBorder.none,
-                focusedBorder: InputBorder.none,
-                errorBorder: InputBorder.none,
-                focusedErrorBorder: InputBorder.none,
-              ),
-            ),
-            TextFormField(
+              controller: _url,
               decoration: InputDecoration(
                 hintText: 'Ссылка',
                 hintStyle: GoogleFonts.robotoFlex(
@@ -132,6 +128,38 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                 focusedErrorBorder: InputBorder.none,
               ),
             ),
+            BlocBuilder<NotesBloc, NotesBlocState>(builder: (context, state) {
+              return BottomButtonWidget(
+                buttonText: 'Сохранить',
+                onPressed: () {
+                  if (_title.text.isNotEmpty && _comment.text.isNotEmpty) {
+                    context.read<NotesBloc>().add(
+                          AddNoteEvent(
+                            movieTitle: _title.text,
+                            dutarion: _duration.text,
+                            comment: _comment.text,
+                            url: _url.text,
+                            movieImage: '',
+                          ),
+                        );
+                    Navigator.of(context).pop(
+                      MaterialPageRoute(
+                        builder: (context) => const NotesScreen(),
+                      ),
+                    );
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          'Поля название и комментарий должны быть заполнены'
+                              .toUpperCase(),
+                        ),
+                      ),
+                    );
+                  }
+                },
+              );
+            })
           ],
         ),
       ),

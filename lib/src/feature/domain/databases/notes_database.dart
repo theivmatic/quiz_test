@@ -34,7 +34,7 @@ CREATE TABLE $tableNotes (
   ${NoteFields.dutarion} $textType,
   ${NoteFields.comment} $textType,
   ${NoteFields.url} $textType,
-  ${NoteFields.movieImage} $textType,
+  ${NoteFields.movieImage} $textType
 )
     ''');
   }
