@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quiz_test/src/feature/domain/models/note_model.dart';
 import 'package:quiz_test/src/feature/presentation/bloc/notes/notes_bloc.dart';
 import 'package:quiz_test/src/feature/presentation/screens/add_note_screen.dart';
 
@@ -80,14 +81,45 @@ class _NotesScreenState extends State<NotesScreen> {
                 ],
               );
             } else {
-              return ListView.builder(
+              return ListView.separated(
+                separatorBuilder: (BuildContext context, int index) =>
+                    const Divider(
+                  color: Color.fromRGBO(53, 53, 58, 1),
+                ),
                 scrollDirection: Axis.vertical,
                 itemCount: state.note.length,
                 itemBuilder: (context, index) {
                   return GestureDetector(
-                    onTap: () {},
-                    child: Container(),
-                  );
+                      onTap: () {},
+                      child: Row(
+                        children: [
+                          Container(
+                            width: 76,
+                            height: 76,
+                            decoration: const BoxDecoration(
+                              color: Colors.amber,
+                            ),
+                          ),
+                          Column(
+                            children: [
+                              Text(''),
+                              Text(''),
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              IconButton(
+                                onPressed: () {},
+                                icon: Image.asset(''),
+                              ),
+                              IconButton(
+                                onPressed: () {},
+                                icon: Image.asset(''),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ));
                 },
               );
             }
