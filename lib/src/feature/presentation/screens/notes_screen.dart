@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -159,9 +160,94 @@ class _NotesScreenState extends State<NotesScreen> {
                                   ),
                                   PopupMenuItem(
                                     onTap: () {
-                                      context.read<NotesBloc>().add(
-                                            DeleteNoteEvent(id: state.note[index].id!),
-                                          );
+                                      showCupertinoDialog(
+                                        context: context,
+                                        builder: (_) => AlertDialog(
+                                          actionsAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(16),
+                                          ),
+                                          backgroundColor: const Color.fromRGBO(
+                                              50, 49, 58, 1),
+                                          title: Text(
+                                            'Вы уверены, что хотите удалить заметку?',
+                                            style: GoogleFonts.robotoFlex(
+                                              textStyle: const TextStyle(
+                                                color: Color.fromRGBO(
+                                                    247, 247, 252, 1),
+                                                fontSize: 11,
+                                                fontWeight: FontWeight.w400,
+                                              ),
+                                            ),
+                                          ),
+                                          actions: [
+                                            FilledButton(
+                                              style: ButtonStyle(
+                                                shape: MaterialStatePropertyAll(
+                                                  RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5),
+                                                  ),
+                                                ),
+                                                backgroundColor:
+                                                    const MaterialStatePropertyAll(
+                                                  Color.fromRGBO(
+                                                      199, 201, 204, 1),
+                                                ),
+                                              ),
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                              child: Text(
+                                                'Отменить',
+                                                style: GoogleFonts.robotoFlex(
+                                                  textStyle: const TextStyle(
+                                                    color: Color.fromRGBO(
+                                                        53, 53, 58, 1),
+                                                    fontSize: 13,
+                                                    fontWeight: FontWeight.w400,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            FilledButton(
+                                              style: ButtonStyle(
+                                                shape: MaterialStatePropertyAll(
+                                                  RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5),
+                                                  ),
+                                                ),
+                                                backgroundColor:
+                                                    const MaterialStatePropertyAll(
+                                                  Color.fromRGBO(
+                                                      252, 35, 87, 1),
+                                                ),
+                                              ),
+                                              onPressed: () {},
+                                              child: Text(
+                                                'Удалить',
+                                                style: GoogleFonts.robotoFlex(
+                                                  textStyle: const TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 13,
+                                                    fontWeight: FontWeight.w400,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      );
+
+                                      // context.read<NotesBloc>().add(
+                                      //       DeleteNoteEvent(
+                                      //           id: state.note[index].id!),
+                                      //     );
                                     },
                                     child: Row(
                                       children: [
