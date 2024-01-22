@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:quiz_test/src/feature/domain/models/note_model.dart';
 import 'package:quiz_test/src/feature/presentation/bloc/notes/notes_bloc.dart';
 import 'package:quiz_test/src/feature/presentation/screens/add_note_screen.dart';
 
@@ -92,198 +91,231 @@ class _NotesScreenState extends State<NotesScreen> {
                 itemBuilder: (context, index) {
                   return GestureDetector(
                       onTap: () {},
-                      child: Row(
-                        children: [
-                          Container(
-                            width: 76,
-                            height: 76,
-                            decoration: const BoxDecoration(
-                              color: Colors.amber,
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              width: 76,
+                              height: 76,
+                              decoration: BoxDecoration(
+                                color: Colors.amber,
+                                borderRadius: BorderRadius.circular(4),
+                              ),
                             ),
-                          ),
-                          Column(
-                            children: [
-                              Text(state.note[index].movieTitle),
-                              Text(state.note[index].comment),
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              PopupMenuButton(
-                                shape: BeveledRectangleBorder(
-                                  borderRadius: BorderRadius.circular(6),
-                                ),
-                                color: const Color.fromRGBO(50, 49, 58, 1),
-                                child: Image.asset(
-                                    'assets/icons/note_options.png'),
-                                itemBuilder: (BuildContext context) => [
-                                  PopupMenuItem(
-                                    onTap: () {},
-                                    child: Row(
-                                      children: [
-                                        Image.asset(
-                                            'assets/icons/note_edit.png'),
-                                        const SizedBox(width: 10),
-                                        Text(
-                                          'Изменить',
-                                          style: GoogleFonts.robotoFlex(
-                                            textStyle: const TextStyle(
-                                              color: Color.fromRGBO(
-                                                  247, 247, 251, 1),
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
+                            SizedBox(
+                              width: 211,
+                              height: 77,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    state.note[index].movieTitle,
+                                    style: GoogleFonts.robotoFlex(
+                                      textStyle: const TextStyle(
+                                        color: Color.fromRGBO(247, 247, 251, 1),
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w500,
+                                      ),
                                     ),
                                   ),
-                                  PopupMenuItem(
-                                    child: Row(
-                                      children: [
-                                        Image.asset(
-                                            'assets/icons/note_pin.png'),
-                                        const SizedBox(width: 10),
-                                        Text(
-                                          'Закрепить',
-                                          style: GoogleFonts.robotoFlex(
-                                            textStyle: const TextStyle(
-                                              color: Color.fromRGBO(
-                                                  247, 247, 251, 1),
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
+                                  Text(
+                                    state.note[index].comment,
+                                    maxLines: 3,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: GoogleFonts.robotoFlex(
+                                      textStyle: const TextStyle(
+                                        color: Color.fromRGBO(189, 193, 203, 1),
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w400,
+                                      ),
                                     ),
                                   ),
-                                  PopupMenuItem(
-                                    onTap: () {
-                                      showCupertinoDialog(
-                                        context: context,
-                                        builder: (_) => AlertDialog(
-                                          actionsAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(16),
-                                          ),
-                                          backgroundColor: const Color.fromRGBO(
-                                              50, 49, 58, 1),
-                                          title: Text(
-                                            'Вы уверены, что хотите удалить заметку?',
-                                            style: GoogleFonts.robotoFlex(
-                                              textStyle: const TextStyle(
-                                                color: Color.fromRGBO(
-                                                    247, 247, 252, 1),
-                                                fontSize: 11,
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                          ),
-                                          actions: [
-                                            FilledButton(
-                                              style: ButtonStyle(
-                                                shape: MaterialStatePropertyAll(
-                                                  RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            5),
-                                                  ),
-                                                ),
-                                                backgroundColor:
-                                                    const MaterialStatePropertyAll(
-                                                  Color.fromRGBO(
-                                                      199, 201, 204, 1),
-                                                ),
-                                              ),
-                                              onPressed: () {
-                                                Navigator.of(context).pop();
-                                              },
-                                              child: Text(
-                                                'Отменить',
-                                                style: GoogleFonts.robotoFlex(
-                                                  textStyle: const TextStyle(
-                                                    color: Color.fromRGBO(
-                                                        53, 53, 58, 1),
-                                                    fontSize: 13,
-                                                    fontWeight: FontWeight.w400,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            FilledButton(
-                                              style: ButtonStyle(
-                                                shape: MaterialStatePropertyAll(
-                                                  RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            5),
-                                                  ),
-                                                ),
-                                                backgroundColor:
-                                                    const MaterialStatePropertyAll(
-                                                  Color.fromRGBO(
-                                                      252, 35, 87, 1),
-                                                ),
-                                              ),
-                                              onPressed: () {
-                                                context.read<NotesBloc>().add(
-                                                      DeleteNoteEvent(
-                                                          id: state
-                                                              .note[index].id!),
-                                                    );
-                                                Navigator.of(context).pop();
-                                              },
-                                              child: Text(
-                                                'Удалить',
-                                                style: GoogleFonts.robotoFlex(
-                                                  textStyle: const TextStyle(
-                                                    color: Colors.white,
-                                                    fontSize: 13,
-                                                    fontWeight: FontWeight.w400,
-                                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(
+                              height: 77,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  PopupMenuButton(
+                                    shape: BeveledRectangleBorder(
+                                      borderRadius: BorderRadius.circular(6),
+                                    ),
+                                    color: const Color.fromRGBO(50, 49, 58, 1),
+                                    child: Image.asset(
+                                        'assets/icons/note_options.png'),
+                                    itemBuilder: (BuildContext context) => [
+                                      PopupMenuItem(
+                                        onTap: () {},
+                                        child: Row(
+                                          children: [
+                                            Image.asset(
+                                                'assets/icons/note_edit.png'),
+                                            const SizedBox(width: 10),
+                                            Text(
+                                              'Изменить',
+                                              style: GoogleFonts.robotoFlex(
+                                                textStyle: const TextStyle(
+                                                  color: Color.fromRGBO(
+                                                      247, 247, 251, 1),
+                                                  fontSize: 13,
+                                                  fontWeight: FontWeight.w400,
                                                 ),
                                               ),
                                             ),
                                           ],
                                         ),
-                                      );
-                                    },
-                                    child: Row(
-                                      children: [
-                                        Image.asset(
-                                            'assets/icons/note_delete.png'),
-                                        const SizedBox(width: 10),
-                                        Text(
-                                          'Удалить',
-                                          style: GoogleFonts.robotoFlex(
-                                            textStyle: const TextStyle(
-                                              color: Color.fromRGBO(
-                                                  247, 247, 251, 1),
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.w400,
+                                      ),
+                                      PopupMenuItem(
+                                        child: Row(
+                                          children: [
+                                            Image.asset(
+                                                'assets/icons/note_pin.png'),
+                                            const SizedBox(width: 10),
+                                            Text(
+                                              'Закрепить',
+                                              style: GoogleFonts.robotoFlex(
+                                                textStyle: const TextStyle(
+                                                  color: Color.fromRGBO(
+                                                      247, 247, 251, 1),
+                                                  fontSize: 13,
+                                                  fontWeight: FontWeight.w400,
+                                                ),
+                                              ),
                                             ),
-                                          ),
+                                          ],
                                         ),
-                                      ],
-                                    ),
+                                      ),
+                                      PopupMenuItem(
+                                        onTap: () {
+                                          showCupertinoDialog(
+                                            context: context,
+                                            builder: (_) => AlertDialog(
+                                              actionsAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(16),
+                                              ),
+                                              backgroundColor:
+                                                  const Color.fromRGBO(
+                                                      50, 49, 58, 1),
+                                              title: Text(
+                                                'Вы уверены, что хотите удалить заметку?',
+                                                style: GoogleFonts.robotoFlex(
+                                                  textStyle: const TextStyle(
+                                                    color: Color.fromRGBO(
+                                                        247, 247, 252, 1),
+                                                    fontSize: 11,
+                                                    fontWeight: FontWeight.w400,
+                                                  ),
+                                                ),
+                                              ),
+                                              actions: [
+                                                FilledButton(
+                                                  style: ButtonStyle(
+                                                    shape:
+                                                        MaterialStatePropertyAll(
+                                                      RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                                5),
+                                                      ),
+                                                    ),
+                                                    backgroundColor:
+                                                        const MaterialStatePropertyAll(
+                                                      Color.fromRGBO(
+                                                          199, 201, 204, 1),
+                                                    ),
+                                                  ),
+                                                  onPressed: () {
+                                                    Navigator.of(context).pop();
+                                                  },
+                                                  child: Text(
+                                                    'Отменить',
+                                                    style: GoogleFonts.robotoFlex(
+                                                      textStyle: const TextStyle(
+                                                        color: Color.fromRGBO(
+                                                            53, 53, 58, 1),
+                                                        fontSize: 13,
+                                                        fontWeight:
+                                                            FontWeight.w400,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                FilledButton(
+                                                  style: ButtonStyle(
+                                                    shape:
+                                                        MaterialStatePropertyAll(
+                                                      RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                                5),
+                                                      ),
+                                                    ),
+                                                    backgroundColor:
+                                                        const MaterialStatePropertyAll(
+                                                      Color.fromRGBO(
+                                                          252, 35, 87, 1),
+                                                    ),
+                                                  ),
+                                                  onPressed: () {
+                                                    context.read<NotesBloc>().add(
+                                                          DeleteNoteEvent(
+                                                              id: state
+                                                                  .note[index]
+                                                                  .id!),
+                                                        );
+                                                    Navigator.of(context).pop();
+                                                  },
+                                                  child: Text(
+                                                    'Удалить',
+                                                    style: GoogleFonts.robotoFlex(
+                                                      textStyle: const TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 13,
+                                                        fontWeight:
+                                                            FontWeight.w400,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          );
+                                        },
+                                        child: Row(
+                                          children: [
+                                            Image.asset(
+                                                'assets/icons/note_delete.png'),
+                                            const SizedBox(width: 10),
+                                            Text(
+                                              'Удалить',
+                                              style: GoogleFonts.robotoFlex(
+                                                textStyle: const TextStyle(
+                                                  color: Color.fromRGBO(
+                                                      247, 247, 251, 1),
+                                                  fontSize: 13,
+                                                  fontWeight: FontWeight.w400,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
                                   ),
+                                  Image.asset('assets/icons/note_pinned.png')
                                 ],
                               ),
-                              // IconButton(
-                              //   onPressed: () {},
-                              //   icon: Image.asset(
-                              //       'assets/icons/note_options.png'),
-                              // ),
-                              IconButton(
-                                onPressed: () {},
-                                icon: Image.asset(''),
-                              ),
-                            ],
-                          ),
-                        ],
+                            ),
+                          ],
+                        ),
                       ));
                 },
               );
