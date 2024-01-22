@@ -108,29 +108,70 @@ class _NotesScreenState extends State<NotesScreen> {
                           Column(
                             children: [
                               PopupMenuButton(
-                                child: Image.asset('assets/icons/note_options.png'),
+                                shape: BeveledRectangleBorder(
+                                  borderRadius: BorderRadius.circular(6),
+                                ),
+                                color: const Color.fromRGBO(50, 49, 58, 1),
+                                child: Image.asset(
+                                    'assets/icons/note_options.png'),
                                 itemBuilder: (BuildContext context) => [
                                   PopupMenuItem(
                                     child: Row(
                                       children: [
-                                        Image.asset('assets/icons/note_edit.png'),
-                                        const Text('Изменить'),
+                                        Image.asset(
+                                            'assets/icons/note_edit.png'),
+                                        const SizedBox(width: 10),
+                                        Text(
+                                          'Изменить',
+                                          style: GoogleFonts.robotoFlex(
+                                            textStyle: const TextStyle(
+                                              color: Color.fromRGBO(
+                                                  247, 247, 251, 1),
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ),
+                                        ),
                                       ],
                                     ),
                                   ),
                                   PopupMenuItem(
                                     child: Row(
                                       children: [
-                                        Image.asset('assets/icons/note_pin.png'),
-                                        const Text('Закрепить'),
+                                        Image.asset(
+                                            'assets/icons/note_pin.png'),
+                                        const SizedBox(width: 10),
+                                        Text(
+                                          'Закрепить',
+                                          style: GoogleFonts.robotoFlex(
+                                            textStyle: const TextStyle(
+                                              color: Color.fromRGBO(
+                                                  247, 247, 251, 1),
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ),
+                                        ),
                                       ],
                                     ),
                                   ),
                                   PopupMenuItem(
                                     child: Row(
                                       children: [
-                                        Image.asset('assets/icons/note_delete.png'),
-                                        const Text('Удалить'),
+                                        Image.asset(
+                                            'assets/icons/note_delete.png'),
+                                        const SizedBox(width: 10),
+                                        Text(
+                                          'Удалить',
+                                          style: GoogleFonts.robotoFlex(
+                                            textStyle: const TextStyle(
+                                              color: Color.fromRGBO(
+                                                  247, 247, 251, 1),
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ),
+                                        ),
                                       ],
                                     ),
                                   ),
