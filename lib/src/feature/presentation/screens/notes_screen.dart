@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quiz_test/src/feature/domain/models/note_model.dart';
 import 'package:quiz_test/src/feature/presentation/bloc/notes/notes_bloc.dart';
 import 'package:quiz_test/src/feature/presentation/screens/add_note_screen.dart';
 
@@ -116,6 +117,7 @@ class _NotesScreenState extends State<NotesScreen> {
                                     'assets/icons/note_options.png'),
                                 itemBuilder: (BuildContext context) => [
                                   PopupMenuItem(
+                                    onTap: () {},
                                     child: Row(
                                       children: [
                                         Image.asset(
@@ -156,6 +158,11 @@ class _NotesScreenState extends State<NotesScreen> {
                                     ),
                                   ),
                                   PopupMenuItem(
+                                    onTap: () {
+                                      context.read<NotesBloc>().add(
+                                            DeleteNoteEvent(id: state.note[index].id!),
+                                          );
+                                    },
                                     child: Row(
                                       children: [
                                         Image.asset(
