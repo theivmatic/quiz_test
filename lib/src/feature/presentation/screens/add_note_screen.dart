@@ -142,6 +142,9 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                             movieImage: '',
                           ),
                         );
+                    context.read<NotesBloc>().add(
+                          const FetchNotesEvent(),
+                        );
                     Navigator.of(context).pop(
                       MaterialPageRoute(
                         builder: (context) => const NotesScreen(),

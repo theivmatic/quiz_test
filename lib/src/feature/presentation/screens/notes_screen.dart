@@ -228,7 +228,14 @@ class _NotesScreenState extends State<NotesScreen> {
                                                       252, 35, 87, 1),
                                                 ),
                                               ),
-                                              onPressed: () {},
+                                              onPressed: () {
+                                                context.read<NotesBloc>().add(
+                                                      DeleteNoteEvent(
+                                                          id: state
+                                                              .note[index].id!),
+                                                    );
+                                                    Navigator.of(context).pop();
+                                              },
                                               child: Text(
                                                 'Удалить',
                                                 style: GoogleFonts.robotoFlex(
