@@ -101,10 +101,10 @@ class _NotesScreenState extends State<NotesScreen> {
                               color: Colors.amber,
                             ),
                           ),
-                          const Column(
+                          Column(
                             children: [
-                              Text(''),
-                              Text(''),
+                              Text(state.note[index].movieTitle),
+                              Text(state.note[index].comment),
                             ],
                           ),
                           Column(
@@ -234,7 +234,7 @@ class _NotesScreenState extends State<NotesScreen> {
                                                           id: state
                                                               .note[index].id!),
                                                     );
-                                                    Navigator.of(context).pop();
+                                                Navigator.of(context).pop();
                                               },
                                               child: Text(
                                                 'Удалить',
@@ -250,11 +250,6 @@ class _NotesScreenState extends State<NotesScreen> {
                                           ],
                                         ),
                                       );
-
-                                      // context.read<NotesBloc>().add(
-                                      //       DeleteNoteEvent(
-                                      //           id: state.note[index].id!),
-                                      //     );
                                     },
                                     child: Row(
                                       children: [
