@@ -107,10 +107,40 @@ class _NotesScreenState extends State<NotesScreen> {
                           ),
                           Column(
                             children: [
-                              IconButton(
-                                onPressed: () {},
-                                icon: Image.asset('assets/icons/note_options.png'),
+                              PopupMenuButton(
+                                child: Image.asset('assets/icons/note_options.png'),
+                                itemBuilder: (BuildContext context) => [
+                                  PopupMenuItem(
+                                    child: Row(
+                                      children: [
+                                        Image.asset('assets/icons/note_edit.png'),
+                                        const Text('Изменить'),
+                                      ],
+                                    ),
+                                  ),
+                                  PopupMenuItem(
+                                    child: Row(
+                                      children: [
+                                        Image.asset('assets/icons/note_pin.png'),
+                                        const Text('Закрепить'),
+                                      ],
+                                    ),
+                                  ),
+                                  PopupMenuItem(
+                                    child: Row(
+                                      children: [
+                                        Image.asset('assets/icons/note_delete.png'),
+                                        const Text('Удалить'),
+                                      ],
+                                    ),
+                                  ),
+                                ],
                               ),
+                              // IconButton(
+                              //   onPressed: () {},
+                              //   icon: Image.asset(
+                              //       'assets/icons/note_options.png'),
+                              // ),
                               IconButton(
                                 onPressed: () {},
                                 icon: Image.asset(''),
