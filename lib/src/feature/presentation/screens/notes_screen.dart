@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:quiz_test/src/feature/domain/models/note_model.dart';
 import 'package:quiz_test/src/feature/presentation/bloc/notes/notes_bloc.dart';
 import 'package:quiz_test/src/feature/presentation/screens/add_note_screen.dart';
 
@@ -100,7 +99,7 @@ class _NotesScreenState extends State<NotesScreen> {
                               color: Colors.amber,
                             ),
                           ),
-                          Column(
+                          const Column(
                             children: [
                               Text(''),
                               Text(''),
@@ -110,7 +109,7 @@ class _NotesScreenState extends State<NotesScreen> {
                             children: [
                               IconButton(
                                 onPressed: () {},
-                                icon: Image.asset(''),
+                                icon: Image.asset('assets/icons/note_options.png'),
                               ),
                               IconButton(
                                 onPressed: () {},
