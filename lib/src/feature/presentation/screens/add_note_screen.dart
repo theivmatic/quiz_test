@@ -128,41 +128,43 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                 focusedErrorBorder: InputBorder.none,
               ),
             ),
-            BlocBuilder<NotesBloc, NotesBlocState>(builder: (context, state) {
-              return BottomButtonWidget(
-                buttonText: 'Сохранить',
-                onPressed: () {
-                  if (_title.text.isNotEmpty && _comment.text.isNotEmpty) {
-                    context.read<NotesBloc>().add(
-                          AddNoteEvent(
-                            movieTitle: _title.text,
-                            dutarion: _duration.text,
-                            comment: _comment.text,
-                            url: _url.text,
-                            movieImage: '',
-                          ),
-                        );
-                    context.read<NotesBloc>().add(
-                          const FetchNotesEvent(),
-                        );
-                    Navigator.of(context).pop(
-                      MaterialPageRoute(
-                        builder: (context) => const NotesScreen(),
-                      ),
-                    );
-                  } else {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text(
-                          'Поля название и комментарий должны быть заполнены'
-                              .toUpperCase(),
+            BlocBuilder<NotesBloc, NotesBlocState>(
+              builder: (context, state) {
+                return BottomButtonWidget(
+                  buttonText: 'Сохранить',
+                  onPressed: () {
+                    if (_title.text.isNotEmpty && _comment.text.isNotEmpty) {
+                      context.read<NotesBloc>().add(
+                            AddNoteEvent(
+                              movieTitle: _title.text,
+                              dutarion: _duration.text,
+                              comment: _comment.text,
+                              url: _url.text,
+                              movieImage: '',
+                            ),
+                          );
+                      context.read<NotesBloc>().add(
+                            const FetchNotesEvent(),
+                          );
+                      Navigator.of(context).pop(
+                        MaterialPageRoute(
+                          builder: (context) => const NotesScreen(),
                         ),
-                      ),
-                    );
-                  }
-                },
-              );
-            })
+                      );
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            'Поля название и комментарий должны быть заполнены'
+                                .toUpperCase(),
+                          ),
+                        ),
+                      );
+                    }
+                  },
+                );
+              },
+            ),
           ],
         ),
       ),

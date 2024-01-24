@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_test/src/feature/presentation/screens/notes_screen.dart';
 import 'package:quiz_test/src/feature/presentation/screens/quiz_theme_screen.dart';
+import 'package:quiz_test/src/feature/presentation/screens/settings_screen.dart';
 
 class BottomNavigationBarWidget extends StatefulWidget {
   const BottomNavigationBarWidget({super.key});
@@ -28,6 +29,9 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
         } else if (index == 1) {
           Navigator.of(context).pushReplacement(
               MaterialPageRoute(builder: (context) => const NotesScreen()));
+        } else if (index == 4) {
+          Navigator.of(context).pushReplacement(
+              MaterialPageRoute(builder: (context) => const SettingsScreen()));
         }
       },
     );
