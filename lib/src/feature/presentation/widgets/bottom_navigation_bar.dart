@@ -31,7 +31,7 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
               MaterialPageRoute(builder: (context) => const NotesScreen()));
         } else if (index == 4) {
           Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (context) => const SettingsScreen()));
+              MaterialPageRoute(builder: (context) => SettingsScreen()));
         }
       },
     );

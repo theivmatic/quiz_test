@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_test/src/feature/presentation/widgets/bottom_navigation_bar.dart';
 import 'package:quiz_test/src/feature/presentation/widgets/settngs_tile.dart';
+import 'package:in_app_review/in_app_review.dart';
 
 class SettingsScreen extends StatelessWidget {
-  const SettingsScreen({super.key});
+  final InAppReview inAppReview = InAppReview.instance;
+
+  SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +32,11 @@ class SettingsScreen extends StatelessWidget {
         children: [
           SettingsTileWidget(
             tileText: 'Оценить приложение',
-            onTap: () {},
+            onTap: () async {
+              if (await inAppReview.isAvailable()) {
+                inAppReview.requestReview();
+              }
+            },
           ),
           const Divider(
             color: Color.fromRGBO(51, 51, 51, 1),
