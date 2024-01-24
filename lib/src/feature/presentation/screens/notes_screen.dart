@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_test/src/feature/presentation/bloc/notes/notes_bloc.dart';
 import 'package:quiz_test/src/feature/presentation/screens/add_note_screen.dart';
+import 'package:quiz_test/src/feature/presentation/screens/error_screen.dart';
 
 import '../widgets/bottom_navigation_bar.dart';
 
@@ -321,7 +322,7 @@ class _NotesScreenState extends State<NotesScreen> {
               );
             }
           }
-          return const Placeholder();
+          return const ErrorScreen();
         },
       ),
       floatingActionButton: FloatingActionButton(
