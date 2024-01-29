@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quiz_test/src/feature/presentation/widgets/bottom_navigation_bar.dart';
 
 class NewsScreen extends StatelessWidget {
   const NewsScreen({super.key});
@@ -22,6 +23,7 @@ class NewsScreen extends StatelessWidget {
         backgroundColor: const Color.fromRGBO(27, 31, 41, 1),
       ),
       backgroundColor: const Color.fromRGBO(27, 31, 41, 1),
+      bottomNavigationBar: const BottomNavigationBarWidget(),
     );
   }
 }
