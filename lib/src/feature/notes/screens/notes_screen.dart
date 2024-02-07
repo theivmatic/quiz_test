@@ -23,12 +23,7 @@ class _NotesScreenState extends State<NotesScreen> {
       appBar: AppBar(
         title: Text(
           'Заметки',
-          style: GoogleFonts.robotoFlex(
-            textStyle: const TextStyle(
-              fontSize: 19,
-              fontWeight: FontWeight.w700,
-            ),
-          ),
+          style: TextStyles.appBarText,
         ),
         centerTitle: true,
         elevation: 0,

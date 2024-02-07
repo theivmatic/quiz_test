@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/feature/notes/domain/bloc/notes_bloc.dart';
 import 'package:quiz_test/src/feature/notes/screens/notes_screen.dart';
@@ -34,12 +33,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
         ),
         title: Text(
           'Новая заметка',
-          style: GoogleFonts.robotoFlex(
-            textStyle: const TextStyle(
-                color: Color.fromRGBO(247, 247, 251, 1),
-                fontSize: 19,
-                fontWeight: FontWeight.w700),
-          ),
+          style: TextStyles.appBarText,
         ),
         actions: [
           IconButton(
@@ -61,13 +55,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
               controller: _title,
               decoration: InputDecoration(
                 hintText: 'Название фильма или сериала',
-                hintStyle: GoogleFonts.robotoFlex(
-                  textStyle: const TextStyle(
-                    color: AppColors.lightGray,
-                    fontSize: 17,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
+                hintStyle: TextStyles.hintBigText,
                 disabledBorder: InputBorder.none,
                 enabledBorder: InputBorder.none,
                 focusedBorder: InputBorder.none,
@@ -79,13 +67,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
               controller: _duration,
               decoration: InputDecoration(
                 hintText: 'Длительность',
-                hintStyle: GoogleFonts.robotoFlex(
-                  textStyle: const TextStyle(
-                    color: AppColors.lightGray,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
+                hintStyle: TextStyles.hintMediumText,
                 disabledBorder: InputBorder.none,
                 enabledBorder: InputBorder.none,
                 focusedBorder: InputBorder.none,
@@ -97,13 +79,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
               controller: _comment,
               decoration: InputDecoration(
                 hintText: 'Комментарий',
-                hintStyle: GoogleFonts.robotoFlex(
-                  textStyle: const TextStyle(
-                    color: AppColors.lightGray,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
+                hintStyle: TextStyles.hintMediumText,
                 disabledBorder: InputBorder.none,
                 enabledBorder: InputBorder.none,
                 focusedBorder: InputBorder.none,
@@ -115,13 +91,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
               controller: _url,
               decoration: InputDecoration(
                 hintText: 'Ссылка',
-                hintStyle: GoogleFonts.robotoFlex(
-                  textStyle: const TextStyle(
-                    color: AppColors.lightGray,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
+                hintStyle: TextStyles.hintMediumText,
                 disabledBorder: InputBorder.none,
                 enabledBorder: InputBorder.none,
                 focusedBorder: InputBorder.none,

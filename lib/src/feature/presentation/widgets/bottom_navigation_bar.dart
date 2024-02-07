@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/feature/preparation/screens/preparations_screen.dart';
 import 'package:quiz_test/src/feature/presentation/screens/news_screen.dart';
@@ -57,14 +56,10 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
       backgroundColor: AppColors.darkBackground,
       selectedItemColor: AppColors.buttonPink,
       selectedFontSize: 11,
-      selectedLabelStyle: GoogleFonts.robotoFlex(
-        textStyle: const TextStyle(fontWeight: FontWeight.w500),
-      ),
+      selectedLabelStyle: TextStyles.navbarLabel,
       unselectedItemColor: AppColors.lightGray,
       unselectedFontSize: 11,
-      unselectedLabelStyle: GoogleFonts.robotoFlex(
-        textStyle: const TextStyle(fontWeight: FontWeight.w500),
-      ),
+      unselectedLabelStyle: TextStyles.navbarLabel,
       showUnselectedLabels: true,
       items: const [
         BottomNavigationBarItem(

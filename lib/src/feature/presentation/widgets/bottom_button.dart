@@ -26,10 +26,7 @@ class BottomButtonWidget extends StatelessWidget {
       ),
       child: Text(
         buttonText,
-        style: const TextStyle(
-          fontSize: 14,
-          fontWeight: FontWeight.w700,
-        ),
+        style: TextStyles.bottomButtonText,
       ),
     );
   }

@@ -23,19 +23,15 @@ class StartScreen extends StatelessWidget {
             'Насколько вы хорошо знаете\n русские сериалы?',
             textAlign: TextAlign.center,
             style: GoogleFonts.robotoFlex(
-              textStyle: const TextStyle(
-                fontSize: 19,
-                fontWeight: FontWeight.w700,
-                color: Color.fromRGBO(247, 247, 251, 1),
-              ),
+              textStyle: TextStyles.startScreenText,
             ),
           ),
           const SizedBox(height: 30),
           BottomButtonWidget(
             buttonText: 'Продолжить',
             onPressed: () {
-              Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => const QuizThemeScreen()));
+              Navigator.of(context).pushReplacement(MaterialPageRoute(
+                  builder: (context) => const QuizThemeScreen()));
             },
           ),
         ],
