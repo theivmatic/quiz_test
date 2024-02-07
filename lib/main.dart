@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:quiz_test/src/feature/news/domain/bloc/news_bloc.dart';
 import 'package:quiz_test/src/feature/notes/domain/bloc/notes_bloc.dart';
 import 'package:quiz_test/src/feature/preparation/domain/bloc/preparation_bloc.dart';
 import 'package:quiz_test/observer.dart';
@@ -23,6 +24,9 @@ class MainApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => PreparationBloc(),
+        ),
+        BlocProvider(
+          create: (context) => NewsBloc(),
         ),
       ],
       child: const MaterialApp(
