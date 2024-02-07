@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:quiz_test/src/feature/presentation/bloc/preparation/preparation_bloc.dart';
-import 'package:quiz_test/src/feature/presentation/screens/preparations_screen.dart';
+import 'package:quiz_test/src/feature/preparation/domain/bloc/preparation_bloc.dart';
+import 'package:quiz_test/src/feature/preparation/screens/preparations_screen.dart';
+
 
 class PreparationCardScreen extends StatefulWidget {
   const PreparationCardScreen({super.key});

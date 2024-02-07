@@ -1,7 +1,5 @@
-import 'dart:developer';
-
 import 'package:flutter/services.dart';
-import 'package:quiz_test/src/feature/domain/models/preparation_entity.dart';
+import 'package:quiz_test/src/feature/preparation/domain/models/preparation_entity.dart';
 
 Future<PreparationEntity> fetchPreparation() async {
   final String responce =

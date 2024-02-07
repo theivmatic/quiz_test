@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quiz_test/src/feature/presentation/bloc/notes/notes_bloc.dart';
-import 'package:quiz_test/src/feature/presentation/bloc/observer.dart';
-import 'package:quiz_test/src/feature/presentation/bloc/preparation/preparation_bloc.dart';
+import 'package:quiz_test/src/feature/notes/domain/bloc/notes_bloc.dart';
+import 'package:quiz_test/src/feature/preparation/domain/bloc/preparation_bloc.dart';
+import 'package:quiz_test/observer.dart';
 import 'package:quiz_test/src/feature/presentation/screens/splash_screen.dart';
 
 void main() {

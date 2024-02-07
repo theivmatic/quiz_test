@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:quiz_test/src/feature/presentation/screens/quiz_theme_screen.dart';
+import 'package:quiz_test/src/feature/quiz/screens/quiz_theme_screen.dart';
 import 'package:quiz_test/src/feature/presentation/widgets/bottom_button.dart';
 
 class StartScreen extends StatelessWidget {

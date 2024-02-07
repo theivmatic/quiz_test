@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:quiz_test/src/feature/domain/databases/notes_database.dart';
-import 'package:quiz_test/src/feature/domain/models/note_model.dart';
+import 'package:quiz_test/src/feature/notes/domain/databases/notes_database.dart';
+import 'package:quiz_test/src/feature/notes/domain/models/note_model.dart';
 
 part 'notes_event.dart';
 part 'notes_state.dart';

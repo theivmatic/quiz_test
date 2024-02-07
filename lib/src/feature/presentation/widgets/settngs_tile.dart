@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class SettingsTileWidget extends StatelessWidget {
   final String tileText;
-  final onTap;
+  final VoidCallback onTap;
 
   const SettingsTileWidget(
       {super.key, required this.tileText, required this.onTap});

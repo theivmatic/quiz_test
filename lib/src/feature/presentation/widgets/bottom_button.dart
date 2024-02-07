@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class BottomButtonWidget extends StatelessWidget {
-  final onPressed;
+  final VoidCallback onPressed;
   final String buttonText;
 
   const BottomButtonWidget({

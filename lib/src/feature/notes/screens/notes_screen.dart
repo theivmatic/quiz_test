@@ -2,11 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:quiz_test/src/feature/presentation/bloc/notes/notes_bloc.dart';
-import 'package:quiz_test/src/feature/presentation/screens/add_note_screen.dart';
+import 'package:quiz_test/src/feature/notes/domain/bloc/notes_bloc.dart';
+import 'package:quiz_test/src/feature/notes/screens/add_note_screen.dart';
 import 'package:quiz_test/src/feature/presentation/screens/error_screen.dart';
 
-import '../widgets/bottom_navigation_bar.dart';
+import '../../presentation/widgets/bottom_navigation_bar.dart';
 
 class NotesScreen extends StatefulWidget {
   const NotesScreen({super.key});
