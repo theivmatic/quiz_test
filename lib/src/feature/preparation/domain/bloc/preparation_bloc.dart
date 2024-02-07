@@ -13,8 +13,7 @@ class PreparationBloc extends Bloc<PreparationBlocEvent, PreparationBlocState> {
           final preparationLoaded = await fetchPreparation();
           // log(preparationLoaded.toString());
           emit(
-            PreparationBlocLoadedState(preparationLoaded: preparationLoaded),
-          );
+              PreparationBlocLoadedState(preparationLoaded: preparationLoaded));
           // log(preparationLoaded.toString());
         } catch (e) {
           emit(PreparationBlocErrorState(errorMessage: e.toString()));
