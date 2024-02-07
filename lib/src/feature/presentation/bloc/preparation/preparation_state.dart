@@ -7,7 +7,7 @@ final class PreparationBlocInitialState extends PreparationBlocState {}
 final class PreparationBlocLoadingState extends PreparationBlocState {}
 
 final class PreparationBlocLoadedState extends PreparationBlocState {
-  final dynamic preparationLoaded;
+  final PreparationEntity preparationLoaded;
 
   PreparationBlocLoadedState({required this.preparationLoaded});
 }
