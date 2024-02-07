@@ -1,6 +1,11 @@
+import 'dart:convert';
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'news_entity.g.dart';
+
+NewsEntity newsEntityFromJson(String str) =>
+    NewsEntity.fromJson(jsonDecode(str));
 
 @JsonSerializable()
 class NewsEntity {
