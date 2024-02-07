@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/feature/preparation/screens/preparation_card_screen.dart';
 import 'package:quiz_test/src/feature/presentation/widgets/bottom_navigation_bar.dart';
 
@@ -21,9 +22,9 @@ class PreparationsScreen extends StatelessWidget {
         ),
         centerTitle: true,
         elevation: 0,
-        backgroundColor: const Color.fromRGBO(27, 31, 41, 1),
+        backgroundColor: AppColors.darkBackground,
       ),
-      backgroundColor: const Color.fromRGBO(27, 31, 41, 1),
+      backgroundColor: AppColors.darkBackground,
       body: GridView.count(
         crossAxisCount: 2,
         children: [

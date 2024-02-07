@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/feature/preparation/domain/bloc/preparation_bloc.dart';
 import 'package:quiz_test/src/feature/preparation/screens/preparations_screen.dart';
 
@@ -43,9 +44,9 @@ class _PreparationCardScreenState extends State<PreparationCardScreen> {
           icon: const Icon(Icons.arrow_back_ios),
         ),
         elevation: 0,
-        backgroundColor: const Color.fromRGBO(27, 31, 41, 1),
+        backgroundColor: AppColors.darkBackground,
       ),
-      backgroundColor: const Color.fromRGBO(27, 31, 41, 1),
+      backgroundColor: AppColors.darkBackground,
       body: BlocBuilder<PreparationBloc, PreparationBlocState>(
         bloc: preparationBloc,
         builder: (context, state) => switch (state) {

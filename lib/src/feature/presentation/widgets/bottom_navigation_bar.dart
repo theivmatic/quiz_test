@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/feature/preparation/screens/preparations_screen.dart';
 import 'package:quiz_test/src/feature/presentation/screens/news_screen.dart';
 import 'package:quiz_test/src/feature/notes/screens/notes_screen.dart';
@@ -53,13 +54,13 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
       onTap: _onItemTapped,
       iconSize: 24,
       elevation: 0,
-      backgroundColor: const Color.fromRGBO(27, 31, 41, 1),
-      selectedItemColor: const Color.fromRGBO(251, 43, 93, 1),
+      backgroundColor: AppColors.darkBackground,
+      selectedItemColor: AppColors.buttonPink,
       selectedFontSize: 11,
       selectedLabelStyle: GoogleFonts.robotoFlex(
         textStyle: const TextStyle(fontWeight: FontWeight.w500),
       ),
-      unselectedItemColor: const Color.fromRGBO(131, 131, 131, 1),
+      unselectedItemColor: AppColors.lightGray,
       unselectedFontSize: 11,
       unselectedLabelStyle: GoogleFonts.robotoFlex(
         textStyle: const TextStyle(fontWeight: FontWeight.w500),

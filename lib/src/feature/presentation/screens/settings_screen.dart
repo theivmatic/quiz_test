@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/feature/presentation/widgets/bottom_navigation_bar.dart';
 import 'package:quiz_test/src/feature/presentation/widgets/settngs_tile.dart';
 import 'package:in_app_review/in_app_review.dart';
@@ -24,9 +25,9 @@ class SettingsScreen extends StatelessWidget {
         ),
         centerTitle: true,
         elevation: 0,
-        backgroundColor: const Color.fromRGBO(27, 31, 41, 1),
+        backgroundColor: AppColors.darkBackground,
       ),
-      backgroundColor: const Color.fromRGBO(27, 31, 41, 1),
+      backgroundColor: AppColors.darkBackground,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -39,42 +40,42 @@ class SettingsScreen extends StatelessWidget {
             },
           ),
           const Divider(
-            color: Color.fromRGBO(51, 51, 51, 1),
+            color: AppColors.settingsDivider,
           ),
           SettingsTileWidget(
             tileText: 'О приложении',
             onTap: () {},
           ),
           const Divider(
-            color: Color.fromRGBO(51, 51, 51, 1),
+            color: AppColors.settingsDivider,
           ),
           SettingsTileWidget(
             tileText: 'Политика конфиденциальности',
             onTap: () {},
           ),
           const Divider(
-            color: Color.fromRGBO(51, 51, 51, 1),
+            color: AppColors.settingsDivider,
           ),
           SettingsTileWidget(
             tileText: 'Пользовательское соглашение',
             onTap: () {},
           ),
           const Divider(
-            color: Color.fromRGBO(51, 51, 51, 1),
+            color: AppColors.settingsDivider,
           ),
           SettingsTileWidget(
             tileText: 'Обратная связь',
             onTap: () {},
           ),
           const Divider(
-            color: Color.fromRGBO(51, 51, 51, 1),
+            color: AppColors.settingsDivider,
           ),
           SettingsTileWidget(
             tileText: 'Сброс статистики',
             onTap: () {},
           ),
           const Divider(
-            color: Color.fromRGBO(51, 51, 51, 1),
+            color: AppColors.settingsDivider,
           ),
         ],
       ),

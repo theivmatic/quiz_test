@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/feature/presentation/screens/start_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -20,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(27, 31, 41, 1),
+      backgroundColor: AppColors.darkBackground,
       body: Center(
         child: Image.asset('assets/images/splash_screen_image.png'),
       ),

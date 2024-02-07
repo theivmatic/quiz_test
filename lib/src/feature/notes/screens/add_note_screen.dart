@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/feature/notes/domain/bloc/notes_bloc.dart';
 import 'package:quiz_test/src/feature/notes/screens/notes_screen.dart';
 import 'package:quiz_test/src/feature/presentation/widgets/bottom_button.dart';
@@ -23,13 +24,13 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: const Color.fromRGBO(27, 31, 41, 1),
+        backgroundColor: AppColors.darkBackground,
         leading: IconButton(
           onPressed: () {
             Navigator.of(context).pop();
           },
           icon: const Icon(Icons.arrow_back_ios),
-          color: const Color.fromRGBO(199, 201, 204, 1),
+          color: AppColors.iconGrey,
         ),
         title: Text(
           'Новая заметка',
@@ -51,7 +52,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
           ),
         ],
       ),
-      backgroundColor: const Color.fromRGBO(27, 31, 41, 1),
+      backgroundColor: AppColors.darkBackground,
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
@@ -62,7 +63,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                 hintText: 'Название фильма или сериала',
                 hintStyle: GoogleFonts.robotoFlex(
                   textStyle: const TextStyle(
-                    color: Color.fromRGBO(131, 131, 131, 1),
+                    color: AppColors.lightGray,
                     fontSize: 17,
                     fontWeight: FontWeight.w500,
                   ),
@@ -80,7 +81,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                 hintText: 'Длительность',
                 hintStyle: GoogleFonts.robotoFlex(
                   textStyle: const TextStyle(
-                    color: Color.fromRGBO(131, 131, 131, 1),
+                    color: AppColors.lightGray,
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
                   ),
@@ -98,7 +99,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                 hintText: 'Комментарий',
                 hintStyle: GoogleFonts.robotoFlex(
                   textStyle: const TextStyle(
-                    color: Color.fromRGBO(131, 131, 131, 1),
+                    color: AppColors.lightGray,
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
                   ),
@@ -116,7 +117,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                 hintText: 'Ссылка',
                 hintStyle: GoogleFonts.robotoFlex(
                   textStyle: const TextStyle(
-                    color: Color.fromRGBO(131, 131, 131, 1),
+                    color: AppColors.lightGray,
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
                   ),

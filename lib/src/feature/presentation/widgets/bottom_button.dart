@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_test/src/core/constants/app_theme.dart';
 
 class BottomButtonWidget extends StatelessWidget {
   final VoidCallback onPressed;
@@ -16,7 +17,7 @@ class BottomButtonWidget extends StatelessWidget {
       onPressed: onPressed,
       style: const ButtonStyle(
         backgroundColor: MaterialStatePropertyAll(
-          Color.fromRGBO(251, 43, 93, 1),
+          AppColors.buttonPink,
         ),
         fixedSize: MaterialStatePropertyAll(
           Size(343, 43),

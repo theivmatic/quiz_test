@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/feature/notes/domain/bloc/notes_bloc.dart';
 import 'package:quiz_test/src/feature/notes/screens/add_note_screen.dart';
 import 'package:quiz_test/src/feature/presentation/screens/error_screen.dart';
@@ -31,9 +32,9 @@ class _NotesScreenState extends State<NotesScreen> {
         ),
         centerTitle: true,
         elevation: 0,
-        backgroundColor: const Color.fromRGBO(27, 31, 41, 1),
+        backgroundColor: AppColors.darkBackground,
       ),
-      backgroundColor: const Color.fromRGBO(27, 31, 41, 1),
+      backgroundColor: AppColors.darkBackground,
       body: BlocBuilder<NotesBloc, NotesBlocState>(
         builder: (context, state) {
           if (state is NotesBlocInitialState) {
@@ -85,7 +86,7 @@ class _NotesScreenState extends State<NotesScreen> {
               return ListView.separated(
                 separatorBuilder: (BuildContext context, int index) =>
                     const Divider(
-                  color: Color.fromRGBO(53, 53, 58, 1),
+                  color: AppColors.divider,
                 ),
                 scrollDirection: Axis.vertical,
                 itemCount: state.note.length,
@@ -146,7 +147,7 @@ class _NotesScreenState extends State<NotesScreen> {
                                     shape: BeveledRectangleBorder(
                                       borderRadius: BorderRadius.circular(6),
                                     ),
-                                    color: const Color.fromRGBO(50, 49, 58, 1),
+                                    color: AppColors.popupMenuBackground,
                                     child: Image.asset(
                                         'assets/icons/note_options.png'),
                                     itemBuilder: (BuildContext context) => [
@@ -203,8 +204,7 @@ class _NotesScreenState extends State<NotesScreen> {
                                                     BorderRadius.circular(16),
                                               ),
                                               backgroundColor:
-                                                  const Color.fromRGBO(
-                                                      50, 49, 58, 1),
+                                                  AppColors.popupMenuBackground,
                                               title: Text(
                                                 'Вы уверены, что хотите удалить заметку?',
                                                 style: GoogleFonts.robotoFlex(
@@ -229,8 +229,7 @@ class _NotesScreenState extends State<NotesScreen> {
                                                     ),
                                                     backgroundColor:
                                                         const MaterialStatePropertyAll(
-                                                      Color.fromRGBO(
-                                                          199, 201, 204, 1),
+                                                      AppColors.iconGrey,
                                                     ),
                                                   ),
                                                   onPressed: () {
@@ -330,10 +329,10 @@ class _NotesScreenState extends State<NotesScreen> {
           Navigator.of(context).push(
               MaterialPageRoute(builder: (context) => const AddNoteScreen()));
         },
-        backgroundColor: const Color.fromRGBO(251, 43, 93, 1),
+        backgroundColor: AppColors.buttonPink,
         child: const Icon(
           Icons.add,
-          color: Color.fromRGBO(199, 201, 204, 1),
+          color: AppColors.iconGrey,
           size: 24,
         ),
       ),
