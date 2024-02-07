@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_test/src/feature/presentation/bloc/notes/notes_bloc.dart';
 import 'package:quiz_test/src/feature/presentation/bloc/observer.dart';
+import 'package:quiz_test/src/feature/presentation/bloc/preparation/preparation_bloc.dart';
 import 'package:quiz_test/src/feature/presentation/screens/splash_screen.dart';
 
 void main() {
@@ -19,6 +20,9 @@ class MainApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => NotesBloc(),
+        ),
+        BlocProvider(
+          create: (context) => PreparationBloc(),
         ),
       ],
       child: const MaterialApp(

@@ -1,8 +1,5 @@
 part of 'preparation_bloc.dart';
 
-sealed class PreparationBlocEvent extends Equatable {
-  const PreparationBlocEvent();
+sealed class PreparationBlocEvent {}
 
-  @override
-  List<Object> get props => [];
-}
+class FetchPreparationBlocEvent implements PreparationBlocEvent {}
