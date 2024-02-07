@@ -73,7 +73,7 @@ class PreparationCardScreen extends StatelessWidget {
                       'assets/images/training_images/training_image1.png')),
               const SizedBox(height: 5),
               Text(
-                'Валера Турбо в исполнении Славы Копейкина стал одним из самых неоднозначных персонажей, в него влюбляются и ненавидят ',
+                'Валера Турбо в исполнении Славы Копейкина стал одним из самых неоднозначных персонажей, в него влюбляются и ненавидят',
                 style: GoogleFonts.robotoFlex(
                   textStyle: const TextStyle(
                     color: Color.fromRGBO(189, 193, 203, 1),
