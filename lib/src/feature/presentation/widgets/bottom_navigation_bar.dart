@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/feature/preparation/screens/preparations_screen.dart';
-import 'package:quiz_test/src/feature/presentation/screens/news_screen.dart';
+import 'package:quiz_test/src/feature/news/screens/news_screen.dart';
 import 'package:quiz_test/src/feature/notes/screens/notes_screen.dart';
 import 'package:quiz_test/src/feature/quiz/screens/quiz_theme_screen.dart';
-import 'package:quiz_test/src/feature/presentation/screens/settings_screen.dart';
+import 'package:quiz_test/src/feature/settings/screens/settings_screen.dart';
 
 class BottomNavigationBarWidget extends StatefulWidget {
   const BottomNavigationBarWidget({super.key});
