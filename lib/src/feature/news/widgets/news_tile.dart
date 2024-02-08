@@ -22,7 +22,7 @@ class NewsTileWidget extends StatelessWidget {
             children: [
               Image.asset('assets/images/news_images/news_image5.png'),
               Padding(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

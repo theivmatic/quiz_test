@@ -4,7 +4,6 @@ import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/feature/news/domain/bloc/news_bloc.dart';
 import 'package:quiz_test/src/feature/news/screens/news_screen.dart';
 import 'package:quiz_test/src/feature/news/widgets/news_card.dart';
-import 'package:quiz_test/src/feature/news/widgets/news_tile.dart';
 
 class SpecificNewsScreen extends StatefulWidget {
   const SpecificNewsScreen({super.key});

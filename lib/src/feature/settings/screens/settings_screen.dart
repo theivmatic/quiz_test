@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
+import 'package:quiz_test/src/core/constants/urls.dart';
 import 'package:quiz_test/src/feature/presentation/widgets/bottom_navigation_bar.dart';
 import 'package:quiz_test/src/feature/settings/widgets/settngs_tile.dart';
 import 'package:in_app_review/in_app_review.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class SettingsScreen extends StatelessWidget {
+class SettingsScreen extends StatefulWidget {
+
+  const SettingsScreen({super.key});
+
+  @override
+  State<SettingsScreen> createState() => _SettingsScreenState();
+}
+
+class _SettingsScreenState extends State<SettingsScreen> {
   final InAppReview inAppReview = InAppReview.instance;
-
-  SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,14 +53,24 @@ class SettingsScreen extends StatelessWidget {
           ),
           SettingsTileWidget(
             tileText: 'Политика конфиденциальности',
-            onTap: () {},
+            onTap: () {
+              launchUrl(
+                AppUrls.privacyPolicy,
+                mode: LaunchMode.externalApplication,
+              );
+            },
           ),
           const Divider(
             color: AppColors.settingsDivider,
           ),
           SettingsTileWidget(
             tileText: 'Пользовательское соглашение',
-            onTap: () {},
+            onTap: () {
+              launchUrl(
+                AppUrls.userAgreement,
+                mode: LaunchMode.externalApplication,
+              );
+            },
           ),
           const Divider(
             color: AppColors.settingsDivider,
