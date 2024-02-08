@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
-import 'package:quiz_test/src/feature/presentation/widgets/bottom_navigation_bar.dart';
+import 'package:quiz_test/src/core/widgets/bottom_navigation_bar.dart';
 
 class QuizThemeScreen extends StatelessWidget {
   const QuizThemeScreen({super.key});

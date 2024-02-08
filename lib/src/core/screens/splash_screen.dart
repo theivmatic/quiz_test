@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
-import 'package:quiz_test/src/feature/presentation/screens/start_screen.dart';
+import 'package:quiz_test/src/core/screens/start_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

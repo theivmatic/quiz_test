@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
-import 'package:quiz_test/src/feature/preparation/screens/preparation_card_screen.dart';
-import 'package:quiz_test/src/feature/presentation/widgets/bottom_navigation_bar.dart';
+import 'package:quiz_test/src/feature/preparation/presentation/screens/preparation_card_screen.dart';
+import 'package:quiz_test/src/core/widgets/bottom_navigation_bar.dart';
 
 class PreparationsScreen extends StatelessWidget {
   const PreparationsScreen({super.key});

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/core/constants/urls.dart';
-import 'package:quiz_test/src/feature/presentation/widgets/bottom_navigation_bar.dart';
-import 'package:quiz_test/src/feature/settings/widgets/settngs_tile.dart';
+import 'package:quiz_test/src/core/widgets/bottom_navigation_bar.dart';
+import 'package:quiz_test/src/feature/settings/presentation/widgets/settngs_tile.dart';
 import 'package:in_app_review/in_app_review.dart';
 import 'package:url_launcher/url_launcher.dart';
 

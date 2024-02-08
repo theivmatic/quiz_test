@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
+import 'package:quiz_test/src/core/screens/error_screen.dart';
 import 'package:quiz_test/src/feature/preparation/domain/bloc/preparation_bloc.dart';
-import 'package:quiz_test/src/feature/preparation/screens/preparations_screen.dart';
-import 'package:quiz_test/src/feature/preparation/widgets/preparation_tile.dart';
+import 'package:quiz_test/src/feature/preparation/presentation/screens/preparations_screen.dart';
+import 'package:quiz_test/src/feature/preparation/presentation/widgets/preparation_tile.dart';
 
 
 class PreparationCardScreen extends StatefulWidget {
@@ -54,8 +55,8 @@ class _PreparationCardScreenState extends State<PreparationCardScreen> {
                 subtext: state.preparationLoaded.facts?[index].subtext,
               ),
             ),
-          PreparationBlocLoadingState() => const Placeholder(),
-          PreparationBlocErrorState() => const Placeholder(),
+          PreparationBlocLoadingState() => const CircularProgressIndicator(),
+          PreparationBlocErrorState() => const ErrorScreen(),
           _ => const Placeholder(),
         },
       ),

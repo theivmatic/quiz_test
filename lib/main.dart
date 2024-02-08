@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_test/src/feature/news/domain/bloc/news_bloc.dart';
 import 'package:quiz_test/src/feature/notes/domain/bloc/notes_bloc.dart';
 import 'package:quiz_test/src/feature/preparation/domain/bloc/preparation_bloc.dart';
-import 'package:quiz_test/observer.dart';
-import 'package:quiz_test/src/feature/presentation/screens/splash_screen.dart';
+import 'package:quiz_test/src/core/bloc/observer.dart';
+import 'package:quiz_test/src/core/screens/splash_screen.dart';
 
 void main() {
   Bloc.observer = AppObserver();

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
-import 'package:quiz_test/src/feature/preparation/screens/preparations_screen.dart';
-import 'package:quiz_test/src/feature/news/screens/news_screen.dart';
-import 'package:quiz_test/src/feature/notes/screens/notes_screen.dart';
-import 'package:quiz_test/src/feature/quiz/screens/quiz_theme_screen.dart';
-import 'package:quiz_test/src/feature/settings/screens/settings_screen.dart';
+import 'package:quiz_test/src/feature/notes/presentation/screens/notes_screen.dart';
+import 'package:quiz_test/src/feature/preparation/presentation/screens/preparations_screen.dart';
+import 'package:quiz_test/src/feature/news/presentation/screens/news_screen.dart';
+import 'package:quiz_test/src/feature/quiz/presentation/screens/quiz_theme_screen.dart';
+import 'package:quiz_test/src/feature/settings/presentation/screens/settings_screen.dart';
 
 class BottomNavigationBarWidget extends StatefulWidget {
   const BottomNavigationBarWidget({super.key});
@@ -39,7 +39,7 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
               MaterialPageRoute(builder: (context) => const NewsScreen()));
         } else if (index == 4) {
           Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (context) => SettingsScreen()));
+              MaterialPageRoute(builder: (context) => const SettingsScreen()));
         }
       },
     );

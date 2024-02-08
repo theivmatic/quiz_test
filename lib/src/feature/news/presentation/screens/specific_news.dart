@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
+import 'package:quiz_test/src/core/screens/error_screen.dart';
 import 'package:quiz_test/src/feature/news/domain/bloc/news_bloc.dart';
-import 'package:quiz_test/src/feature/news/screens/news_screen.dart';
-import 'package:quiz_test/src/feature/news/widgets/news_card.dart';
+import 'package:quiz_test/src/feature/news/presentation/screens/news_screen.dart';
+import 'package:quiz_test/src/feature/news/presentation/widgets/news_card.dart';
 
 class SpecificNewsScreen extends StatefulWidget {
   const SpecificNewsScreen({super.key});
@@ -55,8 +56,8 @@ class _SpecificNewsScreenState extends State<SpecificNewsScreen> {
                 ),
               ),
             ),
-          NewsBlocLoadingState() => const Placeholder(),
-          NewsBlocErrorState() => const Placeholder(),
+          NewsBlocLoadingState() => const CircularProgressIndicator(),
+          NewsBlocErrorState() => const ErrorScreen(),
           _ => const Placeholder(),
         },
       ),

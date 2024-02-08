@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/feature/notes/domain/bloc/notes_bloc.dart';
-import 'package:quiz_test/src/feature/notes/screens/notes_screen.dart';
-import 'package:quiz_test/src/feature/presentation/widgets/bottom_button.dart';
+import 'package:quiz_test/src/feature/notes/presentation/screens/notes_screen.dart';
+import 'package:quiz_test/src/core/widgets/bottom_button.dart';
 
 class AddNoteScreen extends StatefulWidget {
   const AddNoteScreen({super.key});

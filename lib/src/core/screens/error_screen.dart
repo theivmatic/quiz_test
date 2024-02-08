@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
-import 'package:quiz_test/src/feature/presentation/widgets/bottom_button.dart';
+import 'package:quiz_test/src/core/widgets/bottom_button.dart';
 
 class ErrorScreen extends StatelessWidget {
   const ErrorScreen({super.key});
