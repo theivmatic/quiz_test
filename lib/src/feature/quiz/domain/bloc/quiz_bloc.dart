@@ -7,7 +7,7 @@ part 'quiz_state.dart';
 
 class QuizBloc extends Bloc<QuizBlocEvent, QuizBlocState> {
   QuizBloc() : super(QuizBlocInitialState()) {
-    on<FetchQuiz>((event, emit) async {
+    on<FetchQuizBlocEvent>((event, emit) async {
       try {
         final quizLoaded = await fetchQuiz();
         emit(
