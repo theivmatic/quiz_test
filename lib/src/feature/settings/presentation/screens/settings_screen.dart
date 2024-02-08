@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:in_app_review/in_app_review.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
@@ -7,7 +8,6 @@ import 'package:quiz_test/src/feature/settings/presentation/widgets/settngs_tile
 import 'package:url_launcher/url_launcher.dart';
 
 class SettingsScreen extends StatefulWidget {
-
   const SettingsScreen({super.key});
 
   @override
@@ -77,7 +77,33 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
           SettingsTileWidget(
             tileText: 'Обратная связь',
-            onTap: () {},
+            onTap: () {
+              showCupertinoDialog<VoidCallback>(
+                barrierDismissible: true,
+                context: context,
+                builder: (_) => AlertDialog(
+                  backgroundColor: AppColors.popupMenuBackground,
+                  title: Text(
+                    'Обратная связь',
+                    style: TextStyles.feedbackTitleText,
+                  ),
+                  content: TextFormField(
+                    decoration: const InputDecoration(),
+                  ),
+                  actions: [
+                    FilledButton(
+                      onPressed: () {},
+                      child: const Text('Отправить'),
+                      style: const ButtonStyle(
+                        backgroundColor:
+                            MaterialStatePropertyAll(AppColors.buttonPink),
+                      ),
+                    ),
+                  ],
+                  actionsAlignment: MainAxisAlignment.center,
+                ),
+              );
+            },
           ),
           const Divider(
             color: AppColors.settingsDivider,

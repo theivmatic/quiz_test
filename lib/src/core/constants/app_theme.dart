@@ -108,4 +108,18 @@ abstract class TextStyles {
       color: AppColors.textGrey,
     ),
   );
+  static final popupTitleText = font(
+    textStyle: const TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 11,
+      color: AppColors.textWhite,
+    ),
+  );
+  static final feedbackTitleText = font(
+    textStyle: const TextStyle(
+      fontWeight: FontWeight.w700,
+      fontSize: 16,
+      color: AppColors.textWhite,
+    ),
+  );
 }

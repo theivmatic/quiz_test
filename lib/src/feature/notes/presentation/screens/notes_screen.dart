@@ -200,6 +200,7 @@ class _NotesScreenState extends State<NotesScreen> {
                                     PopupMenuItem<dynamic>(
                                       onTap: () {
                                         showCupertinoDialog<dynamic>(
+                                          barrierDismissible: true,
                                           context: context,
                                           builder: (_) => AlertDialog(
                                             actionsAlignment:
@@ -212,18 +213,7 @@ class _NotesScreenState extends State<NotesScreen> {
                                                 AppColors.popupMenuBackground,
                                             title: Text(
                                               'Вы уверены, что хотите удалить заметку?',
-                                              style: GoogleFonts.robotoFlex(
-                                                textStyle: const TextStyle(
-                                                  color: Color.fromRGBO(
-                                                    247,
-                                                    247,
-                                                    252,
-                                                    1,
-                                                  ),
-                                                  fontSize: 11,
-                                                  fontWeight: FontWeight.w400,
-                                                ),
-                                              ),
+                                              style: TextStyles.popupTitleText,
                                             ),
                                             actions: [
                                               FilledButton(
