@@ -87,9 +87,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     'Обратная связь',
                     style: TextStyles.feedbackTitleText,
                   ),
-                  content: TextFormField(
-                    decoration: const InputDecoration(),
-                  ),
+                  content: TextFormField(),
                   actions: [
                     FilledButton(
                       onPressed: () {},
