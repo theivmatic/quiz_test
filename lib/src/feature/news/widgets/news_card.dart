@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 
-class PreparationTileWidget extends StatelessWidget {
-  final String? number;
-  final String? text;
+class NewsCardWidget extends StatelessWidget {
+  final String? newsTitle;
+  final String? newsText;
   final String? imagePath;
-  final String? subtext;
+  final String? newsSubtext;
 
-  const PreparationTileWidget({
-    super.key,
-    required this.number,
-    required this.text,
-    this.imagePath,
-    this.subtext,
-  });
+  const NewsCardWidget(
+      {super.key,
+      required this.newsTitle,
+      required this.newsText,
+      required this.imagePath,
+      required this.newsSubtext});
 
   @override
   Widget build(BuildContext context) {
@@ -24,23 +23,18 @@ class PreparationTileWidget extends StatelessWidget {
         children: [
           const SizedBox(height: 10),
           Text(
-            number ?? '',
+            newsTitle ?? '',
             style: TextStyles.factNumber,
           ),
           const SizedBox(height: 10),
           Text(
-            text ?? '',
+            newsText ?? '',
             style: TextStyles.factText,
           ),
           const SizedBox(height: 10),
           imagePath != null ? Image.asset(imagePath!) : const SizedBox(),
           const SizedBox(height: 5),
-          subtext != null
-              ? Text(
-                  subtext!,
-                  style: TextStyles.factSubText,
-                )
-              : const SizedBox(),
+          Text(newsSubtext ?? '', style: TextStyles.factSubText),
         ],
       ),
     );

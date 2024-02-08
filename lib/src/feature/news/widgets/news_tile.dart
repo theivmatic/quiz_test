@@ -21,15 +21,19 @@ class NewsTileWidget extends StatelessWidget {
           child: Column(
             children: [
               Image.asset('assets/images/news_images/news_image5.png'),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.all(10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                        'Новые «Бременские музыканты»: фантазия с эффектом «зловещей долины»'),
-                    SizedBox(height: 5),
-                    Text('22 декабря • читать 4 минуты'),
+                      'Новые «Бременские музыканты»: фантазия с эффектом «зловещей долины»',
+                      style: TextStyles.newsTileTitle,
+                    ),
+                    const SizedBox(height: 5),
+                    Text('22 декабря • читать 4 минуты',
+                      style: TextStyles.newsTileDateTime,
+                    ),
                   ],
                 ),
               ),

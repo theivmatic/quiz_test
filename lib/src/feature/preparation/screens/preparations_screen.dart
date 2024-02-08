@@ -26,7 +26,8 @@ class PreparationsScreen extends StatelessWidget {
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                    builder: (context) => const  PreparationCardScreen()),
+                  builder: (context) => const PreparationCardScreen(),
+                ),
               );
             },
             child: Image.asset(

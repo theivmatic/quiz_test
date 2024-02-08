@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
+import 'package:quiz_test/src/feature/news/screens/specific_news.dart';
 import 'package:quiz_test/src/feature/news/widgets/news_tile.dart';
 import 'package:quiz_test/src/feature/presentation/widgets/bottom_navigation_bar.dart';
 
@@ -22,7 +23,13 @@ class NewsScreen extends StatelessWidget {
       body: Column(
         children: [
           NewsTileWidget(
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) => const SpecificNewsScreen(),
+                ),
+              );
+            },
           ),
         ],
       ),
@@ -30,4 +37,3 @@ class NewsScreen extends StatelessWidget {
     );
   }
 }
-

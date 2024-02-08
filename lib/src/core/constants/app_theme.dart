@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 const font = GoogleFonts.robotoFlex;
 
 abstract class AppColors {
+  static const white = Color.fromRGBO(255, 255, 255, 1);
   static const darkBackground = Color.fromRGBO(27, 31, 41, 1);
   static const buttonPink = Color.fromRGBO(251, 43, 93, 1);
   static const lightGray = Color.fromRGBO(131, 131, 131, 1);
@@ -91,6 +92,20 @@ abstract class TextStyles {
   static final navbarLabel = font(
     textStyle: const TextStyle(
       fontWeight: FontWeight.w500,
+    ),
+  );
+  static final newsTileTitle = font(
+    textStyle: const TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 14,
+      color: AppColors.white,
+    ),
+  );
+  static final newsTileDateTime = font(
+    textStyle: const TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 12,
+      color: AppColors.textGrey,
     ),
   );
 }
