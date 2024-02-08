@@ -1,28 +1,42 @@
 {
     "questions": [
         {
-            "id": 1,
             "question": "Как зовут автора написавшего книгу «Слово пацана. Криминальный Татарстан 1970–2010-х», по мотивам котрой и был снят сериал?",
             "answers": [
                 {
-                    "first_answer": "Роберт Насыри",
-                    "second_answer": "Роберт Шамсудин",
-                    "third_answer": "Роберт Гараев",
-                    "fourth_answer": "Роберт Инсабет"
+                    "first_answer": {
+                        "answer_text": "Роберт Насыри",
+                        "is_correct": false
+                    },
+                    "second_answer": {
+                        "answer_text": "Роберт Шамсудин",
+                        "is_correct": false
+                    },
+                    "third_answer": {
+                        "answer_text": "Роберт Гараев",
+                        "is_correct": true
+                    },
+                    "fourth_answer": {
+                        "answer_text": "Роберт Инсабет",
+                        "is_correct": false
+                    }
                 }
             ]
         },
         {
-            "id": 2,
             "question": "Правда ли что Рузилю Минекаеву (Адидасу-младшему) 24 года?",
             "answers": [
                 {
-                    "first_answer": "Правда",
-                    "second_answer": "Ложь"
+                    "first_answer": {
+                        "answer_text": "Правда",
+                        "is_correct": true
+                    },
+                    "second_answer": {
+                        "answer_text": "Ложь",
+                        "is_correct": false
+                    }
                 }
             ]
         }
     ]
 }
-
-
