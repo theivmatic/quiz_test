@@ -4,7 +4,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'quiz_entity.g.dart';
 
-QuizEntity postListEntityDataFromString(String jsonString) =>
+QuizEntity quizEntityFromJson(String jsonString) =>
     QuizEntity.fromJson(jsonDecode(jsonString) as Map<String, dynamic>);
 
 @JsonSerializable()
