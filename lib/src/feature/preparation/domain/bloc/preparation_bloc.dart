@@ -11,11 +11,9 @@ class PreparationBloc extends Bloc<PreparationBlocEvent, PreparationBlocState> {
       (event, emit) async {
         try {
           final preparationLoaded = await fetchPreparation();
-          // log(preparationLoaded.toString());
           emit(
             PreparationBlocLoadedState(preparationLoaded: preparationLoaded),
           );
-          // log(preparationLoaded.toString());
         } on Exception catch (e) {
           emit(
             PreparationBlocErrorState(
