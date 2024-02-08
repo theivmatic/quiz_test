@@ -6,7 +6,6 @@ import 'package:quiz_test/src/feature/preparation/domain/bloc/preparation_bloc.d
 import 'package:quiz_test/src/feature/preparation/presentation/screens/preparations_screen.dart';
 import 'package:quiz_test/src/feature/preparation/presentation/widgets/preparation_tile.dart';
 
-
 class PreparationCardScreen extends StatefulWidget {
   const PreparationCardScreen({super.key});
 
@@ -34,8 +33,11 @@ class _PreparationCardScreenState extends State<PreparationCardScreen> {
         ),
         leading: IconButton(
           onPressed: () {
-            Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (context) => const PreparationsScreen()));
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute<dynamic>(
+                builder: (context) => const PreparationsScreen(),
+              ),
+            );
           },
           icon: const Icon(Icons.arrow_back_ios),
         ),
@@ -63,4 +65,3 @@ class _PreparationCardScreenState extends State<PreparationCardScreen> {
     );
   }
 }
-

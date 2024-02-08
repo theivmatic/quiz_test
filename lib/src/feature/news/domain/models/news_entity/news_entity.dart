@@ -5,7 +5,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'news_entity.g.dart';
 
 NewsEntity newsEntityFromJson(String str) =>
-    NewsEntity.fromJson(jsonDecode(str));
+    NewsEntity.fromJson(jsonDecode(str) as Map<String, dynamic>);
 
 @JsonSerializable()
 class NewsEntity {

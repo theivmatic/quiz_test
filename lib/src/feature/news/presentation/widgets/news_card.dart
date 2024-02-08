@@ -7,12 +7,13 @@ class NewsCardWidget extends StatelessWidget {
   final String? imagePath;
   final String? newsSubtext;
 
-  const NewsCardWidget(
-      {super.key,
-      required this.newsTitle,
-      required this.newsText,
-      required this.imagePath,
-      required this.newsSubtext});
+  const NewsCardWidget({
+    super.key,
+    required this.newsTitle,
+    required this.newsText,
+    required this.imagePath,
+    required this.newsSubtext,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,7 @@ class NewsCardWidget extends StatelessWidget {
             style: TextStyles.factText,
           ),
           const SizedBox(height: 10),
-          imagePath != null ? Image.asset(imagePath!) : const SizedBox(),
+          if (imagePath != null) Image.asset(imagePath!) else const SizedBox(),
           const SizedBox(height: 5),
           Text(newsSubtext ?? '', style: TextStyles.factSubText),
         ],

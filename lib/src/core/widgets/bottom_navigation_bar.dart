@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
+import 'package:quiz_test/src/feature/news/presentation/screens/news_screen.dart';
 import 'package:quiz_test/src/feature/notes/presentation/screens/notes_screen.dart';
 import 'package:quiz_test/src/feature/preparation/presentation/screens/preparations_screen.dart';
-import 'package:quiz_test/src/feature/news/presentation/screens/news_screen.dart';
 import 'package:quiz_test/src/feature/quiz/presentation/screens/quiz_theme_screen.dart';
 import 'package:quiz_test/src/feature/settings/presentation/screens/settings_screen.dart';
 
@@ -27,19 +27,34 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
         _selectedIndex = index;
         if (index == 0) {
           Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (context) => const QuizThemeScreen()));
+            MaterialPageRoute<dynamic>(
+              builder: (context) => const QuizThemeScreen(),
+            ),
+          );
         } else if (index == 1) {
           Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (context) => const NotesScreen()));
+            MaterialPageRoute<dynamic>(
+              builder: (context) => const NotesScreen(),
+            ),
+          );
         } else if (index == 2) {
           Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (context) => const PreparationsScreen()));
+            MaterialPageRoute<dynamic>(
+              builder: (context) => const PreparationsScreen(),
+            ),
+          );
         } else if (index == 3) {
           Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (context) => const NewsScreen()));
+            MaterialPageRoute<dynamic>(
+              builder: (context) => const NewsScreen(),
+            ),
+          );
         } else if (index == 4) {
           Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (context) => const SettingsScreen()));
+            MaterialPageRoute<dynamic>(
+              builder: (context) => const SettingsScreen(),
+            ),
+          );
         }
       },
     );
@@ -51,7 +66,6 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
       type: BottomNavigationBarType.fixed,
       currentIndex: _selectedIndex,
       onTap: _onItemTapped,
-      iconSize: 24,
       elevation: 0,
       backgroundColor: AppColors.darkBackground,
       selectedItemColor: AppColors.buttonPink,

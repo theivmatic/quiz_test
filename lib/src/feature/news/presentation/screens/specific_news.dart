@@ -30,7 +30,10 @@ class _SpecificNewsScreenState extends State<SpecificNewsScreen> {
         leading: IconButton(
           onPressed: () {
             Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (context) => const NewsScreen()));
+              MaterialPageRoute<dynamic>(
+                builder: (context) => const NewsScreen(),
+              ),
+            );
           },
           icon: const Icon(Icons.arrow_back_ios),
           color: AppColors.iconGrey,

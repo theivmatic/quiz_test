@@ -33,14 +33,15 @@ class PreparationTileWidget extends StatelessWidget {
             style: TextStyles.factText,
           ),
           const SizedBox(height: 10),
-          imagePath != null ? Image.asset(imagePath!) : const SizedBox(),
+          if (imagePath != null) Image.asset(imagePath!) else const SizedBox(),
           const SizedBox(height: 5),
-          subtext != null
-              ? Text(
-                  subtext!,
-                  style: TextStyles.factSubText,
-                )
-              : const SizedBox(),
+          if (subtext != null)
+            Text(
+              subtext!,
+              style: TextStyles.factSubText,
+            )
+          else
+            const SizedBox(),
         ],
       ),
     );

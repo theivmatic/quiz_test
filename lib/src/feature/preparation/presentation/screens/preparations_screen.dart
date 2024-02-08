@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
-import 'package:quiz_test/src/feature/preparation/presentation/screens/preparation_card_screen.dart';
 import 'package:quiz_test/src/core/widgets/bottom_navigation_bar.dart';
+import 'package:quiz_test/src/feature/preparation/presentation/screens/preparation_card_screen.dart';
 
 class PreparationsScreen extends StatelessWidget {
   const PreparationsScreen({super.key});
@@ -25,7 +25,7 @@ class PreparationsScreen extends StatelessWidget {
           GestureDetector(
             onTap: () {
               Navigator.of(context).push(
-                MaterialPageRoute(
+                MaterialPageRoute<dynamic>(
                   builder: (context) => const PreparationCardScreen(),
                 ),
               );

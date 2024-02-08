@@ -11,7 +11,7 @@ class NewsBloc extends Bloc<NewsBlocEvent, NewsBlocState> {
       try {
         final newsLoaded = await fetchNews();
         emit(NewsBlocLoadedState(newsLoaded: newsLoaded));
-      } catch (e) {
+      } on Exception catch (e) {
         emit(NewsBlocErrorState(errorMessage: e.toString()));
       }
     });

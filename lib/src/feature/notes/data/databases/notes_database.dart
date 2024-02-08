@@ -1,6 +1,6 @@
 import 'package:path/path.dart';
-import 'package:sqflite/sqflite.dart';
 import 'package:quiz_test/src/feature/notes/domain/models/note_model.dart';
+import 'package:sqflite/sqflite.dart';
 
 class NotesDatabase {
   static final NotesDatabase instance = NotesDatabase._init();
@@ -20,10 +20,10 @@ class NotesDatabase {
     final dbPath = await getDatabasesPath();
     final path = join(dbPath, filePath);
 
-    return await openDatabase(path, version: 1, onCreate: _createDB);
+    return openDatabase(path, version: 1, onCreate: _createDB);
   }
 
-  Future _createDB(Database db, int version) async {
+  Future<dynamic> _createDB(Database db, int version) async {
     const idType = 'INTEGER PRIMARY KEY AUTOINCREMENT';
     const textType = 'TEXT NOT NULL';
 
@@ -68,29 +68,33 @@ CREATE TABLE $tableNotes (
 
     final result = await db.query(tableNotes);
 
-    return result.map((json) => Note.fromJson(json)).toList();
+    return result.map(Note.fromJson).toList();
   }
 
   Future<int> update({required Note note}) async {
     final db = await instance.database;
 
-    return db.update(tableNotes, note.toJson(),
-        where: '${NoteFields.id} = ?', whereArgs: [note.id]);
+    return db.update(
+      tableNotes,
+      note.toJson(),
+      where: '${NoteFields.id} = ?',
+      whereArgs: [note.id],
+    );
   }
 
   Future<int> delete({required int id}) async {
     final db = await instance.database;
 
-    return await db.delete(
+    return db.delete(
       tableNotes,
       where: '${NoteFields.id} = ?',
       whereArgs: [id],
     );
   }
 
-  Future close() async {
+  Future<dynamic> close() async {
     final db = await instance.database;
 
-    db.close();
+    await db.close();
   }
 }

@@ -5,8 +5,11 @@ class SettingsTileWidget extends StatelessWidget {
   final String tileText;
   final VoidCallback onTap;
 
-  const SettingsTileWidget(
-      {super.key, required this.tileText, required this.onTap});
+  const SettingsTileWidget({
+    super.key,
+    required this.tileText,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {

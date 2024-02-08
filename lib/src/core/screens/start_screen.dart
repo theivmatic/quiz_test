@@ -30,8 +30,11 @@ class StartScreen extends StatelessWidget {
           BottomButtonWidget(
             buttonText: 'Продолжить',
             onPressed: () {
-              Navigator.of(context).pushReplacement(MaterialPageRoute(
-                  builder: (context) => const QuizThemeScreen()));
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute<dynamic>(
+                  builder: (context) => const QuizThemeScreen(),
+                ),
+              );
             },
           ),
         ],

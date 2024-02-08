@@ -9,15 +9,16 @@ part 'notes_state.dart';
 
 class NotesBloc extends Bloc<NotesBlocEvent, NotesBlocState> {
   NotesBloc() : super(NotesBlocInitialState()) {
-    List<Note> notes = [];
+    var notes = <Note>[];
     on<AddNoteEvent>((event, emit) async {
       await NotesDatabase.instance.create(
         Note(
-            movieTitle: event.movieTitle,
-            dutarion: event.dutarion,
-            comment: event.comment,
-            url: event.url,
-            movieImage: event.movieImage),
+          movieTitle: event.movieTitle,
+          dutarion: event.dutarion,
+          comment: event.comment,
+          url: event.url,
+          movieImage: event.movieImage,
+        ),
       );
     });
 
@@ -33,7 +34,7 @@ class NotesBloc extends Bloc<NotesBlocEvent, NotesBlocState> {
     });
 
     on<FetchSpecificNoteEvent>((event, emit) async {
-      Note note = await NotesDatabase.instance.readNote(id: event.id);
+      final note = await NotesDatabase.instance.readNote(id: event.id);
       emit(DisplaySpecificNotes(note: note));
     });
 

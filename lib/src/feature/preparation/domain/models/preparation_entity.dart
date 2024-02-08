@@ -5,7 +5,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'preparation_entity.g.dart';
 
 PreparationEntity preparationEntityFromJson(String str) =>
-    PreparationEntity.fromJson(jsonDecode(str));
+    PreparationEntity.fromJson(jsonDecode(str) as Map<String, dynamic>);
 
 @JsonSerializable()
 class PreparationEntity {

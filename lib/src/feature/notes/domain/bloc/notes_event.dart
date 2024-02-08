@@ -12,12 +12,13 @@ class AddNoteEvent extends NotesBlocEvent {
   final String url;
   final String movieImage;
 
-  const AddNoteEvent(
-      {required this.movieTitle,
-      required this.dutarion,
-      required this.comment,
-      required this.url,
-      required this.movieImage});
+  const AddNoteEvent({
+    required this.movieTitle,
+    required this.dutarion,
+    required this.comment,
+    required this.url,
+    required this.movieImage,
+  });
 
   @override
   List<Object?> get props => [movieTitle, dutarion, comment, url, movieImage];
