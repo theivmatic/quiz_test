@@ -27,7 +27,7 @@ class QuizThemeScreen extends StatelessWidget {
                 'assets/images/quiz_topc.png',
               ),
               onTap: () {
-                Navigator.of(context).push(
+                Navigator.of(context).pushReplacement(
                   MaterialPageRoute<dynamic>(
                     builder: (context) => const QuizCardScreen(),
                   ),
