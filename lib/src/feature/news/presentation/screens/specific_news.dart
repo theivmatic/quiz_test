@@ -51,12 +51,33 @@ class _SpecificNewsScreenState extends State<SpecificNewsScreen> {
               ),
               child: ListView.builder(
                 itemCount: state.newsLoaded.news?.length,
-                itemBuilder: (context, index) => NewsCardWidget(
-                  newsTitle: state.newsLoaded.news?[index].newsTitle,
-                  newsText: state.newsLoaded.news?[index].newsText,
-                  imagePath: state.newsLoaded.news?[index].imagePath,
-                  newsSubtext: state.newsLoaded.news?[index].newsSubtext,
-                ),
+                itemBuilder: (context, index) {
+                  if (index == 0) {
+                    return Wrap(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
+                          child: Text(
+                            'Новые «Бременские музыканты»: фантазия с эффектом «зловещей долины»',
+                            style: TextStyles.appBarText,
+                          ),
+                        ),
+                        NewsCardWidget(
+                          newsTitle: state.newsLoaded.news?[0].newsTitle,
+                          newsText: state.newsLoaded.news?[0].newsText,
+                          imagePath: state.newsLoaded.news?[0].imagePath,
+                          newsSubtext: state.newsLoaded.news?[0].newsSubtext,
+                        ),
+                      ],
+                    );
+                  }
+                  return NewsCardWidget(
+                    newsTitle: state.newsLoaded.news?[index].newsTitle,
+                    newsText: state.newsLoaded.news?[index].newsText,
+                    imagePath: state.newsLoaded.news?[index].imagePath,
+                    newsSubtext: state.newsLoaded.news?[index].newsSubtext,
+                  );
+                },
               ),
             ),
           NewsBlocLoadingState() => const CircularProgressIndicator(),
