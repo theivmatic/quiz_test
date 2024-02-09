@@ -4,6 +4,8 @@ import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/core/screens/error_screen.dart';
 import 'package:quiz_test/src/feature/quiz/domain/bloc/quiz_bloc.dart';
 import 'package:quiz_test/src/feature/quiz/presentation/screens/quiz_theme_screen.dart';
+import 'package:quiz_test/src/feature/quiz/presentation/widgets/answer_tile.dart';
+import 'package:quiz_test/src/feature/quiz/presentation/widgets/question_tile.dart';
 
 class QuizCardScreen extends StatefulWidget {
   const QuizCardScreen({super.key});
@@ -52,7 +54,7 @@ class _QuizCardScreenState extends State<QuizCardScreen> {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
-                  'Вопрос ${currentQuestionIndex + 1} из ${state.quizLoaded.questions?.length}',
+                  'Вопрос ${currentQuestionIndex + 1} из ${state.quizLoaded.questions?.length}', style: TextStyles.questionCounterText,
                 ),
                 QuestionTileWidget(
                   questionText: state.quizLoaded.questions?[0].question,
@@ -63,97 +65,30 @@ class _QuizCardScreenState extends State<QuizCardScreen> {
                   isCorrect:
                       state.quizLoaded.questions?[0].answers?[0].isCorrect,
                 ),
-                // AnswerTileWidget(
-                //   answerText:
-                //       state.quizLoaded.questions?[0].answers?[0].answerText,
-                //   isCorrect:
-                //       state.quizLoaded.questions?[0].answers?[0].isCorrect,
-                // ),
-                // AnswerTileWidget(
-                //   answerText:
-                //       state.quizLoaded.questions?[0].answers?[0].answerText,
-                //   isCorrect:
-                //       state.quizLoaded.questions?[0].answers?[0].isCorrect,
-                // ),
-                // AnswerTileWidget(
-                //   answerText:
-                //       state.quizLoaded.questions?[0].answers?[0].answerText,
-                //   isCorrect:
-                //       state.quizLoaded.questions?[0].answers?[0].isCorrect,
-                // ),
+                AnswerTileWidget(
+                  answerText:
+                      state.quizLoaded.questions?[0].answers?[1].answerText,
+                  isCorrect:
+                      state.quizLoaded.questions?[0].answers?[1].isCorrect,
+                ),
+                AnswerTileWidget(
+                  answerText:
+                      state.quizLoaded.questions?[0].answers?[2].answerText,
+                  isCorrect:
+                      state.quizLoaded.questions?[0].answers?[2].isCorrect,
+                ),
+                AnswerTileWidget(
+                  answerText:
+                      state.quizLoaded.questions?[0].answers?[3].answerText,
+                  isCorrect:
+                      state.quizLoaded.questions?[0].answers?[3].isCorrect,
+                ),
               ],
             ),
           QuizBlocLoadingState() => const CircularProgressIndicator(),
           QuizBlocErrorState() => const ErrorScreen(),
           _ => const Placeholder(),
         },
-      ),
-    );
-  }
-}
-
-class QuestionTileWidget extends StatelessWidget {
-  final String? questionText;
-
-  const QuestionTileWidget({
-    super.key,
-    required this.questionText,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(15),
-          child: Container(
-            height: 336,
-            decoration: BoxDecoration(
-              color: AppColors.popupMenuBackground,
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: Center(
-              child: Padding(
-                padding: const EdgeInsets.all(20),
-                child: Text(
-                  questionText ?? '',
-                  style: TextStyles.factNumber,
-                ),
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class AnswerTileWidget extends StatelessWidget {
-  final String? answerText;
-  final bool? isCorrect;
-
-  const AnswerTileWidget({
-    super.key,
-    required this.answerText,
-    required this.isCorrect,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(15),
-      child: Container(
-        height: 43,
-        decoration: BoxDecoration(
-          color: AppColors.answerBackground,
-          borderRadius: BorderRadius.circular(8),
-        ),
-        child: Center(
-          child: Text(
-            answerText ?? '',
-            style: TextStyles.bottomButtonText,
-          ),
-        ),
       ),
     );
   }

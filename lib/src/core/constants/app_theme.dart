@@ -17,6 +17,7 @@ abstract class AppColors {
   //text colors
   static const textWhite = Color.fromRGBO(247, 247, 251, 1);
   static const textGrey = Color.fromRGBO(189, 193, 203, 1);
+  static const textDarkGrey = Color.fromRGBO(173, 173, 173, 1);
 }
 
 abstract class TextStyles {
@@ -121,6 +122,13 @@ abstract class TextStyles {
       fontWeight: FontWeight.w700,
       fontSize: 16,
       color: AppColors.textWhite,
+    ),
+  );
+  static final questionCounterText = font(
+    textStyle: const TextStyle(
+      fontWeight: FontWeight.w700,
+      fontSize: 12,
+      color: AppColors.textDarkGrey,
     ),
   );
 }

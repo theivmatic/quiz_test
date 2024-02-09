@@ -7,7 +7,7 @@ part 'quiz_entity.g.dart';
 QuizEntity quizEntityFromJson(String jsonString) =>
     QuizEntity.fromJson(jsonDecode(jsonString) as Map<String, dynamic>);
 
-@JsonSerializable() 
+@JsonSerializable()
 class QuizEntity {
 	List<Question>? questions;
 
@@ -16,22 +16,20 @@ class QuizEntity {
   factory QuizEntity.fromJson(Map<String, dynamic> json) => _$QuizEntityFromJson(json);
 }
 
-@JsonSerializable() 
+@JsonSerializable()
 class Question {
-	String? question;
-	List<Answer>? answers;
+  String? question;
+  List<Answer>? answers;
 
-	Question({this.question, this.answers});
+  Question({this.question, this.answers});
 
   factory Question.fromJson(Map<String, dynamic> json) => _$QuestionFromJson(json);
 }
 
-@JsonSerializable() 
+@JsonSerializable()
 class Answer {
-  @JsonKey(name: 'answer_text')
-  String? answerText;
-  @JsonKey(name: 'is_correct')
-  bool? isCorrect;
+	String? answerText;
+	bool? isCorrect;
 
 	Answer({this.answerText, this.isCorrect});
 

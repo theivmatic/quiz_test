@@ -25,14 +25,12 @@
             "question": "Правда ли что Рузилю Минекаеву (Адидасу-младшему) 24 года?",
             "answers": [
                 {
-                    "first_answer": {
-                        "answer_text": "Правда",
-                        "is_correct": true
-                    },
-                    "second_answer": {
-                        "answer_text": "Ложь",
-                        "is_correct": false
-                    }
+                    "answer_text": "Правда",
+                    "is_correct": true
+                },
+                {
+                    "answer_text": "Ложь",
+                    "is_correct": false
                 }
             ]
         }
