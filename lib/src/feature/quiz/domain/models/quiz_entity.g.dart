@@ -30,11 +30,11 @@ Map<String, dynamic> _$QuestionToJson(Question instance) => <String, dynamic>{
     };
 
 Answer _$AnswerFromJson(Map<String, dynamic> json) => Answer(
-      answerText: json['answerText'] as String?,
-      isCorrect: json['isCorrect'] as bool?,
+      answerText: json['answer_text'] as String?,
+      isCorrect: json['is_correct'] as bool?,
     );
 
 Map<String, dynamic> _$AnswerToJson(Answer instance) => <String, dynamic>{
-      'answerText': instance.answerText,
-      'isCorrect': instance.isCorrect,
+      'answer_text': instance.answerText,
+      'is_correct': instance.isCorrect,
     };

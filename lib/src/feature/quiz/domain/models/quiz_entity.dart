@@ -28,7 +28,9 @@ class Question {
 
 @JsonSerializable()
 class Answer {
+  @JsonKey(name: 'answer_text')
 	String? answerText;
+  @JsonKey(name: 'is_correct')
 	bool? isCorrect;
 
 	Answer({this.answerText, this.isCorrect});

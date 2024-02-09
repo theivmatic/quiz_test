@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/core/screens/error_screen.dart';
 import 'package:quiz_test/src/feature/quiz/domain/bloc/quiz_bloc.dart';
-import 'package:quiz_test/src/feature/quiz/presentation/screens/quiz_theme_screen.dart';
 import 'package:quiz_test/src/feature/quiz/presentation/widgets/answer_tile.dart';
 import 'package:quiz_test/src/feature/quiz/presentation/widgets/popup.dart';
 import 'package:quiz_test/src/feature/quiz/presentation/widgets/question_tile.dart';
@@ -46,7 +45,8 @@ class _QuizCardScreenState extends State<QuizCardScreen> {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
-                  'Вопрос ${currentQuestionIndex + 1} из ${state.quizLoaded.questions?.length}', style: TextStyles.questionCounterText,
+                  'Вопрос ${currentQuestionIndex + 1} из ${state.quizLoaded.questions?.length}',
+                  style: TextStyles.questionCounterText,
                 ),
                 QuestionTileWidget(
                   questionText: state.quizLoaded.questions?[0].question,
@@ -56,24 +56,28 @@ class _QuizCardScreenState extends State<QuizCardScreen> {
                       state.quizLoaded.questions?[0].answers?[0].answerText,
                   isCorrect:
                       state.quizLoaded.questions?[0].answers?[0].isCorrect,
+                  onTap: () {},
                 ),
                 AnswerTileWidget(
                   answerText:
                       state.quizLoaded.questions?[0].answers?[1].answerText,
                   isCorrect:
                       state.quizLoaded.questions?[0].answers?[1].isCorrect,
+                  onTap: () {},
                 ),
                 AnswerTileWidget(
                   answerText:
                       state.quizLoaded.questions?[0].answers?[2].answerText,
                   isCorrect:
                       state.quizLoaded.questions?[0].answers?[2].isCorrect,
+                  onTap: () {},
                 ),
                 AnswerTileWidget(
                   answerText:
                       state.quizLoaded.questions?[0].answers?[3].answerText,
                   isCorrect:
                       state.quizLoaded.questions?[0].answers?[3].isCorrect,
+                  onTap: () {},
                 ),
               ],
             ),
