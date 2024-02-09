@@ -12,6 +12,7 @@ abstract class AppColors {
   static const settingsDivider = Color.fromRGBO(51, 51, 51, 1);
   static const divider = Color.fromRGBO(53, 53, 58, 1);
   static const popupMenuBackground = Color.fromRGBO(50, 49, 58, 1);
+  static const answerBackground = Color.fromRGBO(84, 84, 84, 1);
 
   //text colors
   static const textWhite = Color.fromRGBO(247, 247, 251, 1);

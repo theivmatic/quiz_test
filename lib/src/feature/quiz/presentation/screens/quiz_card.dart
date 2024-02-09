@@ -14,6 +14,7 @@ class QuizCardScreen extends StatefulWidget {
 
 class _QuizCardScreenState extends State<QuizCardScreen> {
   late QuizBloc? quizBloc;
+  final currentQuestionIndex = 0;
 
   @override
   void initState() {
@@ -26,7 +27,7 @@ class _QuizCardScreenState extends State<QuizCardScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Подготовка',
+          'Слово пацана',
           style: TextStyles.appBarText,
         ),
         leading: IconButton(
@@ -47,11 +48,112 @@ class _QuizCardScreenState extends State<QuizCardScreen> {
       body: BlocBuilder<QuizBloc, QuizBlocState>(
         bloc: quizBloc,
         builder: (context, state) => switch (state) {
-          QuizBlocLoadedState() => const Placeholder(),
+          QuizBlocLoadedState() => Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text(
+                  'Вопрос ${currentQuestionIndex + 1} из ${state.quizLoaded.questions?.length}',
+                ),
+                QuestionTileWidget(
+                  questionText: state.quizLoaded.questions?[0].question,
+                ),
+                AnswerTileWidget(
+                  answerText:
+                      state.quizLoaded.questions?[0].answers?[0].answerText,
+                  isCorrect:
+                      state.quizLoaded.questions?[0].answers?[0].isCorrect,
+                ),
+                // AnswerTileWidget(
+                //   answerText:
+                //       state.quizLoaded.questions?[0].answers?[0].answerText,
+                //   isCorrect:
+                //       state.quizLoaded.questions?[0].answers?[0].isCorrect,
+                // ),
+                // AnswerTileWidget(
+                //   answerText:
+                //       state.quizLoaded.questions?[0].answers?[0].answerText,
+                //   isCorrect:
+                //       state.quizLoaded.questions?[0].answers?[0].isCorrect,
+                // ),
+                // AnswerTileWidget(
+                //   answerText:
+                //       state.quizLoaded.questions?[0].answers?[0].answerText,
+                //   isCorrect:
+                //       state.quizLoaded.questions?[0].answers?[0].isCorrect,
+                // ),
+              ],
+            ),
           QuizBlocLoadingState() => const CircularProgressIndicator(),
           QuizBlocErrorState() => const ErrorScreen(),
           _ => const Placeholder(),
         },
+      ),
+    );
+  }
+}
+
+class QuestionTileWidget extends StatelessWidget {
+  final String? questionText;
+
+  const QuestionTileWidget({
+    super.key,
+    required this.questionText,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(15),
+          child: Container(
+            height: 336,
+            decoration: BoxDecoration(
+              color: AppColors.popupMenuBackground,
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: Text(
+                  questionText ?? '',
+                  style: TextStyles.factNumber,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class AnswerTileWidget extends StatelessWidget {
+  final String? answerText;
+  final bool? isCorrect;
+
+  const AnswerTileWidget({
+    super.key,
+    required this.answerText,
+    required this.isCorrect,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(15),
+      child: Container(
+        height: 43,
+        decoration: BoxDecoration(
+          color: AppColors.answerBackground,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Center(
+          child: Text(
+            answerText ?? '',
+            style: TextStyles.bottomButtonText,
+          ),
+        ),
       ),
     );
   }
