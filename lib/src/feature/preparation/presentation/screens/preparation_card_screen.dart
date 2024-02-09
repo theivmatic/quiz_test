@@ -50,12 +50,33 @@ class _PreparationCardScreenState extends State<PreparationCardScreen> {
         builder: (context, state) => switch (state) {
           PreparationBlocLoadedState() => ListView.builder(
               itemCount: state.preparationLoaded.facts?.length,
-              itemBuilder: (context, index) => PreparationTileWidget(
-                number: state.preparationLoaded.facts?[index].number,
-                text: state.preparationLoaded.facts?[index].text,
-                imagePath: state.preparationLoaded.facts?[index].imagePath,
-                subtext: state.preparationLoaded.facts?[index].subtext,
-              ),
+              itemBuilder: (context, index) {
+                if (index == 0) {
+                  return Wrap(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                        child: Text(
+                          '30 фактов о сериале «Слово пацана. Кровь на асфальте»',
+                          style: TextStyles.appBarText,
+                        ),
+                      ),
+                      PreparationTileWidget(
+                        number: state.preparationLoaded.facts?[0].number,
+                        text: state.preparationLoaded.facts?[0].text,
+                        imagePath: state.preparationLoaded.facts?[0].imagePath,
+                        subtext: state.preparationLoaded.facts?[0].subtext,
+                      ),
+                    ],
+                  );
+                }
+                return PreparationTileWidget(
+                  number: state.preparationLoaded.facts?[index].number,
+                  text: state.preparationLoaded.facts?[index].text,
+                  imagePath: state.preparationLoaded.facts?[index].imagePath,
+                  subtext: state.preparationLoaded.facts?[index].subtext,
+                );
+              },
             ),
           PreparationBlocLoadingState() => const CircularProgressIndicator(),
           PreparationBlocErrorState() => const ErrorScreen(),

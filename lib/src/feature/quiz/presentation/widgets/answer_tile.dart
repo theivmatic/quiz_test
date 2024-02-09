@@ -5,12 +5,14 @@ class AnswerTileWidget extends StatelessWidget {
   final String? answerText;
   final bool? isCorrect;
   final VoidCallback onTap;
+  final Color color;
 
   const AnswerTileWidget({
     super.key,
     required this.answerText,
     required this.isCorrect,
     required this.onTap,
+    required this.color,
   });
 
   @override
@@ -22,7 +24,7 @@ class AnswerTileWidget extends StatelessWidget {
         child: Container(
           height: 43,
           decoration: BoxDecoration(
-            color: AppColors.answerBackground,
+            color: color,
             borderRadius: BorderRadius.circular(8),
           ),
           child: Center(

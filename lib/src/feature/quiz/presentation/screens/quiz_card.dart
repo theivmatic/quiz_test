@@ -17,6 +17,7 @@ class QuizCardScreen extends StatefulWidget {
 class _QuizCardScreenState extends State<QuizCardScreen> {
   late QuizBloc? quizBloc;
   final currentQuestionIndex = 0;
+  static bool? isSelected = false;
 
   @override
   void initState() {
@@ -51,34 +52,50 @@ class _QuizCardScreenState extends State<QuizCardScreen> {
                 QuestionTileWidget(
                   questionText: state.quizLoaded.questions?[0].question,
                 ),
-                AnswerTileWidget(
-                  answerText:
-                      state.quizLoaded.questions?[0].answers?[0].answerText,
-                  isCorrect:
-                      state.quizLoaded.questions?[0].answers?[0].isCorrect,
-                  onTap: () {},
+                Expanded(
+                  child: ListView.builder(
+                    itemBuilder: (context, index) => AnswerTileWidget(
+                      answerText: state.quizLoaded.questions?[index]
+                          .answers?[index].answerText,
+                      isCorrect: state.quizLoaded.questions?[index]
+                          .answers?[index].isCorrect,
+                      onTap: () {},
+                      color: Colors.black,
+                    ),
+                  ),
                 ),
-                AnswerTileWidget(
-                  answerText:
-                      state.quizLoaded.questions?[0].answers?[1].answerText,
-                  isCorrect:
-                      state.quizLoaded.questions?[0].answers?[1].isCorrect,
-                  onTap: () {},
-                ),
-                AnswerTileWidget(
-                  answerText:
-                      state.quizLoaded.questions?[0].answers?[2].answerText,
-                  isCorrect:
-                      state.quizLoaded.questions?[0].answers?[2].isCorrect,
-                  onTap: () {},
-                ),
-                AnswerTileWidget(
-                  answerText:
-                      state.quizLoaded.questions?[0].answers?[3].answerText,
-                  isCorrect:
-                      state.quizLoaded.questions?[0].answers?[3].isCorrect,
-                  onTap: () {},
-                ),
+                // AnswerTileWidget(
+                //   answerText:
+                //       state.quizLoaded.questions?[0].answers?[0].answerText,
+                //   isCorrect:
+                //       state.quizLoaded.questions?[0].answers?[0].isCorrect,
+                //   onTap: () {
+                //     if (state.quizLoaded.questions?[0].answers?[0].isCorrect ==
+                //         true) {}
+                //   },
+                //   color: null,
+                // ),
+                // AnswerTileWidget(
+                //   answerText:
+                //       state.quizLoaded.questions?[0].answers?[1].answerText,
+                //   isCorrect:
+                //       state.quizLoaded.questions?[0].answers?[1].isCorrect,
+                //   onTap: () {},
+                // ),
+                // AnswerTileWidget(
+                //   answerText:
+                //       state.quizLoaded.questions?[0].answers?[2].answerText,
+                //   isCorrect:
+                //       state.quizLoaded.questions?[0].answers?[2].isCorrect,
+                //   onTap: () {},
+                // ),
+                // AnswerTileWidget(
+                //   answerText:
+                //       state.quizLoaded.questions?[0].answers?[3].answerText,
+                //   isCorrect:
+                //       state.quizLoaded.questions?[0].answers?[3].isCorrect,
+                //   onTap: () {},
+                // ),
               ],
             ),
           QuizBlocLoadingState() => const CircularProgressIndicator(),
