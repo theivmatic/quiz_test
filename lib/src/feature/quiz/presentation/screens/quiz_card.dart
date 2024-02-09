@@ -5,6 +5,7 @@ import 'package:quiz_test/src/core/screens/error_screen.dart';
 import 'package:quiz_test/src/feature/quiz/domain/bloc/quiz_bloc.dart';
 import 'package:quiz_test/src/feature/quiz/presentation/screens/quiz_theme_screen.dart';
 import 'package:quiz_test/src/feature/quiz/presentation/widgets/answer_tile.dart';
+import 'package:quiz_test/src/feature/quiz/presentation/widgets/popup.dart';
 import 'package:quiz_test/src/feature/quiz/presentation/widgets/question_tile.dart';
 
 class QuizCardScreen extends StatefulWidget {
@@ -32,16 +33,7 @@ class _QuizCardScreenState extends State<QuizCardScreen> {
           'Слово пацана',
           style: TextStyles.appBarText,
         ),
-        leading: IconButton(
-          onPressed: () {
-            Navigator.of(context).pushReplacement(
-              MaterialPageRoute<dynamic>(
-                builder: (context) => const QuizThemeScreen(),
-              ),
-            );
-          },
-          icon: const Icon(Icons.arrow_back_ios),
-        ),
+        leading: const PopUpWidget(),
         centerTitle: true,
         elevation: 0,
         backgroundColor: AppColors.darkBackground,

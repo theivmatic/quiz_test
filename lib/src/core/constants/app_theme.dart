@@ -131,4 +131,18 @@ abstract class TextStyles {
       color: AppColors.textDarkGrey,
     ),
   );
+  static final popupItemText = font(
+    textStyle: const TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 13,
+      color: AppColors.divider,
+    ),
+  );
+  static final popupItemCancelText = font(
+    textStyle: const TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 13,
+      color: AppColors.white,
+    ),
+  );
 }
