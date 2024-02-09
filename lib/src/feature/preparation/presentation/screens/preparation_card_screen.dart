@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/core/screens/error_screen.dart';
 import 'package:quiz_test/src/feature/preparation/domain/bloc/preparation_bloc.dart';
-import 'package:quiz_test/src/feature/preparation/presentation/screens/preparations_screen.dart';
 import 'package:quiz_test/src/feature/preparation/presentation/widgets/preparation_tile.dart';
 
 class PreparationCardScreen extends StatefulWidget {
@@ -33,11 +32,7 @@ class _PreparationCardScreenState extends State<PreparationCardScreen> {
         ),
         leading: IconButton(
           onPressed: () {
-            Navigator.of(context).pushReplacement(
-              MaterialPageRoute<dynamic>(
-                builder: (context) => const PreparationsScreen(),
-              ),
-            );
+            Navigator.of(context).pop();
           },
           icon: const Icon(Icons.arrow_back_ios),
         ),

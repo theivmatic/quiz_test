@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
-import 'package:quiz_test/src/core/widgets/bottom_navigation_bar.dart';
 import 'package:quiz_test/src/feature/news/presentation/screens/specific_news.dart';
 import 'package:quiz_test/src/feature/news/presentation/widgets/news_tile.dart';
 
@@ -24,7 +23,7 @@ class NewsScreen extends StatelessWidget {
         children: [
           NewsTileWidget(
             onTap: () {
-              Navigator.of(context).pushReplacement(
+              Navigator.of(context).push(
                 MaterialPageRoute<dynamic>(
                   builder: (context) => const SpecificNewsScreen(),
                 ),
@@ -33,7 +32,6 @@ class NewsScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: const BottomNavigationBarWidget(),
     );
   }
 }

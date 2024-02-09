@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
-import 'package:quiz_test/src/core/widgets/bottom_navigation_bar.dart';
 import 'package:quiz_test/src/feature/quiz/presentation/screens/quiz_card.dart';
 
 class QuizThemeScreen extends StatelessWidget {
@@ -37,7 +36,6 @@ class QuizThemeScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: const BottomNavigationBarWidget(),
     );
   }
 }

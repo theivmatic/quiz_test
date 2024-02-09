@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/core/screens/error_screen.dart';
 import 'package:quiz_test/src/feature/news/domain/bloc/news_bloc.dart';
-import 'package:quiz_test/src/feature/news/presentation/screens/news_screen.dart';
 import 'package:quiz_test/src/feature/news/presentation/widgets/news_card.dart';
 
 class SpecificNewsScreen extends StatefulWidget {
@@ -29,11 +28,7 @@ class _SpecificNewsScreenState extends State<SpecificNewsScreen> {
         elevation: 0,
         leading: IconButton(
           onPressed: () {
-            Navigator.of(context).pushReplacement(
-              MaterialPageRoute<dynamic>(
-                builder: (context) => const NewsScreen(),
-              ),
-            );
+            Navigator.of(context).pop();
           },
           icon: const Icon(Icons.arrow_back_ios),
           color: AppColors.iconGrey,

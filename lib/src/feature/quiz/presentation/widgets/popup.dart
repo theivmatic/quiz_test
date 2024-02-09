@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
-import 'package:quiz_test/src/feature/quiz/presentation/screens/quiz_theme_screen.dart';
+import 'package:quiz_test/src/core/router/navigation_screen.dart';
 
 class PopUpWidget extends StatelessWidget {
   const PopUpWidget({super.key});
@@ -21,7 +21,7 @@ class PopUpWidget extends StatelessWidget {
           onTap: () {
             Navigator.of(context).pushReplacement(
               MaterialPageRoute<dynamic>(
-                builder: (context) => const QuizThemeScreen(),
+                builder: (context) => const NavigationScreen(),
               ),
             );
           },

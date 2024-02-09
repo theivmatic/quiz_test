@@ -6,8 +6,6 @@ import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/feature/notes/domain/bloc/notes_bloc.dart';
 import 'package:quiz_test/src/feature/notes/presentation/screens/add_note_screen.dart';
 
-import '../../../../core/widgets/bottom_navigation_bar.dart';
-
 class NotesScreen extends StatefulWidget {
   const NotesScreen({super.key});
 
@@ -78,8 +76,7 @@ class _NotesScreenState extends State<NotesScreen> {
               );
             } else {
               return ListView.separated(
-                separatorBuilder: (context, index) =>
-                    const Divider(
+                separatorBuilder: (context, index) => const Divider(
                   color: AppColors.divider,
                 ),
                 itemCount: state.note.length,
@@ -334,7 +331,7 @@ class _NotesScreenState extends State<NotesScreen> {
                 },
               );
             }
-          } 
+          }
           return const CircularProgressIndicator();
         },
       ),
@@ -353,7 +350,6 @@ class _NotesScreenState extends State<NotesScreen> {
           size: 24,
         ),
       ),
-      bottomNavigationBar: const BottomNavigationBarWidget(),
     );
   }
 }
