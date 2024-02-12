@@ -1,0 +1,62 @@
+import 'package:flutter/material.dart';
+import 'package:quiz_test/src/core/constants/app_theme.dart';
+import 'package:quiz_test/src/core/router/navigation_screen.dart';
+import 'package:quiz_test/src/core/widgets/bottom_button.dart';
+import 'package:quiz_test/src/feature/quiz/presentation/screens/quiz_theme_screen.dart';
+
+class QuizResultScreen extends StatelessWidget {
+  const QuizResultScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Слово пацана',
+          style: TextStyles.appBarText,
+        ),
+        centerTitle: true,
+        elevation: 0,
+        backgroundColor: AppColors.darkBackground,
+      ),
+      backgroundColor: AppColors.darkBackground,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Row(),
+            const SizedBox(
+              height: 15,
+            ),
+            Text(
+              'Неплохо!\nНо вы можете лучше!',
+              style: TextStyles.factNumber,
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            Text(
+              'Вы правильно ответили\nна 3 вопроса из 15',
+              style: TextStyles.quizResultText,
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            BottomButtonWidget(
+              buttonText: 'Закончить',
+              onPressed: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute<dynamic>(
+                    builder: (context) => const NavigationScreen(),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

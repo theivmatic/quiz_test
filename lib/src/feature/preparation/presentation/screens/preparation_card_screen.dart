@@ -35,6 +35,7 @@ class _PreparationCardScreenState extends State<PreparationCardScreen> {
             Navigator.of(context).pop();
           },
           icon: const Icon(Icons.arrow_back_ios),
+          color: AppColors.iconGrey,
         ),
         elevation: 0,
         backgroundColor: AppColors.darkBackground,
