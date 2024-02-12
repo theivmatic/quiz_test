@@ -120,12 +120,14 @@ class _QuizCardScreenState extends State<QuizCardScreen> {
                           return;
                         }
                         _questionAnswered(answer.isCorrect!);
-
                         _nextQuestion();
                         if (endOfQuiz == true) {
                           Navigator.of(context).pushReplacement(
                             MaterialPageRoute<dynamic>(
-                              builder: (context) => const QuizResultScreen(),
+                              builder: (context) => QuizResultScreen(
+                                rightAnswers: _totalScore,
+                                numberOfQuestions: quizLength,
+                              ),
                             ),
                           );
                         }

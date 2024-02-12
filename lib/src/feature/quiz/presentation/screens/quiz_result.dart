@@ -5,7 +5,10 @@ import 'package:quiz_test/src/core/widgets/bottom_button.dart';
 import 'package:quiz_test/src/feature/quiz/presentation/screens/quiz_theme_screen.dart';
 
 class QuizResultScreen extends StatelessWidget {
-  const QuizResultScreen({super.key});
+  final int numberOfQuestions;
+  final int rightAnswers;
+
+  const QuizResultScreen({super.key, required this.numberOfQuestions, required this.rightAnswers});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +40,7 @@ class QuizResultScreen extends StatelessWidget {
               height: 8,
             ),
             Text(
-              'Вы правильно ответили\nна 3 вопроса из 15',
+              'Вы правильно ответили\nна $rightAnswers вопрос(ов) из $numberOfQuestions',
               style: TextStyles.quizResultText,
               textAlign: TextAlign.center,
             ),
