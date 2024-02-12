@@ -145,4 +145,11 @@ abstract class TextStyles {
       color: AppColors.white,
     ),
   );
+  static final uploadImageText = font(
+    textStyle: const TextStyle(
+      fontWeight: FontWeight.w500,
+      fontSize: 11,
+      color: AppColors.lightGray,
+    ),
+  );
 }

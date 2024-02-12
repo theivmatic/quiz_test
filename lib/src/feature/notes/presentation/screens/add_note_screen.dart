@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/core/widgets/bottom_button.dart';
 import 'package:quiz_test/src/feature/notes/domain/bloc/notes_bloc.dart';
@@ -17,6 +20,8 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
   final TextEditingController _duration = TextEditingController();
   final TextEditingController _comment = TextEditingController();
   final TextEditingController _url = TextEditingController();
+
+  File? _selectedImage;
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +55,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextFormField(
               controller: _title,
@@ -99,6 +105,35 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                 focusedErrorBorder: InputBorder.none,
               ),
             ),
+            GestureDetector(
+              onTap: _pickImageFromGallery,
+              child: Column(
+                children: [
+                  Container(
+                    width: 88,
+                    height: 88,
+                    decoration: BoxDecoration(
+                      color: AppColors.answerBackground,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: const Center(
+                      child: Icon(Icons.photo_camera_outlined),
+                    ),
+                  ),
+                  if (_selectedImage != null)
+                    Image.file(_selectedImage!)
+                  else
+                    const SizedBox(),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'Загрузить файл',
+                    style: TextStyles.uploadImageText,
+                  ),
+                ],
+              ),
+            ),
             BlocBuilder<NotesBloc, NotesBlocState>(
               builder: (context, state) {
                 return BottomButtonWidget(
@@ -140,5 +175,15 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
         ),
       ),
     );
+  }
+
+  Future<dynamic> _pickImageFromGallery() async {
+    final returnedImage =
+        await ImagePicker().pickImage(source: ImageSource.gallery);
+
+    if (returnedImage == null) return;
+    setState(() {
+      _selectedImage = File(returnedImage.path);
+    });
   }
 }

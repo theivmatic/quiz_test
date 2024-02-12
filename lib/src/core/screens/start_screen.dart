@@ -35,11 +35,6 @@ class StartScreen extends StatelessWidget {
                   builder: (context) => const NavigationScreen(),
                 ),
               );
-              // Navigator.of(context).pushReplacement(
-              //   MaterialPageRoute<dynamic>(
-              //     builder: (context) => const QuizThemeScreen(),
-              //   ),
-              // );
             },
           ),
         ],
