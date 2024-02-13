@@ -47,43 +47,43 @@
             "difficulty": 2,
             "questions": [
                 {
-                    "question": "Вопрос 1",
+                    "question": "Два холма Вопрос 1",
                     "answers": [
                         {
-                            "answer_text": "Ответ 1",
+                            "answer_text": "Два холма Ответ 1",
                             "is_correct": false
                         },
                         {
-                            "answer_text": "Ответ 2",
+                            "answer_text": "Два холма Ответ 2",
                             "is_correct": false
                         },
                         {
-                            "answer_text": "Ответ 3",
+                            "answer_text": "Два холма Ответ 3",
                             "is_correct": true
                         },
                         {
-                            "answer_text": "Ответ 4",
+                            "answer_text": "Два холма Ответ 4",
                             "is_correct": false
                         }
                     ]
                 },
                 {
-                    "question": "Вопрос 2",
+                    "question": "Два холма Вопрос 2",
                     "answers": [
                         {
-                            "answer_text": "Ответ 1",
-                            "is_correct": true
-                        },
-                        {
-                            "answer_text": "Ответ 2",
+                            "answer_text": "Два холма Ответ 1",
                             "is_correct": false
                         },
                         {
-                            "answer_text": "Ответ 3",
-                            "is_correct": true
+                            "answer_text": "Два холма Ответ 2",
+                            "is_correct": false
                         },
                         {
-                            "answer_text": "Ответ 4",
+                            "answer_text": "Два холма Ответ 3",
+                            "is_correct": false
+                        },
+                        {
+                            "answer_text": "Два холма Ответ 4",
                             "is_correct": true
                         }
                     ]
@@ -96,44 +96,44 @@
             "difficulty": 2,
             "questions": [
                 {
-                    "question": "Вопрос 1",
+                    "question": "Триггер Вопрос 1",
                     "answers": [
                         {
-                            "answer_text": "Ответ 1",
+                            "answer_text": "Триггер Ответ 1",
                             "is_correct": false
                         },
                         {
-                            "answer_text": "Ответ 2",
+                            "answer_text": "Триггер Ответ 2",
                             "is_correct": false
                         },
                         {
-                            "answer_text": "Ответ 3",
+                            "answer_text": "Триггер Ответ 3",
                             "is_correct": true
                         },
                         {
-                            "answer_text": "Ответ 4",
+                            "answer_text": "Триггер Ответ 4",
                             "is_correct": false
                         }
                     ]
                 },
                 {
-                    "question": "Вопрос 2",
+                    "question": "Триггер Вопрос 2",
                     "answers": [
                         {
-                            "answer_text": "Ответ 1",
-                            "is_correct": true
-                        },
-                        {
-                            "answer_text": "Ответ 2",
+                            "answer_text": "Триггер Ответ 1",
                             "is_correct": false
                         },
                         {
-                            "answer_text": "Ответ 3",
+                            "answer_text": "Триггер Ответ 2",
                             "is_correct": true
                         },
                         {
-                            "answer_text": "Ответ 4",
-                            "is_correct": true
+                            "answer_text": "Триггер Ответ 3",
+                            "is_correct": false
+                        },
+                        {
+                            "answer_text": "Триггер Ответ 4",
+                            "is_correct": false
                         }
                     ]
                 }

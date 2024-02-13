@@ -45,12 +45,13 @@ class _QuizThemeScreenState extends State<QuizThemeScreen> {
                   title: state.quizzesLoaded.quizzes?[index].quizName,
                   difficulty: state.quizzesLoaded.quizzes?[index].difficulty,
                   imagePath: state.quizzesLoaded.quizzes?[index].imagePath,
+                  quizIndex: state.quizzesLoaded.quizzes.hashCode,
                   onCardTap: () {
-                    // Navigator.of(context).pushReplacement(
-                    //   MaterialPageRoute<dynamic>(
-                    //     builder: (context) => QuizScreen(),
-                    //   ),
-                    // );
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute<dynamic>(
+                        builder: (context) => const QuizScreen(),
+                      ),
+                    );
                   },
                 );
               },
@@ -60,25 +61,6 @@ class _QuizThemeScreenState extends State<QuizThemeScreen> {
           _ => const Placeholder(),
         },
       ),
-
-      // Column(
-      //   children: [
-      //     Center(
-      //       child: GestureDetector(
-      //         child: Image.asset(
-      //           'assets/images/quiz_topc.png',
-      //         ),
-      //         onTap: () {
-      //           Navigator.of(context).pushReplacement(
-      //             MaterialPageRoute<dynamic>(
-      //               builder: (context) => const QuizCardScreen(),
-      //             ),
-      //           );
-      //         },
-      //       ),
-      //     ),
-      //   ],
-      // ),
     );
   }
 }
