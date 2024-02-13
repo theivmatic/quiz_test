@@ -1,10 +1,60 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_test/src/core/constants/app_theme.dart';
 
 class PreparationCardWidget extends StatelessWidget {
-  const PreparationCardWidget({super.key});
+  final String? title;
+  final String? subtitle;
+  final String? imagePath;
+  final VoidCallback onCardTap;
+
+  const PreparationCardWidget({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.imagePath,
+    required this.onCardTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const InkWell();
+    return InkWell(
+      onTap: onCardTap,
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Center(
+              child: Image.asset(
+                imagePath ?? '',
+                scale: 0.5,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    title ?? '',
+                    style: TextStyles.quizCardTitleText,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    subtitle ?? '',
+                    style: TextStyles.popupItemCancelText,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

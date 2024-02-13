@@ -1,8 +1,8 @@
 {
     "preparations": [
         {
-            "preparation_name": "Слово пацана",
-            "image_path": "",
+            "preparation_name": "Слово\nпацана",
+            "image_path": "assets/images/preparation_images/slovo_pacana/card_background.png",
             "title": "30 фактов о сериале «Слово пацана. Кровь на асфальте»",
             "facts": [
                 {
