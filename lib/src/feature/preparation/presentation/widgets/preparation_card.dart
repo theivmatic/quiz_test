@@ -32,6 +32,12 @@ class PreparationCardWidget extends StatelessWidget {
                 scale: 0.5,
               ),
             ),
+            Center(
+              child: Image.asset(
+                'assets/images/shadow.png',
+                scale: 0.5,
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: Column(

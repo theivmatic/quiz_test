@@ -42,25 +42,30 @@ class _PreparationsScreenState extends State<PreparationsScreen> {
           PreparationsBlocLoadedState() => GridView.builder(
             itemCount: state.preparationsLoaded.preparations?.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                mainAxisSpacing: 0.1,
+                // crossAxisSpacing: 0.5,
                 crossAxisCount: 2,
               ),
               itemBuilder: (context, index) {
-                return PreparationCardWidget(
-                  title: state
-                      .preparationsLoaded.preparations?[index].preparationName,
-                  subtitle: state.preparationsLoaded.preparations?[index].title,
-                  imagePath:
-                      state.preparationsLoaded.preparations?[index].imagePath,
-                  onCardTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute<dynamic>(
-                        builder: (context) => PreparationScreen(
-                          preparation:
-                              state.preparationsLoaded.preparations?[index],
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: PreparationCardWidget(
+                    title: state
+                        .preparationsLoaded.preparations?[index].preparationName,
+                    subtitle: state.preparationsLoaded.preparations?[index].title,
+                    imagePath:
+                        state.preparationsLoaded.preparations?[index].imagePath,
+                    onCardTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute<dynamic>(
+                          builder: (context) => PreparationScreen(
+                            preparation:
+                                state.preparationsLoaded.preparations?[index],
+                          ),
                         ),
-                      ),
-                    );
-                  },
+                      );
+                    },
+                  ),
                 );
               },
             ),

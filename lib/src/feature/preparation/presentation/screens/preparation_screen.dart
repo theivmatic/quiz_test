@@ -22,7 +22,7 @@ class _PreparationScreenState extends State<PreparationScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Cлово пацана',
+          widget.preparation?.preparationName ?? '',
           style: TextStyles.appBarText,
         ),
         leading: IconButton(
@@ -37,6 +37,7 @@ class _PreparationScreenState extends State<PreparationScreen> {
       ),
       backgroundColor: AppColors.darkBackground,
       body: ListView.builder(
+        //TODO: сделать норм итемкаунт
         itemCount: 7,
         itemBuilder: (context, index) {
           if (index == 0) {
@@ -45,7 +46,7 @@ class _PreparationScreenState extends State<PreparationScreen> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: Text(
-                    '30 фактов о сериале «Слово пацана. Кровь на асфальте»',
+                    widget.preparation?.title ?? '',
                     style: TextStyles.appBarText,
                   ),
                 ),

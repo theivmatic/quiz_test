@@ -37,5 +37,7 @@ flutter:
     - assets/images/
     - assets/images/preparation_images/
     - assets/images/preparation_images/slovo_pacana/
+    - assets/images/preparation_images/dva_holma/
+    - assets/images/preparation_images/trigger/
     - assets/images/news_images/
     - assets/images/quiz_images/

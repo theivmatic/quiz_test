@@ -1,7 +1,7 @@
 {
     "preparations": [
         {
-            "preparation_name": "Слово\nпацана",
+            "preparation_name": "Слово пацана",
             "image_path": "assets/images/preparation_images/slovo_pacana/card_background.png",
             "title": "30 фактов о сериале «Слово пацана. Кровь на асфальте»",
             "facts": [
@@ -121,6 +121,128 @@
                 },
                 {
                     "text": "Внимание, спойлер! Сцена с убийством главаря враждебной ОПГ и спасением Айгуль от насильников является отсылкой к фильму «Брат»."
+                }
+            ]
+        },
+        {
+            "preparation_name": "Два холма",
+            "image_path": "assets/images/preparation_images/dva_holma/card_background.png",
+            "title": "А вы знали, что...",
+            "facts": [
+                {
+                    "number": "Факт №1",
+                    "text": "Текст факта номер 1 про сериал 'Два холма'",
+                    "image_path": "assets/images/preparation_images/slovo_pacana/preparation_image1.png",
+                    "subtext": "Подпись к картинке про сериал 'Два холма'"
+                },
+                {
+                    "number": "Факт №2",
+                    "text": "Текст факта номер 2 про сериал 'Два холма'",
+                    "image_path": "assets/images/preparation_images/slovo_pacana/preparation_image2.png",
+                    "subtext": "Сцену похорон Желтого воспроизводили на реально существующем кладбище"
+                },
+                {
+                    "number": "Факт №3",
+                    "text": "Текст факта номер 3 про сериал 'Два холма'",
+                    "image_path": null,
+                    "subtext": ""
+                },
+                {
+                    "number": "Факт №4",
+                    "text": "Текст факта номер 4 про сериал 'Два холма'",
+                    "image_path": "assets/images/preparation_images/slovo_pacana/preparation_image4.png",
+                    "subtext": "«Я смотрел документальные фильмы про жизнь улиц, про банды тех времен»"
+                },
+                {
+                    "number": "Факт №5",
+                    "text": "Текст факта номер 5 про сериал 'Два холма'",
+                    "image_path": "assets/images/preparation_images/slovo_pacana/preparation_image5.png",
+                    "subtext": "«Что касается игры на пианино, я в детстве занимался, но потом забросил. Для съемок у меня была пара занятий, я даже синтезатор себе купил. „Седую ночь“ в кадре сам играю»"
+                },
+                {
+                    "number": "Факт №6",
+                    "text": "Текст факта номер 6 про сериал 'Два холма'",
+                    "image_path": "assets/images/preparation_images/slovo_pacana/preparation_image6.png",
+                    "subtext": "На съемочной площадке у Анны случился первый поцелуй"
+                },
+                {
+                    "number": "Факт №7",
+                    "text": "Текст факта номер 7 про сериал 'Два холма'",
+                    "image_path": "assets/images/preparation_images/slovo_pacana/preparation_image7.png",
+                    "subtext": "Сцены из 80-х воссозданы в картине крайне бережно, как будто оказываешься в тех временах"
+                }
+            ],
+            "subtitle": "Ещё 3 факта",
+            "small_facts": [
+                {
+                    "text": "Текст дополнительного факта про сериал 'Два холма'"
+                },
+                {
+                    "text": "Текст дополнительного факта про сериал 'Два холма'"
+                },
+                {
+                    "text": "Текст дополнительного факта про сериал 'Два холма'"
+                }
+            ]
+        },
+        {
+            "preparation_name": "Триггер",
+            "image_path": "assets/images/preparation_images/trigger/card_background.png",
+            "title": "Чтобы сняться в сериале...",
+            "facts": [
+                {
+                    "number": "Факт №1",
+                    "text": "Текст факта номер 1 про сериал 'Триггер'",
+                    "image_path": "assets/images/preparation_images/slovo_pacana/preparation_image1.png",
+                    "subtext": "Подпись к картинке про сериал 'Два холма'"
+                },
+                {
+                    "number": "Факт №2",
+                    "text": "Текст факта номер 2 про сериал 'Триггер'",
+                    "image_path": "assets/images/preparation_images/slovo_pacana/preparation_image2.png",
+                    "subtext": "Подпись к картинке про сериал 'Триггер'"
+                },
+                {
+                    "number": "Факт №3",
+                    "text": "Текст факта номер 3 про сериал 'Триггер'",
+                    "image_path": null,
+                    "subtext": ""
+                },
+                {
+                    "number": "Факт №4",
+                    "text": "Текст факта номер 4 про сериал 'Два холма'",
+                    "image_path": "assets/images/preparation_images/slovo_pacana/preparation_image4.png",
+                    "subtext": "Подпись к картинке про сериал 'Триггер'"
+                },
+                {
+                    "number": "Факт №5",
+                    "text": "Текст факта номер 5 про сериал 'Триггер'",
+                    "image_path": "assets/images/preparation_images/slovo_pacana/preparation_image5.png",
+                    "subtext": "Подпись к картинке про сериал 'Триггер'"
+                },
+                {
+                    "number": "Факт №6",
+                    "text": "Текст факта номер 6 про сериал 'Триггер'",
+                    "image_path": "assets/images/preparation_images/slovo_pacana/preparation_image6.png",
+                    "subtext": "Подпись к картинке про сериал 'Триггер'"
+                },
+                {
+                    "number": "Факт №7",
+                    "text": "Текст факта номер 7 про сериал 'Триггер'",
+                    "image_path": "assets/images/preparation_images/slovo_pacana/preparation_image7.png",
+                    "subtext": "Подпись к картинке про сериал 'Триггер'"
+                }
+            ],
+            "subtitle": "Ещё 3 факта",
+            "small_facts": [
+                {
+                    "text": "Текст дополнительного факта про сериал 'Триггер'"
+                },
+                {
+                    "text": "Текст дополнительного факта про сериал 'Триггер'"
+                },
+                {
+                    "text": "Текст дополнительного факта про сериал 'Триггер'"
                 }
             ]
         }
