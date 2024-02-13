@@ -57,13 +57,13 @@ class _QuizCardScreenState extends State<QuizCardScreen> {
     }
   }
 
-  void _resetQuiz() {
-    setState(() {
-      _questionIndex = 0;
-      _totalScore = 0;
-      endOfQuiz = false;
-    });
-  }
+  // void _resetQuiz() {
+  //   setState(() {
+  //     _questionIndex = 0;
+  //     _totalScore = 0;
+  //     endOfQuiz = false;
+  //   });
+  // }
 
   @override
   void initState() {
@@ -97,9 +97,12 @@ class _QuizCardScreenState extends State<QuizCardScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text(
-                    'Вопрос ${_questionIndex + 1} из ${state.quizLoaded.questions?.length}',
-                    style: TextStyles.questionCounterText,
+                  Padding(
+                    padding: const EdgeInsets.only(right: 15),
+                    child: Text(
+                      'Вопрос ${_questionIndex + 1} из ${state.quizLoaded.questions?.length}',
+                      style: TextStyles.questionCounterText,
+                    ),
                   ),
                   QuestionTileWidget(
                     questionText:
