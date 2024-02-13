@@ -45,7 +45,7 @@ class _QuizThemeScreenState extends State<QuizThemeScreen> {
                   title: state.quizzesLoaded.quizzes?[index].quizName,
                   difficulty: state.quizzesLoaded.quizzes?[index].difficulty,
                   imagePath: state.quizzesLoaded.quizzes?[index].imagePath,
-                  quizIndex: state.quizzesLoaded.quizzes.hashCode,
+                  // quizIndex: state.quizzesLoaded.quizzes?[index].hashCode,
                   onCardTap: () {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute<dynamic>(

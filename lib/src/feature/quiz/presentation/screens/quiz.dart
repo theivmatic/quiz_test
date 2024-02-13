@@ -23,6 +23,7 @@ class _QuizScreenState extends State<QuizScreen> {
   bool answerWasSelected = false;
   bool endOfQuiz = false;
   int quizLength = 0;
+  int quizIndex = 0;
 
   void _questionAnswered(bool answerScore) {
     setState(() {
@@ -88,8 +89,8 @@ class _QuizScreenState extends State<QuizScreen> {
       body: BlocConsumer<QuizzesBloc, QuizzesBlocState>(
         bloc: quizzesBloc,
         listener: (context, state) => switch (state) {
-          QuizzesBlocLoadedState() => quizLength = 2,
-          // state.quizzesLoaded.quizzes?.length ?? 0,
+          QuizzesBlocLoadedState() => quizLength =
+              state.quizzesLoaded.quizzes?[quizIndex].questions!.length ?? 0,
           _ => null,
         },
         builder: (context, state) => switch (state) {
@@ -105,11 +106,11 @@ class _QuizScreenState extends State<QuizScreen> {
                     ),
                   ),
                   QuestionTileWidget(
-                    questionText: state.quizzesLoaded.quizzes?[0]
+                    questionText: state.quizzesLoaded.quizzes?[quizIndex]
                         .questions?[_questionIndex].question,
                   ),
-                  ...(state.quizzesLoaded.quizzes?[0].questions?[_questionIndex]
-                          .answers as List<Answer>)
+                  ...(state.quizzesLoaded.quizzes?[quizIndex]
+                          .questions?[_questionIndex].answers as List<Answer>)
                       .map(
                     (answer) => AnswerTileWidget(
                       answerText: answer.answerText,

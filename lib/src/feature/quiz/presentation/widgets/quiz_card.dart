@@ -6,7 +6,7 @@ class QuizCardWidget extends StatelessWidget {
   final int? difficulty;
   final String? imagePath;
   final VoidCallback onCardTap;
-  final int? quizIndex;
+  // final int? quizIndex;
   final List<Widget> stars = [];
 
   QuizCardWidget({
@@ -15,7 +15,7 @@ class QuizCardWidget extends StatelessWidget {
     required this.difficulty,
     required this.imagePath,
     required this.onCardTap,
-    required this.quizIndex,
+    // required this.quizIndex,
   });
 
   @override

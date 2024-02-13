@@ -4,6 +4,7 @@ import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/core/screens/error_screen.dart';
 import 'package:quiz_test/src/feature/preparation/domain/bloc/preparation_bloc.dart';
 import 'package:quiz_test/src/feature/preparation/presentation/widgets/preparation_tile.dart';
+import 'package:quiz_test/src/feature/preparation/presentation/widgets/small_facts.dart';
 
 class PreparationCardScreen extends StatefulWidget {
   const PreparationCardScreen({super.key});
@@ -48,7 +49,7 @@ class _PreparationCardScreenState extends State<PreparationCardScreen> {
               itemCount: state.preparationLoaded.facts?.length,
               itemBuilder: (context, index) {
                 if (index == 0) {
-                  return Wrap(
+                  return Column(
                     children: [
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -60,11 +61,38 @@ class _PreparationCardScreenState extends State<PreparationCardScreen> {
                       PreparationTileWidget(
                         number: state.preparationLoaded.facts?[0].number,
                         text: state.preparationLoaded.facts?[0].text,
-                        imagePath: state.preparationLoaded.facts?[0].imagePath,
+                        imagePath:
+                            state.preparationLoaded.facts?[0].imagePath,
                         subtext: state.preparationLoaded.facts?[0].subtext,
                       ),
+                      
+                      //TODO: разобраться как отрисовать здесь блок с фактами
+
+                      // SmallFactsWidget(
+                      //   title: state.preparationLoaded.subtitle,
+                      //   itemCount: state.preparationLoaded.smallFacts!.length,
+                      //   smallFact:
+                      //       state.preparationLoaded.smallFacts?[index].text,
+                      // ),
                     ],
                   );
+                  // return Wrap(
+                  //   children: [
+                  //     Padding(
+                  //       padding: const EdgeInsets.symmetric(horizontal: 15),
+                  //       child: Text(
+                  //         '30 фактов о сериале «Слово пацана. Кровь на асфальте»',
+                  //         style: TextStyles.appBarText,
+                  //       ),
+                  //     ),
+                  //     PreparationTileWidget(
+                  //       number: state.preparationLoaded.facts?[0].number,
+                  //       text: state.preparationLoaded.facts?[0].text,
+                  //       imagePath: state.preparationLoaded.facts?[0].imagePath,
+                  //       subtext: state.preparationLoaded.facts?[0].subtext,
+                  //     ),
+                  //   ],
+                  // );
                 }
                 return PreparationTileWidget(
                   number: state.preparationLoaded.facts?[index].number,
