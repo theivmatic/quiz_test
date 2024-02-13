@@ -14,12 +14,12 @@ class PreparationCardScreen extends StatefulWidget {
 }
 
 class _PreparationCardScreenState extends State<PreparationCardScreen> {
-  late PreparationBloc? preparationBloc;
+  late PreparationsBloc? preparationBloc;
 
   @override
   void initState() {
-    preparationBloc = context.read<PreparationBloc>()
-      ..add(FetchPreparationBlocEvent());
+    preparationBloc = context.read<PreparationsBloc>()
+      ..add(FetchPreparationsBlocEvent());
     super.initState();
   }
 
@@ -42,11 +42,11 @@ class _PreparationCardScreenState extends State<PreparationCardScreen> {
         backgroundColor: AppColors.darkBackground,
       ),
       backgroundColor: AppColors.darkBackground,
-      body: BlocBuilder<PreparationBloc, PreparationBlocState>(
+      body: BlocBuilder<PreparationsBloc, PreparationsBlocState>(
         bloc: preparationBloc,
         builder: (context, state) => switch (state) {
-          PreparationBlocLoadedState() => ListView.builder(
-              itemCount: state.preparationLoaded.facts?.length,
+          PreparationsBlocLoadedState() => ListView.builder(
+              itemCount: state.preparationsLoaded.facts?.length,
               itemBuilder: (context, index) {
                 if (index == 0) {
                   return Column(
@@ -59,11 +59,11 @@ class _PreparationCardScreenState extends State<PreparationCardScreen> {
                         ),
                       ),
                       PreparationTileWidget(
-                        number: state.preparationLoaded.facts?[0].number,
-                        text: state.preparationLoaded.facts?[0].text,
+                        number: state.preparationsLoaded.facts?[0].number,
+                        text: state.preparationsLoaded.facts?[0].text,
                         imagePath:
-                            state.preparationLoaded.facts?[0].imagePath,
-                        subtext: state.preparationLoaded.facts?[0].subtext,
+                            state.preparationsLoaded.facts?[0].imagePath,
+                        subtext: state.preparationsLoaded.facts?[0].subtext,
                       ),
                       
                       //TODO: разобраться как отрисовать здесь блок с фактами
@@ -95,15 +95,15 @@ class _PreparationCardScreenState extends State<PreparationCardScreen> {
                   // );
                 }
                 return PreparationTileWidget(
-                  number: state.preparationLoaded.facts?[index].number,
-                  text: state.preparationLoaded.facts?[index].text,
-                  imagePath: state.preparationLoaded.facts?[index].imagePath,
-                  subtext: state.preparationLoaded.facts?[index].subtext,
+                  number: state.preparationsLoaded.facts?[index].number,
+                  text: state.preparationsLoaded.facts?[index].text,
+                  imagePath: state.preparationsLoaded.facts?[index].imagePath,
+                  subtext: state.preparationsLoaded.facts?[index].subtext,
                 );
               },
             ),
-          PreparationBlocLoadingState() => const CircularProgressIndicator(),
-          PreparationBlocErrorState() => const ErrorScreen(),
+          PreparationsBlocLoadingState() => const CircularProgressIndicator(),
+          PreparationsBlocErrorState() => const ErrorScreen(),
           _ => const Placeholder(),
         },
       ),

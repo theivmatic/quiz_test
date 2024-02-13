@@ -1,19 +1,19 @@
 part of 'preparation_bloc.dart';
 
-sealed class PreparationBlocState {}
+sealed class PreparationsBlocState {}
 
-final class PreparationBlocInitialState extends PreparationBlocState {}
+final class PreparationsBlocInitialState extends PreparationsBlocState {}
 
-final class PreparationBlocLoadingState extends PreparationBlocState {}
+final class PreparationsBlocLoadingState extends PreparationsBlocState {}
 
-final class PreparationBlocLoadedState extends PreparationBlocState {
-  final PreparationEntity preparationLoaded;
+final class PreparationsBlocLoadedState extends PreparationsBlocState {
+  final PreparationsEntity preparationsLoaded;
 
-  PreparationBlocLoadedState({required this.preparationLoaded});
+  PreparationsBlocLoadedState({required this.preparationsLoaded});
 }
 
-final class PreparationBlocErrorState extends PreparationBlocState {
+final class PreparationsBlocErrorState extends PreparationsBlocState {
   final String errorMessage;
 
-  PreparationBlocErrorState({required this.errorMessage});
+  PreparationsBlocErrorState({required this.errorMessage});
 }

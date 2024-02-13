@@ -26,7 +26,7 @@ class MainApp extends StatelessWidget {
           create: (context) => NotesBloc(),
         ),
         BlocProvider(
-          create: (context) => PreparationBloc(),
+          create: (context) => PreparationsBloc(),
         ),
         BlocProvider(
           create: (context) => NewsBloc(),

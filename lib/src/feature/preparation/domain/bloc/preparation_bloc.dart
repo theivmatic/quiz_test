@@ -1,22 +1,22 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_test/src/feature/preparation/data/fetch_preparation.dart';
-import 'package:quiz_test/src/feature/preparation/domain/models/preparation_entity.dart';
+import 'package:quiz_test/src/feature/preparation/domain/models/preparations_entity.dart';
 
 part 'preparation_event.dart';
 part 'preparation_state.dart';
 
-class PreparationBloc extends Bloc<PreparationBlocEvent, PreparationBlocState> {
-  PreparationBloc() : super(PreparationBlocInitialState()) {
-    on<FetchPreparationBlocEvent>(
+class PreparationsBloc extends Bloc<PreparationsBlocEvent, PreparationsBlocState> {
+  PreparationsBloc() : super(PreparationsBlocInitialState()) {
+    on<FetchPreparationsBlocEvent>(
       (event, emit) async {
         try {
-          final preparationLoaded = await fetchPreparation();
+          final preparationsLoaded = await fetchPreparations();
           emit(
-            PreparationBlocLoadedState(preparationLoaded: preparationLoaded),
+            PreparationsBlocLoadedState(preparationsLoaded: preparationsLoaded),
           );
         } on Exception catch (e) {
           emit(
-            PreparationBlocErrorState(
+            PreparationsBlocErrorState(
               errorMessage: e.toString(),
             ),
           );
