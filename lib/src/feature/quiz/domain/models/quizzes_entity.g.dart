@@ -1,19 +1,36 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'quiz_entity.dart';
+part of 'quizzes_entity.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-QuizEntity _$QuizEntityFromJson(Map<String, dynamic> json) => QuizEntity(
+QuizzesEntity _$QuizzesEntityFromJson(Map<String, dynamic> json) =>
+    QuizzesEntity(
+      quizzes: (json['quizzes'] as List<dynamic>?)
+          ?.map((e) => Quiz.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$QuizzesEntityToJson(QuizzesEntity instance) =>
+    <String, dynamic>{
+      'quizzes': instance.quizzes,
+    };
+
+Quiz _$QuizFromJson(Map<String, dynamic> json) => Quiz(
+      quizName: json['quiz_name'] as String?,
+      imagePath: json['image_path'] as String?,
+      difficulty: json['difficulty'] as int?,
       questions: (json['questions'] as List<dynamic>?)
           ?.map((e) => Question.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$QuizEntityToJson(QuizEntity instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$QuizToJson(Quiz instance) => <String, dynamic>{
+      'quiz_name': instance.quizName,
+      'image_path': instance.imagePath,
+      'difficulty': instance.difficulty,
       'questions': instance.questions,
     };
 
