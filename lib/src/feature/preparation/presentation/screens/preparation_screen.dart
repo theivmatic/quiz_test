@@ -6,14 +6,14 @@ import 'package:quiz_test/src/feature/preparation/domain/bloc/preparation_bloc.d
 import 'package:quiz_test/src/feature/preparation/presentation/widgets/preparation_tile.dart';
 // import 'package:quiz_test/src/feature/preparation/presentation/widgets/small_facts.dart';
 
-class PreparationCardScreen extends StatefulWidget {
-  const PreparationCardScreen({super.key});
+class PreparationScreen extends StatefulWidget {
+  const PreparationScreen({super.key});
 
   @override
-  State<PreparationCardScreen> createState() => _PreparationCardScreenState();
+  State<PreparationScreen> createState() => _PreparationScreenState();
 }
 
-class _PreparationCardScreenState extends State<PreparationCardScreen> {
+class _PreparationScreenState extends State<PreparationScreen> {
   late PreparationsBloc? preparationBloc;
 
   @override
