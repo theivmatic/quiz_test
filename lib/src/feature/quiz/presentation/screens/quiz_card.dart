@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/core/screens/error_screen.dart';
 import 'package:quiz_test/src/feature/quiz/domain/bloc/quiz_bloc.dart';
-import 'package:quiz_test/src/feature/quiz/domain/models/quiz_entity.dart';
 import 'package:quiz_test/src/feature/quiz/presentation/screens/quiz_result.dart';
 import 'package:quiz_test/src/feature/quiz/presentation/widgets/answer_tile.dart';
 import 'package:quiz_test/src/feature/quiz/presentation/widgets/popup.dart';
@@ -17,7 +16,7 @@ class QuizCardScreen extends StatefulWidget {
 }
 
 class _QuizCardScreenState extends State<QuizCardScreen> {
-  late QuizBloc? quizBloc;
+  late QuizzesBloc? quizBloc;
   int _questionIndex = 0;
   int _totalScore = 0;
   bool answerWasSelected = false;
@@ -67,7 +66,7 @@ class _QuizCardScreenState extends State<QuizCardScreen> {
 
   @override
   void initState() {
-    quizBloc = context.read<QuizBloc>()..add(FetchQuizBlocEvent());
+    quizBloc = context.read<QuizzesBloc>()..add(FetchQuizzesBlocEvent());
     super.initState();
   }
 
@@ -85,30 +84,30 @@ class _QuizCardScreenState extends State<QuizCardScreen> {
         backgroundColor: AppColors.darkBackground,
       ),
       backgroundColor: AppColors.darkBackground,
-      body: BlocConsumer<QuizBloc, QuizBlocState>(
+      body: BlocConsumer<QuizzesBloc, QuizzesBlocState>(
         bloc: quizBloc,
         listener: (context, state) => switch (state) {
-          QuizBlocLoadedState() => quizLength =
-              state.quizLoaded.questions?.length ?? 0,
+          QuizzesBlocLoadedState() => quizLength =
+              state.quizzesLoaded.questions?.length ?? 0,
           _ => null,
         },
         builder: (context, state) => switch (state) {
-          QuizBlocLoadedState() => Center(
+          QuizzesBlocLoadedState() => Center(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(right: 15),
                     child: Text(
-                      'Вопрос ${_questionIndex + 1} из ${state.quizLoaded.questions?.length}',
+                      'Вопрос ${_questionIndex + 1} из ${state.quizzesLoaded.questions?.length}',
                       style: TextStyles.questionCounterText,
                     ),
                   ),
                   QuestionTileWidget(
                     questionText:
-                        state.quizLoaded.questions?[_questionIndex].question,
+                        state.quizzesLoaded.questions?[_questionIndex].question,
                   ),
-                  ...(state.quizLoaded.questions?[_questionIndex].answers
+                  ...(state.quizzesLoaded.questions?[_questionIndex].answers
                           as List<Answer>)
                       .map(
                     (answer) => AnswerTileWidget(
@@ -140,8 +139,8 @@ class _QuizCardScreenState extends State<QuizCardScreen> {
                 ],
               ),
             ),
-          QuizBlocLoadingState() => const CircularProgressIndicator(),
-          QuizBlocErrorState() => const ErrorScreen(),
+          QuizzesBlocLoadingState() => const CircularProgressIndicator(),
+          QuizzesBlocErrorState() => const ErrorScreen(),
           _ => const Placeholder(),
         },
       ),

@@ -31,7 +31,7 @@ class MainApp extends StatelessWidget {
           create: (context) => NewsBloc(),
         ),
         BlocProvider(
-          create: (context) => QuizBloc(),
+          create: (context) => QuizzesBloc(),
         ),
       ],
       child: const MaterialApp(
