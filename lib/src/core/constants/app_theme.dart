@@ -161,4 +161,11 @@ abstract class TextStyles {
       color: AppColors.textGrey,
     ),
   );
+  static final quizCardTitleText = font(
+    textStyle: const TextStyle(
+      fontWeight: FontWeight.w900,
+      fontSize: 22,
+      color: AppColors.textWhite,
+    ),
+  );
 }

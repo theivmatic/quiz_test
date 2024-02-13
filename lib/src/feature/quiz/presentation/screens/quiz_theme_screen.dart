@@ -45,6 +45,13 @@ class _QuizThemeScreenState extends State<QuizThemeScreen> {
                   title: state.quizzesLoaded.quizzes?[index].quizName,
                   difficulty: state.quizzesLoaded.quizzes?[index].difficulty,
                   imagePath: state.quizzesLoaded.quizzes?[index].imagePath,
+                  onCardTap: () {
+                    // Navigator.of(context).pushReplacement(
+                    //   MaterialPageRoute<dynamic>(
+                    //     builder: (context) => QuizScreen(),
+                    //   ),
+                    // );
+                  },
                 );
               },
             ),

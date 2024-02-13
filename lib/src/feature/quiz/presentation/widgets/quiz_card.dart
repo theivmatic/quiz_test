@@ -1,39 +1,59 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_test/src/core/constants/app_theme.dart';
 
 class QuizCardWidget extends StatelessWidget {
   final String? title;
   final int? difficulty;
   final String? imagePath;
+  final VoidCallback onCardTap;
+  final List<Widget> stars = [];
 
-  const QuizCardWidget({
+  QuizCardWidget({
     super.key,
     required this.title,
     required this.difficulty,
     required this.imagePath,
+    required this.onCardTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
       child: InkWell(
-        onTap: () {},
+        onTap: onCardTap,
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
           ),
           child: Stack(
+            alignment: Alignment.bottomCenter,
             children: [
-              Image.asset(imagePath ?? ''),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(title ?? ''),
-                  Row(
-                    children: [
-                      Text('Сложность'),
-                    ],
-                  ),
-                ],
+              Center(
+                child: Image.asset(
+                  imagePath ?? '',
+                  scale: 0.95,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      title ?? '',
+                      style: TextStyles.quizCardTitleText,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          'Сложность',
+                          style: TextStyles.popupTitleText,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
