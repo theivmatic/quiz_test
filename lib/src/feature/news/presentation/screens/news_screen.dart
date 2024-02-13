@@ -47,7 +47,7 @@ class _NewsScreenState extends State<NewsScreen> {
                   date: state.newsLoaded.news?[index].date,
                   timeToRead: state.newsLoaded.news?[index].timeToRead,
                   onCardTap: () {
-                    Navigator.of(context).pushReplacement(
+                    Navigator.of(context).push(
                       MaterialPageRoute<dynamic>(
                         builder: (context) => SpecificNewsScreen(
                           news: state.newsLoaded.news?[index],
@@ -63,20 +63,6 @@ class _NewsScreenState extends State<NewsScreen> {
           _ => const Placeholder(),
         },
       ),
-
-      // Column(
-      //   children: [
-      //     NewsTileWidget(
-      //       onTap: () {
-      //         Navigator.of(context).push(
-      //           MaterialPageRoute<dynamic>(
-      //             builder: (context) => const SpecificNewsScreen(),
-      //           ),
-      //         );
-      //       },
-      //     ),
-      //   ],
-      // ),
     );
   }
 }

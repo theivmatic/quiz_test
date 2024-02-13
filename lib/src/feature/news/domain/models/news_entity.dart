@@ -46,7 +46,7 @@ class News {
 @JsonSerializable()
 class Item {
   @JsonKey(name: 'title')
-  dynamic title;
+  String? title;
   @JsonKey(name: 'text')
   String? text;
   @JsonKey(name: 'image_path')

@@ -36,7 +36,7 @@ Map<String, dynamic> _$NewsToJson(News instance) => <String, dynamic>{
     };
 
 Item _$ItemFromJson(Map<String, dynamic> json) => Item(
-      title: json['title'],
+      title: json['title'] as String?,
       text: json['text'] as String?,
       imagePath: json['image_path'] as String?,
       subtext: json['subtext'] as String?,
