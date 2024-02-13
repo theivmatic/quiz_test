@@ -1,13 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'preparation_entity.dart';
+part of 'preparations_entity.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-PreparationEntity _$PreparationEntityFromJson(Map<String, dynamic> json) =>
-    PreparationEntity(
+PreparationsEntity _$PreparationsEntityFromJson(Map<String, dynamic> json) =>
+    PreparationsEntity(
+      preparations: (json['preparations'] as List<dynamic>?)
+          ?.map((e) => Preparation.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$PreparationsEntityToJson(PreparationsEntity instance) =>
+    <String, dynamic>{
+      'preparations': instance.preparations,
+    };
+
+Preparation _$PreparationFromJson(Map<String, dynamic> json) => Preparation(
+      preparationName: json['preparation_name'] as String?,
+      imagePath: json['image_path'] as String?,
       title: json['title'] as String?,
       facts: (json['facts'] as List<dynamic>?)
           ?.map((e) => Fact.fromJson(e as Map<String, dynamic>))
@@ -18,8 +31,10 @@ PreparationEntity _$PreparationEntityFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$PreparationEntityToJson(PreparationEntity instance) =>
+Map<String, dynamic> _$PreparationToJson(Preparation instance) =>
     <String, dynamic>{
+      'preparation_name': instance.preparationName,
+      'image_path': instance.imagePath,
       'title': instance.title,
       'facts': instance.facts,
       'subtitle': instance.subtitle,
