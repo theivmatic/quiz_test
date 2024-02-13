@@ -35,6 +35,7 @@ flutter:
     - assets/jsons/
     - assets/icons/
     - assets/images/
-    - assets/images/training_images/
+    - assets/images/preparation_images/
+    - assets/images/preparation_images/slovo_pacana/
     - assets/images/news_images/
     - assets/images/quiz_images/

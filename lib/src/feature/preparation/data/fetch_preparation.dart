@@ -3,6 +3,6 @@ import 'package:quiz_test/src/feature/preparation/domain/models/preparation_enti
 
 Future<PreparationEntity> fetchPreparation() async {
   final responce =
-      await rootBundle.loadString('assets/jsons/preparation_slovo_pacana.json');
+      await rootBundle.loadString('assets/jsons/preparation.json');
   return preparationEntityFromJson(responce);
 }
