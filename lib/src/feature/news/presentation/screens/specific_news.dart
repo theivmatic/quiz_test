@@ -3,10 +3,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/core/screens/error_screen.dart';
 import 'package:quiz_test/src/feature/news/domain/bloc/news_bloc.dart';
-import 'package:quiz_test/src/feature/news/presentation/widgets/news_card.dart';
+import 'package:quiz_test/src/feature/news/domain/models/news_entity.dart';
+import 'package:quiz_test/src/feature/news/presentation/widgets/news_tile.dart';
 
 class SpecificNewsScreen extends StatefulWidget {
-  const SpecificNewsScreen({super.key});
+  final News? news;
+
+  const SpecificNewsScreen({
+    super.key,
+    required this.news,
+  });
 
   @override
   State<SpecificNewsScreen> createState() => _SpecificNewsScreenState();
@@ -57,21 +63,21 @@ class _SpecificNewsScreenState extends State<SpecificNewsScreen> {
                             style: TextStyles.appBarText,
                           ),
                         ),
-                        NewsCardWidget(
-                          newsTitle: state.newsLoaded.news?[0].newsTitle,
-                          newsText: state.newsLoaded.news?[0].newsText,
-                          imagePath: state.newsLoaded.news?[0].imagePath,
-                          newsSubtext: state.newsLoaded.news?[0].newsSubtext,
-                        ),
+                        // NewsTileWidget(
+                        //   newsTitle: state.newsLoaded.news?[0].newsTitle,
+                        //   newsText: state.newsLoaded.news?[0].newsText,
+                        //   imagePath: state.newsLoaded.news?[0].imagePath,
+                        //   newsSubtext: state.newsLoaded.news?[0].newsSubtext,
+                        // ),
                       ],
                     );
                   }
-                  return NewsCardWidget(
-                    newsTitle: state.newsLoaded.news?[index].newsTitle,
-                    newsText: state.newsLoaded.news?[index].newsText,
-                    imagePath: state.newsLoaded.news?[index].imagePath,
-                    newsSubtext: state.newsLoaded.news?[index].newsSubtext,
-                  );
+                  // return NewsTileWidget(
+                  //   newsTitle: state.newsLoaded.news?[index].newsTitle,
+                  //   newsText: state.newsLoaded.news?[index].newsText,
+                  //   imagePath: state.newsLoaded.news?[index].imagePath,
+                  //   newsSubtext: state.newsLoaded.news?[index].newsSubtext,
+                  // );
                 },
               ),
             ),
