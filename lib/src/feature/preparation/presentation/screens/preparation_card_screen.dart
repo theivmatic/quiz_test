@@ -4,7 +4,7 @@ import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/core/screens/error_screen.dart';
 import 'package:quiz_test/src/feature/preparation/domain/bloc/preparation_bloc.dart';
 import 'package:quiz_test/src/feature/preparation/presentation/widgets/preparation_tile.dart';
-import 'package:quiz_test/src/feature/preparation/presentation/widgets/small_facts.dart';
+// import 'package:quiz_test/src/feature/preparation/presentation/widgets/small_facts.dart';
 
 class PreparationCardScreen extends StatefulWidget {
   const PreparationCardScreen({super.key});
