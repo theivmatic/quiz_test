@@ -13,11 +13,6 @@ class NoteDetailsScreen extends StatefulWidget {
 }
 
 class _NoteDetailsScreenState extends State<NoteDetailsScreen> {
-  final TextEditingController _newTitle = TextEditingController();
-  final TextEditingController _newDuration = TextEditingController();
-  final TextEditingController _newComment = TextEditingController();
-  final TextEditingController _newUrl = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

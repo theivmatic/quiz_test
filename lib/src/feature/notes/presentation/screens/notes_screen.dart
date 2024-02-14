@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/feature/notes/domain/bloc/notes_bloc.dart';
 import 'package:quiz_test/src/feature/notes/presentation/screens/add_note_screen.dart';
+import 'package:quiz_test/src/feature/notes/presentation/screens/edit_note.dart';
 import 'package:quiz_test/src/feature/notes/presentation/screens/note_details.dart';
 
 class NotesScreen extends StatefulWidget {
@@ -157,7 +158,19 @@ class _NotesScreenState extends State<NotesScreen> {
                                   ),
                                   itemBuilder: (context) => [
                                     PopupMenuItem<dynamic>(
-                                      onTap: () {},
+                                      onTap: () {
+                                        context.read<NotesBloc>().add(
+                                              FetchSpecificNoteEvent(
+                                                id: state.note[index].id ?? 0,
+                                              ),
+                                            );
+                                        Navigator.of(context).push(
+                                          MaterialPageRoute<dynamic>(
+                                            builder: (context) =>
+                                                const EditNoteScreen(),
+                                          ),
+                                        );
+                                      },
                                       child: Row(
                                         children: [
                                           Image.asset(
