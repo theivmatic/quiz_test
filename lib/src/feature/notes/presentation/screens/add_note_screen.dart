@@ -55,130 +55,135 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
       backgroundColor: AppColors.darkBackground,
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            TextFormField(
-              controller: _title,
-              style: TextStyles.noteTitleText,
-              decoration: InputDecoration(
-                hintText: 'Название фильма или сериала',
-                hintStyle: TextStyles.hintBigText,
-                disabledBorder: InputBorder.none,
-                enabledBorder: InputBorder.none,
-                focusedBorder: InputBorder.none,
-                errorBorder: InputBorder.none,
-                focusedErrorBorder: InputBorder.none,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              TextFormField(
+                controller: _title,
+                style: TextStyles.noteTitleText,
+                decoration: InputDecoration(
+                  hintText: 'Название фильма или сериала',
+                  hintStyle: TextStyles.hintBigText,
+                  disabledBorder: InputBorder.none,
+                  enabledBorder: InputBorder.none,
+                  focusedBorder: InputBorder.none,
+                  errorBorder: InputBorder.none,
+                  focusedErrorBorder: InputBorder.none,
+                ),
               ),
-            ),
-            TextFormField(
-              controller: _duration,
-              style: TextStyles.quizResultText,
-              decoration: InputDecoration(
-                hintText: 'Длительность',
-                hintStyle: TextStyles.hintMediumText,
-                disabledBorder: InputBorder.none,
-                enabledBorder: InputBorder.none,
-                focusedBorder: InputBorder.none,
-                errorBorder: InputBorder.none,
-                focusedErrorBorder: InputBorder.none,
+              TextFormField(
+                controller: _duration,
+                style: TextStyles.quizResultText,
+                decoration: InputDecoration(
+                  hintText: 'Длительность',
+                  hintStyle: TextStyles.hintMediumText,
+                  disabledBorder: InputBorder.none,
+                  enabledBorder: InputBorder.none,
+                  focusedBorder: InputBorder.none,
+                  errorBorder: InputBorder.none,
+                  focusedErrorBorder: InputBorder.none,
+                ),
               ),
-            ),
-            TextFormField(
-              controller: _comment,
-              style: TextStyles.quizResultText,
-              decoration: InputDecoration(
-                hintText: 'Комментарий',
-                hintStyle: TextStyles.hintMediumText,
-                disabledBorder: InputBorder.none,
-                enabledBorder: InputBorder.none,
-                focusedBorder: InputBorder.none,
-                errorBorder: InputBorder.none,
-                focusedErrorBorder: InputBorder.none,
+              TextFormField(
+                controller: _comment,
+                style: TextStyles.quizResultText,
+                decoration: InputDecoration(
+                  hintText: 'Комментарий',
+                  hintStyle: TextStyles.hintMediumText,
+                  disabledBorder: InputBorder.none,
+                  enabledBorder: InputBorder.none,
+                  focusedBorder: InputBorder.none,
+                  errorBorder: InputBorder.none,
+                  focusedErrorBorder: InputBorder.none,
+                ),
               ),
-            ),
-            TextFormField(
-              controller: _url,
-              style: TextStyles.noteUrlText,
-              decoration: InputDecoration(
-                hintText: 'Ссылка',
-                hintStyle: TextStyles.hintMediumText,
-                disabledBorder: InputBorder.none,
-                enabledBorder: InputBorder.none,
-                focusedBorder: InputBorder.none,
-                errorBorder: InputBorder.none,
-                focusedErrorBorder: InputBorder.none,
+              TextFormField(
+                controller: _url,
+                style: TextStyles.noteUrlText,
+                decoration: InputDecoration(
+                  hintText: 'Ссылка',
+                  hintStyle: TextStyles.hintMediumText,
+                  disabledBorder: InputBorder.none,
+                  enabledBorder: InputBorder.none,
+                  focusedBorder: InputBorder.none,
+                  errorBorder: InputBorder.none,
+                  focusedErrorBorder: InputBorder.none,
+                ),
               ),
-            ),
-            GestureDetector(
-              onTap: _pickImageFromGallery,
-              child: Column(
-                children: [
-                  Container(
-                    width: 88,
-                    height: 88,
-                    decoration: BoxDecoration(
-                      color: AppColors.answerBackground,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: const Center(
-                      child: Icon(Icons.photo_camera_outlined),
-                    ),
-                  ),
-                  if (_selectedImage != null)
-                    Image.file(_selectedImage!)
-                  else
-                    const SizedBox(),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    'Загрузить файл',
-                    style: TextStyles.uploadImageText,
-                  ),
-                ],
+              const SizedBox(
+                height: 20,
               ),
-            ),
-            BlocBuilder<NotesBloc, NotesBlocState>(
-              builder: (context, state) {
-                return BottomButtonWidget(
-                  buttonText: 'Сохранить',
-                  onPressed: () {
-                    if (_title.text.isNotEmpty && _comment.text.isNotEmpty) {
-                      context.read<NotesBloc>().add(
-                            AddNoteEvent(
-                              movieTitle: _title.text,
-                              dutarion: _duration.text,
-                              comment: _comment.text,
-                              url: _url.text,
-                              movieImage: '',
+              GestureDetector(
+                onTap: _pickImageFromGallery,
+                child: Column(
+                  children: [
+                    if (_selectedImage == null)
+                      Column(
+                        children: [
+                          Container(
+                            width: 88,
+                            height: 88,
+                            decoration: BoxDecoration(
+                              color: AppColors.answerBackground,
+                              borderRadius: BorderRadius.circular(8),
                             ),
-                          );
-                      context.read<NotesBloc>().add(
-                            const FetchNotesEvent(),
-                          );
-                      Navigator.of(context).pop(
-                        MaterialPageRoute<dynamic>(
-                          builder: (context) => const NotesScreen(),
-                        ),
-                      );
-                    } else {
-                      ScaffoldMessenger.of(context).clearSnackBars();
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          duration: const Duration(seconds: 2),
-                          content: Text(
-                            'Поля название и комментарий должны быть заполнены'
-                                .toUpperCase(),
+                            child: const Center(
+                              child: Icon(Icons.photo_camera_outlined),
+                            ),
                           ),
-                        ),
-                      );
-                    }
-                  },
-                );
-              },
-            ),
-          ],
+                          Text(
+                            'Загрузить файл',
+                            style: TextStyles.uploadImageText,
+                          ),
+                        ],
+                      )
+                    else
+                      Image.file(_selectedImage!),
+                  ],
+                ),
+              ),
+              BlocBuilder<NotesBloc, NotesBlocState>(
+                builder: (context, state) {
+                  return BottomButtonWidget(
+                    buttonText: 'Сохранить',
+                    onPressed: () {
+                      if (_title.text.isNotEmpty && _comment.text.isNotEmpty) {
+                        context.read<NotesBloc>().add(
+                              AddNoteEvent(
+                                movieTitle: _title.text,
+                                dutarion: _duration.text,
+                                comment: _comment.text,
+                                url: _url.text,
+                                movieImage: _selectedImage?.path ?? '',
+                              ),
+                            );
+                        context.read<NotesBloc>().add(
+                              const FetchNotesEvent(),
+                            );
+                        Navigator.of(context).pop(
+                          MaterialPageRoute<dynamic>(
+                            builder: (context) => const NotesScreen(),
+                          ),
+                        );
+                      } else {
+                        ScaffoldMessenger.of(context).clearSnackBars();
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            duration: const Duration(seconds: 2),
+                            content: Text(
+                              'Поля название и комментарий должны быть заполнены'
+                                  .toUpperCase(),
+                            ),
+                          ),
+                        );
+                      }
+                    },
+                  );
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
