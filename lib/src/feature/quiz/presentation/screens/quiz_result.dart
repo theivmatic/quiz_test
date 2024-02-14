@@ -1,3 +1,5 @@
+// ignore_for_file: require_trailing_commas
+
 import 'package:flutter/material.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/core/router/navigation_screen.dart';
@@ -30,17 +32,105 @@ class QuizResultScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Row(),
+            if (rightAnswers == 0)
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.star_border,
+                    color: AppColors.iconGrey,
+                  ),
+                  Icon(
+                    Icons.star_border,
+                    color: AppColors.iconGrey,
+                  ),
+                  Icon(
+                    Icons.star_border,
+                    color: AppColors.iconGrey,
+                  ),
+                  Icon(
+                    Icons.star_border,
+                    color: AppColors.iconGrey,
+                  ),
+                  Icon(
+                    Icons.star_border,
+                    color: AppColors.iconGrey,
+                  ),
+                ],
+              )
+            else if (rightAnswers == numberOfQuestions / 2)
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.star,
+                    color: AppColors.buttonPink,
+                  ),
+                  Icon(
+                    Icons.star_border,
+                    color: AppColors.iconGrey,
+                  ),
+                  Icon(
+                    Icons.star_border,
+                    color: AppColors.iconGrey,
+                  ),
+                  Icon(
+                    Icons.star_border,
+                    color: AppColors.iconGrey,
+                  ),
+                  Icon(
+                    Icons.star_border,
+                    color: AppColors.iconGrey,
+                  ),
+                ],
+              )
+            else if (rightAnswers == numberOfQuestions)
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.star,
+                    color: AppColors.buttonPink,
+                  ),
+                  Icon(
+                    Icons.star,
+                    color: AppColors.buttonPink,
+                  ),
+                  Icon(
+                    Icons.star,
+                    color: AppColors.buttonPink,
+                  ),
+                  Icon(
+                    Icons.star,
+                    color: AppColors.buttonPink,
+                  ),
+                  Icon(
+                    Icons.star,
+                    color: AppColors.buttonPink,
+                  ),
+                ],
+              ),
             const SizedBox(
               height: 15,
             ),
-            Text(
-              rightAnswers == numberOfQuestions
-                  ? 'Вот это да!\nВы лучший из лучших!'
-                  : 'Неплохо!\nНо вы можете лучше!',
-              style: TextStyles.factNumber,
-              textAlign: TextAlign.center,
-            ),
+            if (rightAnswers == 0)
+              Text(
+                'Не вышло. Возможно стоит пройти подготовку и попробовать снова?',
+                style: TextStyles.factNumber,
+                textAlign: TextAlign.center,
+              )
+            else if (rightAnswers == numberOfQuestions / 2)
+              Text(
+                'Неплохо!\nНо вы можете лучше!',
+                style: TextStyles.factNumber,
+                textAlign: TextAlign.center,
+              )
+            else if (rightAnswers == numberOfQuestions)
+              Text(
+                'Вот это да!\nВы лучший из лучших!',
+                style: TextStyles.factNumber,
+                textAlign: TextAlign.center,
+              ),
             const SizedBox(
               height: 8,
             ),
