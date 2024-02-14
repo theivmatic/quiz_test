@@ -57,9 +57,13 @@ class _QuizThemeScreenState extends State<QuizThemeScreen> {
                 );
               },
             ),
-          QuizzesBlocLoadingState() => const CircularProgressIndicator(),
+          QuizzesBlocLoadingState() => const Center(
+              child: CircularProgressIndicator(),
+            ),
           QuizzesBlocErrorState() => const ErrorScreen(),
-          _ => const Placeholder(),
+          _ => const Center(
+              child: CircularProgressIndicator(),
+            ),
         },
       ),
     );

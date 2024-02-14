@@ -21,7 +21,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
   final TextEditingController _comment = TextEditingController();
   final TextEditingController _url = TextEditingController();
 
-  File? _selectedImage;
+  File? selectedImage;
 
   @override
   Widget build(BuildContext context) {
@@ -118,7 +118,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                 onTap: _pickImageFromGallery,
                 child: Column(
                   children: [
-                    if (_selectedImage == null)
+                    if (selectedImage == null)
                       Column(
                         children: [
                           Container(
@@ -143,7 +143,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                         constraints: BoxConstraints.loose(
                           const Size(88, 88),
                         ),
-                        child: Image.file(_selectedImage!),
+                        child: Image.file(selectedImage!),
                       ),
                   ],
                 ),
@@ -160,7 +160,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                                 dutarion: _duration.text,
                                 comment: _comment.text,
                                 url: _url.text,
-                                movieImage: _selectedImage?.path ?? '',
+                                movieImage: selectedImage?.path ?? '',
                               ),
                             );
                         context.read<NotesBloc>().add(
@@ -168,7 +168,9 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                             );
                         Navigator.of(context).pop(
                           MaterialPageRoute<dynamic>(
-                            builder: (context) => const NotesScreen(),
+                            builder: (context) => const NotesScreen(
+                              // image: selectedImage,
+                            ),
                           ),
                         );
                       } else {
@@ -200,7 +202,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
 
     if (returnedImage == null) return;
     setState(() {
-      _selectedImage = File(returnedImage.path);
+      selectedImage = File(returnedImage.path);
     });
   }
 }

@@ -58,9 +58,13 @@ class _NewsScreenState extends State<NewsScreen> {
                 );
               },
             ),
-          NewsBlocLoadingState() => const CircularProgressIndicator(),
+          NewsBlocLoadingState() => const Center(
+              child: CircularProgressIndicator(),
+            ),
           NewsBlocErrorState() => const ErrorScreen(),
-          _ => const Placeholder(),
+          _ => const Center(
+              child: CircularProgressIndicator(),
+            ),
         },
       ),
     );

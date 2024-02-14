@@ -40,7 +40,7 @@ class _PreparationsScreenState extends State<PreparationsScreen> {
         bloc: preparationsBloc,
         builder: (context, state) => switch (state) {
           PreparationsBlocLoadedState() => GridView.builder(
-            itemCount: state.preparationsLoaded.preparations?.length,
+              itemCount: state.preparationsLoaded.preparations?.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 mainAxisSpacing: 0.1,
                 // crossAxisSpacing: 0.5,
@@ -50,9 +50,10 @@ class _PreparationsScreenState extends State<PreparationsScreen> {
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: PreparationCardWidget(
-                    title: state
-                        .preparationsLoaded.preparations?[index].preparationName,
-                    subtitle: state.preparationsLoaded.preparations?[index].title,
+                    title: state.preparationsLoaded.preparations?[index]
+                        .preparationName,
+                    subtitle:
+                        state.preparationsLoaded.preparations?[index].title,
                     imagePath:
                         state.preparationsLoaded.preparations?[index].imagePath,
                     onCardTap: () {
@@ -69,9 +70,13 @@ class _PreparationsScreenState extends State<PreparationsScreen> {
                 );
               },
             ),
-          PreparationsBlocLoadingState() => const CircularProgressIndicator(),
+          PreparationsBlocLoadingState() => const Center(
+              child: CircularProgressIndicator(),
+            ),
           PreparationsBlocErrorState() => const ErrorScreen(),
-          _ => const Placeholder(),
+          _ => const Center(
+              child: CircularProgressIndicator(),
+            ),
         },
       ),
 

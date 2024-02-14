@@ -9,7 +9,12 @@ import 'package:quiz_test/src/feature/notes/presentation/screens/edit_note.dart'
 import 'package:quiz_test/src/feature/notes/presentation/screens/note_details.dart';
 
 class NotesScreen extends StatefulWidget {
-  const NotesScreen({super.key});
+  // final File? image;
+
+  const NotesScreen({
+    super.key,
+    // required this.image,
+  });
 
   @override
   State<NotesScreen> createState() => _NotesScreenState();
@@ -106,10 +111,16 @@ class _NotesScreenState extends State<NotesScreen> {
                           Container(
                             width: 76,
                             height: 76,
+                            constraints: BoxConstraints.loose(
+                              const Size(76, 76),
+                            ),
                             decoration: BoxDecoration(
                               color: Colors.amber,
                               borderRadius: BorderRadius.circular(4),
                             ),
+                            // child: Image.file(
+                            //   widget.image ?? File(''),
+                            // ),
                           ),
                           SizedBox(
                             width: 211,
@@ -359,7 +370,9 @@ class _NotesScreenState extends State<NotesScreen> {
               );
             }
           }
-          return const CircularProgressIndicator();
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
         },
       ),
       floatingActionButton: FloatingActionButton(
