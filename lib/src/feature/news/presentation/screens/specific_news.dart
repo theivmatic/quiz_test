@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
-import 'package:quiz_test/src/core/screens/error_screen.dart';
-import 'package:quiz_test/src/feature/news/domain/bloc/news_bloc.dart';
 import 'package:quiz_test/src/feature/news/domain/models/news_entity.dart';
 import 'package:quiz_test/src/feature/news/presentation/widgets/news_tile.dart';
 
@@ -35,8 +32,7 @@ class _SpecificNewsScreenState extends State<SpecificNewsScreen> {
       ),
       backgroundColor: AppColors.darkBackground,
       body: ListView.builder(
-        //TODO: сделать норм итемкаунт
-        itemCount: 6,
+        itemCount: widget.news?.items?.length,
         itemBuilder: (context, index) {
           if (index == 0) {
             return Wrap(

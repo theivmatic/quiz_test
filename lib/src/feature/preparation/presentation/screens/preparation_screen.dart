@@ -37,8 +37,7 @@ class _PreparationScreenState extends State<PreparationScreen> {
       ),
       backgroundColor: AppColors.darkBackground,
       body: ListView.builder(
-        //TODO: сделать норм итемкаунт
-        itemCount: 7,
+        itemCount: widget.preparation?.facts?.length,
         itemBuilder: (context, index) {
           if (index == 0) {
             return Wrap(
@@ -71,46 +70,4 @@ class _PreparationScreenState extends State<PreparationScreen> {
   }
 }
 
-
-
-      
-
-      //TODO: разобраться как отрисовать здесь блок с фактами
-
-      // SmallFactsWidget(
-      //   title: state.preparationLoaded.subtitle,
-      //   itemCount: state.preparationLoaded.smallFacts!.length,
-      //   smallFact:
-      //       state.preparationLoaded.smallFacts?[index].text,
-      // ),
-      //   ],
-      // );
-      // return Wrap(
-      //   children: [
-      //     Padding(
-      //       padding: const EdgeInsets.symmetric(horizontal: 15),
-      //       child: Text(
-      //         '30 фактов о сериале «Слово пацана. Кровь на асфальте»',
-      //         style: TextStyles.appBarText,
-      //       ),
-      //     ),
-      //     PreparationTileWidget(
-      //       number: state.preparationLoaded.facts?[0].number,
-      //       text: state.preparationLoaded.facts?[0].text,
-      //       imagePath: state.preparationLoaded.facts?[0].imagePath,
-      //       subtext: state.preparationLoaded.facts?[0].subtext,
-      //     ),
-      //   ],
-      // );
-      //     }
-      //     return PreparationTileWidget(
-      //       number: state.preparationsLoaded.facts?[index].number,
-      //       text: state.preparationsLoaded.facts?[index].text,
-      //       imagePath: state.preparationsLoaded.facts?[index].imagePath,
-      //       subtext: state.preparationsLoaded.facts?[index].subtext,
-      //     );
-      //   },
-      // ),
-//     );
-//   }
-// }
+      // TODO(theivmatic): разобраться как отрисовать здесь блок с фактами
