@@ -4,7 +4,6 @@ import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/core/widgets/bottom_button.dart';
 import 'package:quiz_test/src/feature/notes/domain/bloc/notes_bloc.dart';
 import 'package:quiz_test/src/feature/notes/domain/models/note_model.dart';
-import 'package:quiz_test/src/feature/notes/presentation/screens/notes_screen.dart';
 
 class EditNoteScreen extends StatefulWidget {
   const EditNoteScreen({super.key});
@@ -31,6 +30,7 @@ class _EditNoteScreenState extends State<EditNoteScreen> {
                   const FetchNotesEvent(),
                 );
             Navigator.of(context).pop();
+            ScaffoldMessenger.of(context).hideCurrentSnackBar();
           },
           icon: const Icon(Icons.arrow_back_ios),
           color: AppColors.iconGrey,
@@ -127,8 +127,10 @@ class _EditNoteScreenState extends State<EditNoteScreen> {
                               .read<NotesBloc>()
                               .add(const FetchNotesEvent());
                         } else {
+                          ScaffoldMessenger.of(context).clearSnackBars();
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
+                              duration: const Duration(seconds: 2),
                               content: Text(
                                 'Поля название и комментарий должны быть заполнены'
                                     .toUpperCase(),
@@ -139,72 +141,6 @@ class _EditNoteScreenState extends State<EditNoteScreen> {
                       },
                     ),
                   ),
-                  // GestureDetector(
-                  //   onTap: _pickImageFromGallery,
-                  //   child: Column(
-                  //     children: [
-                  //       Container(
-                  //         width: 88,
-                  //         height: 88,
-                  //         decoration: BoxDecoration(
-                  //           color: AppColors.answerBackground,
-                  //           borderRadius: BorderRadius.circular(8),
-                  //         ),
-                  //         child: const Center(
-                  //           child: Icon(Icons.photo_camera_outlined),
-                  //         ),
-                  //       ),
-                  //       if (_selectedImage != null)
-                  //         Image.file(_selectedImage!)
-                  //       else
-                  //         const SizedBox(),
-                  //       const SizedBox(
-                  //         height: 10,
-                  //       ),
-                  //       Text(
-                  //         'Загрузить файл',
-                  //         style: TextStyles.uploadImageText,
-                  //       ),
-                  //     ],
-                  //   ),
-                  // ),
-                  // BlocBuilder<NotesBloc, NotesBlocState>(
-                  //   builder: (context, state) {
-                  //     return BottomButtonWidget(
-                  //       buttonText: 'Сохранить',
-                  //       onPressed: () {
-                  //         if (_title.text.isNotEmpty && _comment.text.isNotEmpty) {
-                  //           context.read<NotesBloc>().add(
-                  //                 AddNoteEvent(
-                  //                   movieTitle: _title.text,
-                  //                   dutarion: _duration.text,
-                  //                   comment: _comment.text,
-                  //                   url: _url.text,
-                  //                   movieImage: '',
-                  //                 ),
-                  //               );
-                  //           context.read<NotesBloc>().add(
-                  //                 const FetchNotesEvent(),
-                  //               );
-                  //           Navigator.of(context).pop(
-                  //             MaterialPageRoute<dynamic>(
-                  //               builder: (context) => const NotesScreen(),
-                  //             ),
-                  //           );
-                  //         } else {
-                  //           ScaffoldMessenger.of(context).showSnackBar(
-                  //             SnackBar(
-                  //               content: Text(
-                  //                 'Поля название и комментарий должны быть заполнены'
-                  //                     .toUpperCase(),
-                  //               ),
-                  //             ),
-                  //           );
-                  //         }
-                  //       },
-                  //     );
-                  //   },
-                  // ),
                 ],
               ),
             );

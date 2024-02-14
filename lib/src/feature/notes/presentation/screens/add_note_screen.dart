@@ -32,6 +32,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
         leading: IconButton(
           onPressed: () {
             Navigator.of(context).pop();
+            ScaffoldMessenger.of(context).hideCurrentSnackBar();
           },
           icon: const Icon(Icons.arrow_back_ios),
           color: AppColors.iconGrey,
@@ -162,8 +163,10 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                         ),
                       );
                     } else {
+                      ScaffoldMessenger.of(context).clearSnackBars();
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
+                          duration: const Duration(seconds: 2),
                           content: Text(
                             'Поля название и комментарий должны быть заполнены'
                                 .toUpperCase(),
