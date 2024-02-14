@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/feature/notes/domain/bloc/notes_bloc.dart';
 import 'package:quiz_test/src/feature/notes/presentation/screens/add_note_screen.dart';
+import 'package:quiz_test/src/feature/notes/presentation/screens/note_details.dart';
 
 class NotesScreen extends StatefulWidget {
   const NotesScreen({super.key});
@@ -30,7 +31,9 @@ class _NotesScreenState extends State<NotesScreen> {
       body: BlocBuilder<NotesBloc, NotesBlocState>(
         builder: (context, state) {
           if (state is NotesBlocInitialState) {
-            context.read<NotesBloc>().add(const FetchNotesEvent());
+            context.read<NotesBloc>().add(
+                  const FetchNotesEvent(),
+                );
           }
           if (state is DisplayNotes) {
             if (state.note.isEmpty) {
@@ -82,7 +85,18 @@ class _NotesScreenState extends State<NotesScreen> {
                 itemCount: state.note.length,
                 itemBuilder: (context, index) {
                   return GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      context.read<NotesBloc>().add(
+                            FetchSpecificNoteEvent(
+                              id: state.note[index].id ?? 0,
+                            ),
+                          );
+                      Navigator.of(context).push(
+                        MaterialPageRoute<dynamic>(
+                          builder: (context) => const NoteDetailsScreen(),
+                        ),
+                      );
+                    },
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Row(
