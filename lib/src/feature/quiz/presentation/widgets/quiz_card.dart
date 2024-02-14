@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
+import 'package:quiz_test/src/feature/quiz/presentation/widgets/quiz_difficulry.dart';
 
 class QuizCardWidget extends StatelessWidget {
   final String? title;
@@ -7,7 +8,7 @@ class QuizCardWidget extends StatelessWidget {
   final String? imagePath;
   final VoidCallback onCardTap;
 
-  final List<Widget> stars = [];
+  final List<Icon> stars = [];
 
   QuizCardWidget({
     super.key,
@@ -45,14 +46,7 @@ class QuizCardWidget extends StatelessWidget {
                       title ?? '',
                       style: TextStyles.quizCardTitleText,
                     ),
-                    Row(
-                      children: [
-                        Text(
-                          'Сложность',
-                          style: TextStyles.popupTitleText,
-                        ),
-                      ],
-                    ),
+                    QuizDifficultyWidget(difficulty: difficulty),
                   ],
                 ),
               ),
