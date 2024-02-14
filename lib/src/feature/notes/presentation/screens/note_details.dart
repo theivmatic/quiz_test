@@ -99,6 +99,11 @@ class _NoteDetailsScreenState extends State<NoteDetailsScreen> {
                       focusedErrorBorder: InputBorder.none,
                     ),
                   ),
+                  // Image.file(_selectedImage),
+
+
+
+                  
                   // GestureDetector(
                   //   onTap: _pickImageFromGallery,
                   //   child: Column(

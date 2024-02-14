@@ -139,7 +139,12 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                         ],
                       )
                     else
-                      Image.file(_selectedImage!),
+                      Container(
+                        constraints: BoxConstraints.loose(
+                          const Size(88, 88),
+                        ),
+                        child: Image.file(_selectedImage!),
+                      ),
                   ],
                 ),
               ),
