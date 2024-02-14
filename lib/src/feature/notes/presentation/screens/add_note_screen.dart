@@ -59,6 +59,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
           children: [
             TextFormField(
               controller: _title,
+              style: TextStyles.noteTitleText,
               decoration: InputDecoration(
                 hintText: 'Название фильма или сериала',
                 hintStyle: TextStyles.hintBigText,
@@ -71,6 +72,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
             ),
             TextFormField(
               controller: _duration,
+              style: TextStyles.quizResultText,
               decoration: InputDecoration(
                 hintText: 'Длительность',
                 hintStyle: TextStyles.hintMediumText,
@@ -83,6 +85,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
             ),
             TextFormField(
               controller: _comment,
+              style: TextStyles.quizResultText,
               decoration: InputDecoration(
                 hintText: 'Комментарий',
                 hintStyle: TextStyles.hintMediumText,
@@ -95,6 +98,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
             ),
             TextFormField(
               controller: _url,
+              style: TextStyles.noteUrlText,
               decoration: InputDecoration(
                 hintText: 'Ссылка',
                 hintStyle: TextStyles.hintMediumText,

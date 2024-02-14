@@ -20,6 +20,7 @@ abstract class AppColors {
   static const textWhite = Color.fromRGBO(247, 247, 251, 1);
   static const textGrey = Color.fromRGBO(189, 193, 203, 1);
   static const textDarkGrey = Color.fromRGBO(173, 173, 173, 1);
+  static const textUrl = Color.fromRGBO(103, 136, 255, 1);
 }
 
 abstract class TextStyles {
@@ -166,6 +167,20 @@ abstract class TextStyles {
       fontWeight: FontWeight.w900,
       fontSize: 22,
       color: AppColors.textWhite,
+    ),
+  );
+  static final noteTitleText = font(
+    textStyle: const TextStyle(
+      fontWeight: FontWeight.w500,
+      fontSize: 17,
+      color: AppColors.textGrey,
+    ),
+  );
+  static final noteUrlText = font(
+    textStyle: const TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 14,
+      color: AppColors.textUrl,
     ),
   );
 }
