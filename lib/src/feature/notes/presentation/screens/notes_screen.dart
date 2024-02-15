@@ -96,7 +96,6 @@ class _NotesScreenState extends State<NotesScreen> {
                 itemBuilder: (context, index) {
                   return NoteWidget(
                     note: state.note[index],
-                    isPinned: state.note[index].isPinned,
                   );
                 },
               );

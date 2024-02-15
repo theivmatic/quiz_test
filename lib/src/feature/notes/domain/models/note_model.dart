@@ -27,7 +27,7 @@ class Note {
   final String comment;
   final String url;
   final String movieImage;
-  final bool isPinned;
+  bool isPinned;
 
   Note({
     this.id,

@@ -10,12 +10,10 @@ import 'package:quiz_test/src/feature/notes/presentation/screens/note_details.da
 
 class NoteWidget extends StatefulWidget {
   final Note note;
-  final bool isPinned;
 
   const NoteWidget({
     super.key,
     required this.note,
-    required this.isPinned,
   });
 
   @override
@@ -36,7 +34,6 @@ class _NoteWidgetState extends State<NoteWidget> {
           MaterialPageRoute<dynamic>(
             builder: (context) => NoteDetailsScreen(
               note: widget.note,
-              isPinned: widget.note.isPinned,
             ),
           ),
         );
@@ -287,7 +284,7 @@ class _NoteWidgetState extends State<NoteWidget> {
                       ),
                     ],
                   ),
-                  if (widget.isPinned)
+                  if (widget.note.isPinned)
                     Image.asset('assets/icons/note_pinned.png')
                   else
                     const SizedBox(),

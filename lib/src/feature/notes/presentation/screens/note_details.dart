@@ -6,11 +6,9 @@ import 'package:quiz_test/src/feature/notes/domain/models/note_model.dart';
 
 class NoteDetailsScreen extends StatefulWidget {
   final Note note;
-  bool isPinned;
 
-  NoteDetailsScreen({
+  const NoteDetailsScreen({
     super.key,
-    required this.isPinned,
     required this.note,
   });
 
@@ -43,10 +41,15 @@ class _NoteDetailsScreenState extends State<NoteDetailsScreen> {
           IconButton(
             onPressed: () {
               setState(() {
-                widget.isPinned = !widget.isPinned;
+                widget.note.isPinned = !widget.note.isPinned;
               });
             },
-            icon: Image.asset('assets/icons/pin_icon.png'),
+            icon: Image.asset(
+              'assets/icons/pin_icon.png',
+              color: widget.note.isPinned
+                  ? AppColors.buttonPink
+                  : AppColors.iconGrey,
+            ),
           ),
           IconButton(
             onPressed: () {
