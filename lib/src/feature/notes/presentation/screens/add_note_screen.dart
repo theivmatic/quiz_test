@@ -22,6 +22,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
   final TextEditingController _url = TextEditingController();
 
   File? selectedImage;
+  bool toggleSwitch = false;
 
   @override
   Widget build(BuildContext context) {
@@ -42,8 +43,20 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
           style: TextStyles.appBarText,
         ),
         actions: [
+          // Switch(
+          //   value: toggleSwitch,
+          //   onChanged: (newVal) {
+          //     setState(() {
+          //       toggleSwitch = !toggleSwitch;
+          //     });
+          //   },
+          // ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              setState(() {
+                toggleSwitch = !toggleSwitch;
+              });
+            },
             icon: Image.asset('assets/icons/pin_icon.png'),
           ),
           IconButton(
@@ -161,6 +174,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                                 comment: _comment.text,
                                 url: _url.text,
                                 movieImage: selectedImage?.path ?? '',
+                                // isPinned: toggleSwitch,
                               ),
                             );
                         context.read<NotesBloc>().add(
@@ -169,8 +183,8 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                         Navigator.of(context).pop(
                           MaterialPageRoute<dynamic>(
                             builder: (context) => const NotesScreen(
-                              // image: selectedImage,
-                            ),
+                                // image: selectedImage,
+                                ),
                           ),
                         );
                       } else {
