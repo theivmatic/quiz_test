@@ -34,7 +34,10 @@ class _NoteWidgetState extends State<NoteWidget> {
             );
         Navigator.of(context).push(
           MaterialPageRoute<dynamic>(
-            builder: (context) => const NoteDetailsScreen(),
+            builder: (context) => NoteDetailsScreen(
+              note: widget.note,
+              isPinned: widget.note.isPinned,
+            ),
           ),
         );
       },

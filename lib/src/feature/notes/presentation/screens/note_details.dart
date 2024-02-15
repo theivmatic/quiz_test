@@ -2,10 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/feature/notes/domain/bloc/notes_bloc.dart';
+import 'package:quiz_test/src/feature/notes/domain/models/note_model.dart';
 
 class NoteDetailsScreen extends StatefulWidget {
-  const NoteDetailsScreen({
+  final Note note;
+  bool isPinned;
+
+  NoteDetailsScreen({
     super.key,
+    required this.isPinned,
+    required this.note,
   });
 
   @override
@@ -33,6 +39,27 @@ class _NoteDetailsScreenState extends State<NoteDetailsScreen> {
           'Ваша заметка',
           style: TextStyles.appBarText,
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              setState(() {
+                widget.isPinned = !widget.isPinned;
+              });
+            },
+            icon: Image.asset('assets/icons/pin_icon.png'),
+          ),
+          IconButton(
+            onPressed: () {
+              context.read<NotesBloc>().add(
+                    DeleteNoteEvent(
+                      id: widget.note.id ?? 0,
+                    ),
+                  );
+              Navigator.of(context).pop();
+            },
+            icon: Image.asset('assets/icons/delete_icon.png'),
+          ),
+        ],
       ),
       backgroundColor: AppColors.darkBackground,
       body: BlocBuilder<NotesBloc, NotesBlocState>(
@@ -101,9 +128,6 @@ class _NoteDetailsScreenState extends State<NoteDetailsScreen> {
                   ),
                   // Image.file(_selectedImage),
 
-
-
-                  
                   // GestureDetector(
                   //   onTap: _pickImageFromGallery,
                   //   child: Column(

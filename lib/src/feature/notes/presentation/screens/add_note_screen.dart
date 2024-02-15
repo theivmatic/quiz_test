@@ -43,14 +43,6 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
           style: TextStyles.appBarText,
         ),
         actions: [
-          // Switch(
-          //   value: toggleSwitch,
-          //   onChanged: (newVal) {
-          //     setState(() {
-          //       toggleSwitch = !toggleSwitch;
-          //     });
-          //   },
-          // ),
           IconButton(
             onPressed: () {
               setState(() {
