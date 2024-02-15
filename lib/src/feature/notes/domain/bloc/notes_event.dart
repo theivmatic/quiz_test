@@ -23,7 +23,8 @@ class AddNoteEvent extends NotesBlocEvent {
   });
 
   @override
-  List<Object?> get props => [movieTitle, dutarion, comment, url, movieImage, isPinned];
+  List<Object?> get props =>
+      [movieTitle, dutarion, comment, url, movieImage, isPinned];
 }
 
 class UpdateNoteEvent extends NotesBlocEvent {
@@ -55,4 +56,12 @@ class DeleteNoteEvent extends NotesBlocEvent {
 
   @override
   List<Object?> get props => [id];
+}
+
+class PinNoteEvent extends NotesBlocEvent {
+  final bool isPinned;
+  const PinNoteEvent({required this.isPinned});
+
+  @override
+  List<Object?> get props => [];
 }
