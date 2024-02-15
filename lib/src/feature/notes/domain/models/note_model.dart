@@ -8,6 +8,7 @@ class NoteFields {
     comment,
     url,
     movieImage,
+    isPinned,
   ];
 
   static const String id = '_id';
@@ -16,6 +17,7 @@ class NoteFields {
   static const String comment = 'comment';
   static const String url = 'url';
   static const String movieImage = 'movieImage';
+  static const String isPinned = 'isPinned';
 }
 
 class Note {
@@ -25,6 +27,7 @@ class Note {
   final String comment;
   final String url;
   final String movieImage;
+  final bool isPinned;
 
   Note({
     this.id,
@@ -33,6 +36,7 @@ class Note {
     required this.comment,
     required this.url,
     required this.movieImage,
+    required this.isPinned,
   });
 
   Note copy({
@@ -42,6 +46,7 @@ class Note {
     String? comment,
     String? url,
     String? movieImage,
+    bool? isPinned,
   }) =>
       Note(
         id: id ?? this.id,
@@ -50,6 +55,7 @@ class Note {
         comment: comment ?? this.comment,
         url: url ?? this.url,
         movieImage: movieImage ?? this.movieImage,
+        isPinned: isPinned ?? this.isPinned,
       );
 
   static Note fromJson(Map<String, Object?> json) => Note(
@@ -59,6 +65,7 @@ class Note {
         comment: json[NoteFields.comment] as String,
         url: json[NoteFields.url] as String,
         movieImage: json[NoteFields.movieImage] as String,
+        isPinned: json[NoteFields.isPinned] == 1,
       );
 
   Map<String, Object?> toJson() => {
@@ -68,5 +75,6 @@ class Note {
         NoteFields.comment: comment,
         NoteFields.url: url,
         NoteFields.movieImage: movieImage,
+        NoteFields.isPinned: isPinned ? 1 : 0,
       };
 }
