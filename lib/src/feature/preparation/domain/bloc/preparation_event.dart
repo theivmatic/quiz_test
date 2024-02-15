@@ -1,5 +1,5 @@
 part of 'preparation_bloc.dart';
 
-sealed class PreparationBlocEvent {}
+sealed class PreparationsBlocEvent {}
 
-class FetchPreparationBlocEvent implements PreparationBlocEvent {}
+class FetchPreparationsBlocEvent implements PreparationsBlocEvent {}

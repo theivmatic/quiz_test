@@ -4,20 +4,23 @@ import 'package:google_fonts/google_fonts.dart';
 const font = GoogleFonts.robotoFlex;
 
 abstract class AppColors {
-  static const white = Color.fromRGBO(255, 255, 255, 1);
-  static const darkBackground = Color.fromRGBO(27, 31, 41, 1);
-  static const buttonPink = Color.fromRGBO(251, 43, 93, 1);
-  static const lightGray = Color.fromRGBO(131, 131, 131, 1);
-  static const iconGrey = Color.fromRGBO(199, 201, 204, 1);
-  static const settingsDivider = Color.fromRGBO(51, 51, 51, 1);
-  static const divider = Color.fromRGBO(53, 53, 58, 1);
-  static const popupMenuBackground = Color.fromRGBO(50, 49, 58, 1);
-  static const answerBackground = Color.fromRGBO(84, 84, 84, 1);
+  static const Color white = Color.fromRGBO(255, 255, 255, 1);
+  static const Color darkBackground = Color.fromRGBO(27, 31, 41, 1);
+  static const Color buttonPink = Color.fromRGBO(251, 43, 93, 1);
+  static const Color lightGray = Color.fromRGBO(131, 131, 131, 1);
+  static const Color iconGrey = Color.fromRGBO(199, 201, 204, 1);
+  static const Color settingsDivider = Color.fromRGBO(51, 51, 51, 1);
+  static const Color divider = Color.fromRGBO(53, 53, 58, 1);
+  static const Color popupMenuBackground = Color.fromRGBO(50, 49, 58, 1);
+  static const Color answerBackground = Color.fromRGBO(84, 84, 84, 1);
+  static const Color green = Color.fromRGBO(41, 177, 79, 1);
+  static const Color red = Color.fromRGBO(249, 56, 56, 1);
 
   //text colors
   static const textWhite = Color.fromRGBO(247, 247, 251, 1);
   static const textGrey = Color.fromRGBO(189, 193, 203, 1);
   static const textDarkGrey = Color.fromRGBO(173, 173, 173, 1);
+  static const textUrl = Color.fromRGBO(103, 136, 255, 1);
 }
 
 abstract class TextStyles {
@@ -143,6 +146,41 @@ abstract class TextStyles {
       fontWeight: FontWeight.w400,
       fontSize: 13,
       color: AppColors.white,
+    ),
+  );
+  static final uploadImageText = font(
+    textStyle: const TextStyle(
+      fontWeight: FontWeight.w500,
+      fontSize: 11,
+      color: AppColors.lightGray,
+    ),
+  );
+  static final quizResultText = font(
+    textStyle: const TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 14,
+      color: AppColors.textGrey,
+    ),
+  );
+  static final quizCardTitleText = font(
+    textStyle: const TextStyle(
+      fontWeight: FontWeight.w900,
+      fontSize: 22,
+      color: AppColors.textWhite,
+    ),
+  );
+  static final noteTitleText = font(
+    textStyle: const TextStyle(
+      fontWeight: FontWeight.w500,
+      fontSize: 17,
+      color: AppColors.textGrey,
+    ),
+  );
+  static final noteUrlText = font(
+    textStyle: const TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 14,
+      color: AppColors.textUrl,
     ),
   );
 }

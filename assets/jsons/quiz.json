@@ -1,36 +1,141 @@
 {
-    "questions": [
+    "quizzes": [
         {
-            "question": "Как зовут автора написавшего книгу «Слово пацана. Криминальный Татарстан 1970–2010-х», по мотивам которой и был снят сериал?",
-            "answers": [
+            "quiz_name": "Слово пацана",
+            "image_path": "assets/images/quiz_images/slovo_pacana.png",
+            "difficulty": 3,
+            "questions": [
                 {
-                    "answer_text": "Роберт Насыри",
-                    "is_correct": false
+                    "question": "Как зовут автора написавшего книгу «Слово пацана. Криминальный Татарстан 1970–2010-х», по мотивам которой и был снят сериал?",
+                    "answers": [
+                        {
+                            "answer_text": "Роберт Насыри",
+                            "is_correct": false
+                        },
+                        {
+                            "answer_text": "Роберт Шамсудин",
+                            "is_correct": false
+                        },
+                        {
+                            "answer_text": "Роберт Гараев",
+                            "is_correct": true
+                        },
+                        {
+                            "answer_text": "Роберт Инсабет",
+                            "is_correct": false
+                        }
+                    ]
                 },
                 {
-                    "answer_text": "Роберт Шамсудин",
-                    "is_correct": false
-                },
-                {
-                    "answer_text": "Роберт Гараев",
-                    "is_correct": true
-                },
-                {
-                    "answer_text": "Роберт Инсабет",
-                    "is_correct": false
+                    "question": "Правда ли что Рузилю Минекаеву (Адидасу-младшему) 24 года?",
+                    "answers": [
+                        {
+                            "answer_text": "Правда",
+                            "is_correct": true
+                        },
+                        {
+                            "answer_text": "Ложь",
+                            "is_correct": false
+                        }
+                    ]
                 }
             ]
         },
         {
-            "question": "Правда ли что Рузилю Минекаеву (Адидасу-младшему) 24 года?",
-            "answers": [
+            "quiz_name": "Два холма",
+            "image_path": "assets/images/quiz_images/dva_holma.png",
+            "difficulty": 2,
+            "questions": [
                 {
-                    "answer_text": "Правда",
-                    "is_correct": true
+                    "question": "Два холма Вопрос 1",
+                    "answers": [
+                        {
+                            "answer_text": "Два холма Ответ 1",
+                            "is_correct": false
+                        },
+                        {
+                            "answer_text": "Два холма Ответ 2",
+                            "is_correct": false
+                        },
+                        {
+                            "answer_text": "Два холма Ответ 3",
+                            "is_correct": true
+                        },
+                        {
+                            "answer_text": "Два холма Ответ 4",
+                            "is_correct": false
+                        }
+                    ]
                 },
                 {
-                    "answer_text": "Ложь",
-                    "is_correct": false
+                    "question": "Два холма Вопрос 2",
+                    "answers": [
+                        {
+                            "answer_text": "Два холма Ответ 1",
+                            "is_correct": false
+                        },
+                        {
+                            "answer_text": "Два холма Ответ 2",
+                            "is_correct": false
+                        },
+                        {
+                            "answer_text": "Два холма Ответ 3",
+                            "is_correct": false
+                        },
+                        {
+                            "answer_text": "Два холма Ответ 4",
+                            "is_correct": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "quiz_name": "Триггер",
+            "image_path": "assets/images/quiz_images/trigger.png",
+            "difficulty": 2,
+            "questions": [
+                {
+                    "question": "Триггер Вопрос 1",
+                    "answers": [
+                        {
+                            "answer_text": "Триггер Ответ 1",
+                            "is_correct": false
+                        },
+                        {
+                            "answer_text": "Триггер Ответ 2",
+                            "is_correct": false
+                        },
+                        {
+                            "answer_text": "Триггер Ответ 3",
+                            "is_correct": true
+                        },
+                        {
+                            "answer_text": "Триггер Ответ 4",
+                            "is_correct": false
+                        }
+                    ]
+                },
+                {
+                    "question": "Триггер Вопрос 2",
+                    "answers": [
+                        {
+                            "answer_text": "Триггер Ответ 1",
+                            "is_correct": false
+                        },
+                        {
+                            "answer_text": "Триггер Ответ 2",
+                            "is_correct": true
+                        },
+                        {
+                            "answer_text": "Триггер Ответ 3",
+                            "is_correct": false
+                        },
+                        {
+                            "answer_text": "Триггер Ответ 4",
+                            "is_correct": false
+                        }
+                    ]
                 }
             ]
         }

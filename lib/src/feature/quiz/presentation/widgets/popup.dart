@@ -12,10 +12,16 @@ class PopUpWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(6),
       ),
       color: AppColors.popupMenuBackground,
-      child: const Icon(Icons.arrow_back_ios),
+      child: const Icon(
+        Icons.arrow_back_ios,
+        color: AppColors.iconGrey,
+      ),
       itemBuilder: (context) => [
         PopupMenuItem<dynamic>(
-          child: Text('Вы уверены, что хотите закончить сейчас?', style: TextStyles.popupTitleText,),
+          child: Text(
+            'Вы уверены, что хотите закончить сейчас?',
+            style: TextStyles.popupTitleText,
+          ),
         ),
         PopupMenuItem<dynamic>(
           onTap: () {

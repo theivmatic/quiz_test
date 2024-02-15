@@ -19,6 +19,7 @@ dependencies:
   json_annotation: ^4.8.1
   meta: ^1.9.1
   url_launcher: ^6.2.4
+  image_picker: ^1.0.7
 
 dev_dependencies:
   flutter_test:
@@ -26,6 +27,14 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   json_serializable: ^6.7.1
   build_runner: ^2.4.8
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: false
+  ios: true
+  remove_alpha_ios: true
+  image_path: "assets/icons/launcher_icon.png"
+
 
 flutter:
   uses-material-design: true
@@ -34,5 +43,9 @@ flutter:
     - assets/jsons/
     - assets/icons/
     - assets/images/
-    - assets/images/training_images/
+    - assets/images/preparation_images/
+    - assets/images/preparation_images/slovo_pacana/
+    - assets/images/preparation_images/dva_holma/
+    - assets/images/preparation_images/trigger/
     - assets/images/news_images/
+    - assets/images/quiz_images/

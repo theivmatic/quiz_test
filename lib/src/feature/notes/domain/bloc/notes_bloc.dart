@@ -18,6 +18,7 @@ class NotesBloc extends Bloc<NotesBlocEvent, NotesBlocState> {
           comment: event.comment,
           url: event.url,
           movieImage: event.movieImage,
+          isPinned: false,
         ),
       );
     });

@@ -1,5 +1,5 @@
 part of 'quiz_bloc.dart';
 
-sealed class QuizBlocEvent {}
+sealed class QuizzesBlocEvent {}
 
-class FetchQuizBlocEvent extends QuizBlocEvent {}
+class FetchQuizzesBlocEvent extends QuizzesBlocEvent {}

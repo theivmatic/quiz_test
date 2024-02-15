@@ -11,28 +11,24 @@ class QuestionTileWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(15),
-          child: Container(
-            height: 336,
-            decoration: BoxDecoration(
-              color: AppColors.popupMenuBackground,
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: Center(
-              child: Padding(
-                padding: const EdgeInsets.all(20),
-                child: Text(
-                  questionText ?? '',
-                  style: TextStyles.factNumber,
-                ),
-              ),
+    return Padding(
+      padding: const EdgeInsets.all(15),
+      child: Container(
+        height: 336,
+        decoration: BoxDecoration(
+          color: AppColors.popupMenuBackground,
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: Text(
+              questionText ?? '',
+              style: TextStyles.factNumber,
             ),
           ),
         ),
-      ],
+      ),
     );
   }
 }

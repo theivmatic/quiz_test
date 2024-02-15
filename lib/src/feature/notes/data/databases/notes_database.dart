@@ -20,12 +20,18 @@ class NotesDatabase {
     final dbPath = await getDatabasesPath();
     final path = join(dbPath, filePath);
 
-    return openDatabase(path, version: 1, onCreate: _createDB);
+    return openDatabase(
+      path,
+      version: 1,
+      onCreate: _createDB,
+      onUpgrade: _onUpgrade,
+    );
   }
 
   Future<dynamic> _createDB(Database db, int version) async {
     const idType = 'INTEGER PRIMARY KEY AUTOINCREMENT';
     const textType = 'TEXT NOT NULL';
+    const boolType = 'BOOLEAN NOT NULL';
 
     await db.execute('''
 CREATE TABLE $tableNotes (
@@ -34,9 +40,18 @@ CREATE TABLE $tableNotes (
   ${NoteFields.dutarion} $textType,
   ${NoteFields.comment} $textType,
   ${NoteFields.url} $textType,
-  ${NoteFields.movieImage} $textType
+  ${NoteFields.movieImage} $textType,
+  ${NoteFields.isPinned} $boolType
 )
     ''');
+  }
+
+  void _onUpgrade(Database db, int oldVersion, int newVersion) {
+    if (oldVersion < 2) {
+      db.execute(
+        'ALTER TABLE $tableNotes ADD COLUMN isPinned BOOL DEFAULT false;',
+      );
+    }
   }
 
   Future<Note> create(Note note) async {

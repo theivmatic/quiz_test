@@ -1,19 +1,19 @@
 part of 'quiz_bloc.dart';
 
-sealed class QuizBlocState {}
+sealed class QuizzesBlocState {}
 
-final class QuizBlocInitialState extends QuizBlocState {}
+final class QuizzesBlocInitialState extends QuizzesBlocState {}
 
-final class QuizBlocLoadingState extends QuizBlocState {}
+final class QuizzesBlocLoadingState extends QuizzesBlocState {}
 
-final class QuizBlocLoadedState extends QuizBlocState {
-  final QuizEntity quizLoaded;
+final class QuizzesBlocLoadedState extends QuizzesBlocState {
+  final QuizzesEntity quizzesLoaded;
 
-  QuizBlocLoadedState({required this.quizLoaded});
+  QuizzesBlocLoadedState({required this.quizzesLoaded});
 }
 
-final class QuizBlocErrorState extends QuizBlocState {
+final class QuizzesBlocErrorState extends QuizzesBlocState {
   final String errorMessage;
 
-  QuizBlocErrorState({required this.errorMessage});
+  QuizzesBlocErrorState({required this.errorMessage});
 }

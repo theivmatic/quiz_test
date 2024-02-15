@@ -2,41 +2,56 @@ import 'package:flutter/material.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 
 class NewsCardWidget extends StatelessWidget {
-  final String? newsTitle;
-  final String? newsText;
+  final String? title;
   final String? imagePath;
-  final String? newsSubtext;
+  final String? date;
+  final String? timeToRead;
+  final VoidCallback onCardTap;
 
   const NewsCardWidget({
     super.key,
-    required this.newsTitle,
-    required this.newsText,
+    required this.onCardTap,
     required this.imagePath,
-    required this.newsSubtext,
+    required this.date,
+    required this.timeToRead,
+    required this.title,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(height: 10),
-          Text(
-            newsTitle ?? '',
-            style: TextStyles.factNumber,
+    return InkWell(
+      onTap: onCardTap,
+      child: Center(
+        child: Container(
+          width: 343,
+          height: 206,
+          decoration: BoxDecoration(
+            color: AppColors.popupMenuBackground,
+            borderRadius: BorderRadius.circular(8),
           ),
-          const SizedBox(height: 10),
-          Text(
-            newsText ?? '',
-            style: TextStyles.factText,
+          child: Column(
+            children: [
+              Image.asset(imagePath ?? ''),
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title ?? '',
+                      style: TextStyles.newsTileTitle,
+                    ),
+                    const SizedBox(height: 5),
+                    Text(
+                      '$date • читать $timeToRead',
+                      style: TextStyles.newsTileDateTime,
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
-          const SizedBox(height: 10),
-          if (imagePath != null) Image.asset(imagePath!) else const SizedBox(),
-          const SizedBox(height: 5),
-          Text(newsSubtext ?? '', style: TextStyles.factSubText),
-        ],
+        ),
       ),
     );
   }
