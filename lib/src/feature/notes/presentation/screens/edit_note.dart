@@ -4,22 +4,31 @@ import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/core/widgets/bottom_button.dart';
 import 'package:quiz_test/src/feature/notes/domain/bloc/notes_bloc.dart';
 import 'package:quiz_test/src/feature/notes/domain/models/note_model.dart';
+import 'package:quiz_test/src/feature/notes/presentation/screens/notes_screen.dart';
 
 class EditNoteScreen extends StatefulWidget {
-  const EditNoteScreen({super.key});
+  final Note? note;
+
+  const EditNoteScreen({super.key, required this.note});
 
   @override
   State<EditNoteScreen> createState() => _EditNoteScreenState();
 }
 
 class _EditNoteScreenState extends State<EditNoteScreen> {
-  final TextEditingController _newTitle = TextEditingController();
-  final TextEditingController _newDuration = TextEditingController();
-  final TextEditingController _newComment = TextEditingController();
-  final TextEditingController _newUrl = TextEditingController();
+  // final TextEditingController _newTitle =
+  //     TextEditingController(text: '');
+  // final TextEditingController _newDuration = TextEditingController();
+  // final TextEditingController _newComment = TextEditingController();
+  // final TextEditingController _newUrl = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    final newTitle = TextEditingController(text: widget.note?.movieTitle);
+    final newDuration = TextEditingController(text: widget.note?.dutarion);
+    final newComment = TextEditingController(text: widget.note?.comment);
+    final newUrl = TextEditingController(text: widget.note?.url);
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -50,8 +59,7 @@ class _EditNoteScreenState extends State<EditNoteScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   TextFormField(
-                    // initialValue: state.note.movieTitle,
-                    controller: _newTitle,
+                    controller: newTitle,
                     style: TextStyles.noteTitleText,
                     decoration: InputDecoration(
                       hintText: 'Название фильма или сериала',
@@ -64,8 +72,7 @@ class _EditNoteScreenState extends State<EditNoteScreen> {
                     ),
                   ),
                   TextFormField(
-                    // initialValue: state.note.dutarion,
-                    controller: _newDuration,
+                    controller: newDuration,
                     style: TextStyles.quizResultText,
                     decoration: InputDecoration(
                       hintText: 'Длительность',
@@ -78,8 +85,7 @@ class _EditNoteScreenState extends State<EditNoteScreen> {
                     ),
                   ),
                   TextFormField(
-                    // initialValue: state.note.comment,
-                    controller: _newComment,
+                    controller: newComment,
                     style: TextStyles.quizResultText,
                     decoration: InputDecoration(
                       hintText: 'Комментарий',
@@ -92,8 +98,7 @@ class _EditNoteScreenState extends State<EditNoteScreen> {
                     ),
                   ),
                   TextFormField(
-                    // initialValue: state.note.url,
-                    controller: _newUrl,
+                    controller: newUrl,
                     style: TextStyles.noteUrlText,
                     decoration: InputDecoration(
                       hintText: 'Ссылка',
@@ -109,23 +114,27 @@ class _EditNoteScreenState extends State<EditNoteScreen> {
                     child: BottomButtonWidget(
                       buttonText: 'Сохранить',
                       onPressed: () {
-                        if (_newTitle.text.isNotEmpty &&
-                            _newComment.text.isNotEmpty) {
+                        if (newTitle.text.isNotEmpty &&
+                            newComment.text.isNotEmpty) {
                           context.read<NotesBloc>().add(
                                 UpdateNoteEvent(
                                   note: Note(
-                                    movieTitle: _newTitle.text,
-                                    dutarion: _newDuration.text,
-                                    comment: _newComment.text,
-                                    url: _newUrl.text,
+                                    movieTitle: newTitle.text,
+                                    dutarion: newDuration.text,
+                                    comment: newComment.text,
+                                    url: newUrl.text,
                                     movieImage: '',
                                   ),
                                 ),
                               );
-                          Navigator.of(context).pop();
                           context
                               .read<NotesBloc>()
                               .add(const FetchNotesEvent());
+                          Navigator.of(context).pop(
+                            MaterialPageRoute<dynamic>(
+                              builder: (context) => const NotesScreen(),
+                            ),
+                          );
                         } else {
                           ScaffoldMessenger.of(context).clearSnackBars();
                           ScaffoldMessenger.of(context).showSnackBar(

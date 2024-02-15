@@ -22,6 +22,12 @@ class NotesScreen extends StatefulWidget {
 
 class _NotesScreenState extends State<NotesScreen> {
   @override
+  // void initState() {
+  //   context.read<NotesBloc>().add(const FetchNotesEvent());
+  //   super.initState();
+  // }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -178,7 +184,9 @@ class _NotesScreenState extends State<NotesScreen> {
                                         Navigator.of(context).push(
                                           MaterialPageRoute<dynamic>(
                                             builder: (context) =>
-                                                const EditNoteScreen(),
+                                                EditNoteScreen(
+                                              note: state.note[index],
+                                            ),
                                           ),
                                         );
                                       },
