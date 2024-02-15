@@ -11,6 +11,7 @@ class AddNoteEvent extends NotesBlocEvent {
   final String comment;
   final String url;
   final String movieImage;
+  final bool isPinned;
 
   const AddNoteEvent({
     required this.movieTitle,
@@ -18,6 +19,7 @@ class AddNoteEvent extends NotesBlocEvent {
     required this.comment,
     required this.url,
     required this.movieImage,
+    required this.isPinned,
   });
 
   @override
