@@ -124,7 +124,7 @@ class _EditNoteScreenState extends State<EditNoteScreen> {
                                     comment: newComment.text,
                                     url: newUrl.text,
                                     movieImage: '',
-                                    // isPinned: false,
+                                    isPinned: false,
                                   ),
                                 ),
                               );

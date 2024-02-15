@@ -174,7 +174,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                                 comment: _comment.text,
                                 url: _url.text,
                                 movieImage: selectedImage?.path ?? '',
-                                // isPinned: toggleSwitch,
+                                isPinned: toggleSwitch,
                               ),
                             );
                         context.read<NotesBloc>().add(

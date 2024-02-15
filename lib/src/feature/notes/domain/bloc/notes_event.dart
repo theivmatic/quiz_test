@@ -11,7 +11,7 @@ class AddNoteEvent extends NotesBlocEvent {
   final String comment;
   final String url;
   final String movieImage;
-  // final bool isPinned;
+  final bool isPinned;
 
   const AddNoteEvent({
     required this.movieTitle,
@@ -19,11 +19,11 @@ class AddNoteEvent extends NotesBlocEvent {
     required this.comment,
     required this.url,
     required this.movieImage,
-    // required this.isPinned,
+    required this.isPinned,
   });
 
   @override
-  List<Object?> get props => [movieTitle, dutarion, comment, url, movieImage];
+  List<Object?> get props => [movieTitle, dutarion, comment, url, movieImage, isPinned];
 }
 
 class UpdateNoteEvent extends NotesBlocEvent {
