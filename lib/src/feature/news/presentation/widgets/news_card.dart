@@ -24,15 +24,19 @@ class NewsCardWidget extends StatelessWidget {
       onTap: onCardTap,
       child: Center(
         child: Container(
+          // width: MediaQuery.of(context).size.width,
           width: 343.w,
           height: 206.h,
+          // height: MediaQuery.of(context).size.aspectRatio,
           decoration: BoxDecoration(
             color: AppColors.popupMenuBackground,
             borderRadius: BorderRadius.circular(8.r),
           ),
           child: Column(
             children: [
-              Image.asset(imagePath ?? ''),
+              Image.asset(
+                imagePath ?? '',
+              ),
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: Column(
@@ -42,7 +46,9 @@ class NewsCardWidget extends StatelessWidget {
                       title ?? '',
                       style: TextStyles.newsTileTitle,
                     ),
-                    const SizedBox(height: 5),
+                    SizedBox(
+                      height: 5.h,
+                    ),
                     Text(
                       '$date • читать $timeToRead',
                       style: TextStyles.newsTileDateTime,

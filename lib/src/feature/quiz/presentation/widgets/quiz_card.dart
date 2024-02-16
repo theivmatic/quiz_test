@@ -22,7 +22,7 @@ class QuizCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 10.h),
+      padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
       child: InkWell(
         onTap: onCardTap,
         child: Container(
@@ -35,13 +35,13 @@ class QuizCardWidget extends StatelessWidget {
               Center(
                 child: Image.asset(
                   imagePath ?? '',
-                  // scale: 0.75.w,
+                  scale: 0.22.w,
                 ),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 30.w),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text(
                       title ?? '',
