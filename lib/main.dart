@@ -40,8 +40,11 @@ class MainApp extends StatelessWidget {
           create: (context) => QuizzesBloc(),
         ),
       ],
-      child: const MaterialApp(
-        home: NavigationScreen(),
+      child: MaterialApp(
+        useInheritedMediaQuery: true,
+        locale: DevicePreview.locale(context),
+        builder: DevicePreview.appBuilder,
+        home: const NavigationScreen(),
       ),
     );
   }
