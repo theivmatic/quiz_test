@@ -41,7 +41,12 @@ class PreparationTileWidget extends StatelessWidget {
             height: 10.h,
           ),
           if (imagePath != null)
-            Center(child: Image.asset(imagePath!))
+            Center(
+              child: Image.asset(
+                imagePath!,
+                scale: 0.2.w,
+              ),
+            )
           else
             const SizedBox(),
           SizedBox(
