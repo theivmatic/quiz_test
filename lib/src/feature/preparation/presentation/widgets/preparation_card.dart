@@ -22,7 +22,7 @@ class PreparationCardWidget extends StatelessWidget {
       onTap: onCardTap,
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(16.r),
         ),
         child: Stack(
           alignment: Alignment.center,

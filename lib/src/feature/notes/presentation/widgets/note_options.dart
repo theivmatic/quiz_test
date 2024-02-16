@@ -19,7 +19,7 @@ class NoteOptionsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return PopupMenuButton(
       shape: BeveledRectangleBorder(
-        borderRadius: BorderRadius.circular(6),
+        borderRadius: BorderRadius.circular(6.r),
       ),
       color: AppColors.popupMenuBackground,
       child: Image.asset(
@@ -46,7 +46,7 @@ class NoteOptionsWidget extends StatelessWidget {
               Image.asset(
                 'assets/icons/note_edit.png',
               ),
-              const SizedBox(width: 10),
+              SizedBox(width: 10.w),
               Text(
                 'Изменить',
                 style: TextStyles.editNoteText,
@@ -78,7 +78,9 @@ class NoteOptionsWidget extends StatelessWidget {
               builder: (_) => AlertDialog(
                 actionsAlignment: MainAxisAlignment.spaceEvenly,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16),
+                  borderRadius: BorderRadius.circular(
+                    16.r,
+                  ),
                 ),
                 backgroundColor: AppColors.popupMenuBackground,
                 title: Text(
@@ -91,7 +93,7 @@ class NoteOptionsWidget extends StatelessWidget {
                       shape: MaterialStatePropertyAll(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(
-                            5,
+                            5.r,
                           ),
                         ),
                       ),
@@ -112,7 +114,7 @@ class NoteOptionsWidget extends StatelessWidget {
                       shape: MaterialStatePropertyAll(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(
-                            5,
+                            5.r,
                           ),
                         ),
                       ),

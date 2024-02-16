@@ -129,7 +129,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                             height: 88.h,
                             decoration: BoxDecoration(
                               color: AppColors.answerBackground,
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(8.r),
                             ),
                             child: const Center(
                               child: Icon(Icons.photo_camera_outlined),

@@ -62,7 +62,9 @@ class _NotesScreenState extends State<NotesScreen> {
                     'Ваш список пока пуст',
                     style: TextStyles.factNumber,
                   ),
-                  const SizedBox(height: 15),
+                  SizedBox(
+                    height: 15.h,
+                  ),
                   Text(
                     'Нажмите «+», чтобы создать заметку',
                     style: TextStyles.addNoteText,

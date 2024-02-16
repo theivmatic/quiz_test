@@ -10,7 +10,7 @@ class PopUpWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return PopupMenuButton(
       shape: BeveledRectangleBorder(
-        borderRadius: BorderRadius.circular(6),
+        borderRadius: BorderRadius.circular(6.r),
       ),
       color: AppColors.popupMenuBackground,
       child: const Icon(
@@ -37,7 +37,7 @@ class PopUpWidget extends StatelessWidget {
             height: 28.h,
             decoration: BoxDecoration(
               color: AppColors.iconGrey,
-              borderRadius: BorderRadius.circular(5),
+              borderRadius: BorderRadius.circular(5.r),
             ),
             child: Center(
               child: Text(
@@ -54,7 +54,7 @@ class PopUpWidget extends StatelessWidget {
             height: 28.h,
             decoration: BoxDecoration(
               color: AppColors.buttonPink,
-              borderRadius: BorderRadius.circular(5),
+              borderRadius: BorderRadius.circular(5.r),
             ),
             child: Center(
               child: Text(

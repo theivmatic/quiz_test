@@ -28,7 +28,7 @@ class NewsCardWidget extends StatelessWidget {
           height: 206.h,
           decoration: BoxDecoration(
             color: AppColors.popupMenuBackground,
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(8.r),
           ),
           child: Column(
             children: [

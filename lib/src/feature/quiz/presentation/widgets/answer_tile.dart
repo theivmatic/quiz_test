@@ -23,7 +23,7 @@ class AnswerTileWidget extends StatelessWidget {
         child: Container(
           height: 43.h,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(8.r),
             color: answerColor,
           ),
           child: Center(

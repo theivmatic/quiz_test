@@ -50,7 +50,7 @@ class _NoteWidgetState extends State<NoteWidget> {
               ),
               decoration: BoxDecoration(
                 color: Colors.amber,
-                borderRadius: BorderRadius.circular(4),
+                borderRadius: BorderRadius.circular(4.r),
               ),
               // child: Image.file(
               //   widget.image ?? File(''),

@@ -18,7 +18,7 @@ class QuestionTileWidget extends StatelessWidget {
         height: 336.h,
         decoration: BoxDecoration(
           color: AppColors.popupMenuBackground,
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(16.r),
         ),
         child: Center(
           child: Padding(
