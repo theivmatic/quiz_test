@@ -19,7 +19,7 @@ class AnswerTileWidget extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
         child: Container(
           height: 43.h,
           decoration: BoxDecoration(

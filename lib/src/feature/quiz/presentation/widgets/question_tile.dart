@@ -13,7 +13,10 @@ class QuestionTileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(15),
+      padding: EdgeInsets.symmetric(
+        horizontal: 20.w,
+        vertical: 10.h,
+      ),
       child: Container(
         height: 336.h,
         decoration: BoxDecoration(
@@ -22,7 +25,7 @@ class QuestionTileWidget extends StatelessWidget {
         ),
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.all(20),
+            padding: EdgeInsets.all(20.dg),
             child: Text(
               questionText ?? '',
               style: TextStyles.factNumber,

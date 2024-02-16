@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/feature/news/presentation/screens/news_screen.dart';
 import 'package:quiz_test/src/feature/notes/presentation/screens/notes_screen.dart';
@@ -29,6 +30,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
     return Scaffold(
       body: screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+        iconSize: 24.h,
         type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
         onTap: (index) {
@@ -39,10 +41,10 @@ class _NavigationScreenState extends State<NavigationScreen> {
         elevation: 0,
         backgroundColor: AppColors.darkBackground,
         selectedItemColor: AppColors.buttonPink,
-        selectedFontSize: 11,
+        selectedFontSize: 11.sp,
         selectedLabelStyle: TextStyles.navbarLabel,
         unselectedItemColor: AppColors.lightGray,
-        unselectedFontSize: 11,
+        unselectedFontSize: 11.sp,
         unselectedLabelStyle: TextStyles.navbarLabel,
         showUnselectedLabels: true,
         items: const [
