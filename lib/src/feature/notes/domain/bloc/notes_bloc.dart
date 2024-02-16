@@ -25,7 +25,7 @@ class NotesBloc extends Bloc<NotesBlocEvent, NotesBlocState> {
 
     on<UpdateNoteEvent>((event, emit) async {
       await NotesDatabase.instance.update(
-        note: event.note,
+        note: event.updatedNote,
       );
     });
 

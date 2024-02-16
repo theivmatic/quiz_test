@@ -28,8 +28,8 @@ class AddNoteEvent extends NotesBlocEvent {
 }
 
 class UpdateNoteEvent extends NotesBlocEvent {
-  final Note note;
-  const UpdateNoteEvent({required this.note});
+  final Note updatedNote;
+  const UpdateNoteEvent({required this.updatedNote});
 
   @override
   List<Object?> get props => [];
