@@ -26,7 +26,7 @@ class NewsCardWidget extends StatelessWidget {
         child: Container(
           // width: MediaQuery.of(context).size.width,
           width: 343.w,
-          height: 206.h,
+          // height: 206.h,
           // height: MediaQuery.of(context).size.aspectRatio,
           decoration: BoxDecoration(
             color: AppColors.popupMenuBackground,
@@ -36,6 +36,7 @@ class NewsCardWidget extends StatelessWidget {
             children: [
               Image.asset(
                 imagePath ?? '',
+                scale: 0.2.w,
               ),
               Padding(
                 padding: const EdgeInsets.all(10),
