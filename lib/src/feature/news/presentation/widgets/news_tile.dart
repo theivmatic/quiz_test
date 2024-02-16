@@ -33,9 +33,15 @@ class NewsTileWidget extends StatelessWidget {
             style: TextStyles.factText,
           ),
           const SizedBox(height: 10),
-          if (imagePath != null) Image.asset(imagePath!) else const SizedBox(),
+          if (imagePath != null)
+            Center(child: Image.asset(imagePath!))
+          else
+            const SizedBox(),
           const SizedBox(height: 5),
-          Text(newsSubtext ?? '', style: TextStyles.factSubText),
+          Text(
+            newsSubtext ?? '',
+            style: TextStyles.factSubText,
+          ),
         ],
       ),
     );
