@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/feature/notes/domain/bloc/notes_bloc.dart';
 import 'package:quiz_test/src/feature/notes/presentation/screens/add_note_screen.dart';
@@ -49,35 +49,29 @@ class _NotesScreenState extends State<NotesScreen> {
             if (state.note.isEmpty) {
               return Column(
                 children: [
-                  const SizedBox(height: 40),
+                  SizedBox(
+                    height: 40.h,
+                  ),
                   Center(
                     child: Image.asset('assets/images/notes_image.png'),
                   ),
-                  const SizedBox(height: 20),
+                  SizedBox(
+                    height: 20.h,
+                  ),
                   Text(
                     'Ваш список пока пуст',
-                    style: GoogleFonts.robotoFlex(
-                      textStyle: const TextStyle(
-                        color: Color.fromRGBO(247, 247, 251, 1),
-                        fontSize: 17,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
+                    style: TextStyles.factNumber,
                   ),
                   const SizedBox(height: 15),
                   Text(
                     'Нажмите «+», чтобы создать заметку',
-                    style: GoogleFonts.robotoFlex(
-                      textStyle: const TextStyle(
-                        color: Color.fromRGBO(189, 193, 203, 1),
-                        fontSize: 13,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
+                    style: TextStyles.addNoteText,
                   ),
-                  const SizedBox(height: 15),
+                  SizedBox(
+                    height: 15.h,
+                  ),
                   Padding(
-                    padding: const EdgeInsets.only(right: 40),
+                    padding: EdgeInsets.only(right: 40.w),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [

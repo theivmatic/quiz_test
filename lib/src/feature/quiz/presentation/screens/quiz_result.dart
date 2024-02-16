@@ -1,6 +1,7 @@
 // ignore_for_file: require_trailing_commas
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/core/router/navigation_screen.dart';
 import 'package:quiz_test/src/core/widgets/bottom_button.dart';
@@ -110,8 +111,8 @@ class QuizResultScreen extends StatelessWidget {
                   ),
                 ],
               ),
-            const SizedBox(
-              height: 15,
+            SizedBox(
+              height: 15.h,
             ),
             if (rightAnswers == 0)
               Text(
@@ -131,16 +132,16 @@ class QuizResultScreen extends StatelessWidget {
                 style: TextStyles.factNumber,
                 textAlign: TextAlign.center,
               ),
-            const SizedBox(
-              height: 8,
+            SizedBox(
+              height: 8.h,
             ),
             Text(
               'Вы правильно ответили\nна $rightAnswers вопрос(ов) из $numberOfQuestions',
               style: TextStyles.quizResultText,
               textAlign: TextAlign.center,
             ),
-            const SizedBox(
-              height: 25,
+            SizedBox(
+              height: 25.h,
             ),
             BottomButtonWidget(
               buttonText: 'Закончить',

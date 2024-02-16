@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 
 class NewsCardWidget extends StatelessWidget {
@@ -23,8 +24,8 @@ class NewsCardWidget extends StatelessWidget {
       onTap: onCardTap,
       child: Center(
         child: Container(
-          width: 343,
-          height: 206,
+          width: 343.w,
+          height: 206.h,
           decoration: BoxDecoration(
             color: AppColors.popupMenuBackground,
             borderRadius: BorderRadius.circular(8),

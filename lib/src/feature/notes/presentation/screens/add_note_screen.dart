@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/core/widgets/bottom_button.dart';
@@ -113,8 +114,8 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                   focusedErrorBorder: InputBorder.none,
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 20.h,
               ),
               GestureDetector(
                 onTap: _pickImageFromGallery,
@@ -124,8 +125,8 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                       Column(
                         children: [
                           Container(
-                            width: 88,
-                            height: 88,
+                            width: 88.w,
+                            height: 88.h,
                             decoration: BoxDecoration(
                               color: AppColors.answerBackground,
                               borderRadius: BorderRadius.circular(8),
@@ -143,7 +144,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                     else
                       Container(
                         constraints: BoxConstraints.loose(
-                          const Size(88, 88),
+                          Size(88.w, 88.h),
                         ),
                         child: Image.file(selectedImage!),
                       ),

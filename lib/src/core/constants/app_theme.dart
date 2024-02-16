@@ -176,12 +176,26 @@ abstract class TextStyles {
       fontSize: 17.sp,
       color: AppColors.textGrey,
     ),
-  );
+  ); 
   static final noteUrlText = font(
     textStyle: TextStyle(
       fontWeight: FontWeight.w400,
       fontSize: 14.sp,
       color: AppColors.textUrl,
+    ),
+  );
+  static final addNoteText = font(
+    textStyle: TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 13.sp,
+      color: AppColors.textGrey,
+    ),
+  );
+  static final editNoteText = font(
+    textStyle: TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 13.sp,
+      color: AppColors.textWhite,
     ),
   );
 }

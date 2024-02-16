@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/feature/notes/domain/bloc/notes_bloc.dart';
 import 'package:quiz_test/src/feature/notes/presentation/screens/edit_note.dart';
@@ -49,18 +49,7 @@ class NoteOptionsWidget extends StatelessWidget {
               const SizedBox(width: 10),
               Text(
                 'Изменить',
-                style: GoogleFonts.robotoFlex(
-                  textStyle: const TextStyle(
-                    color: Color.fromRGBO(
-                      247,
-                      247,
-                      251,
-                      1,
-                    ),
-                    fontSize: 13,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
+                style: TextStyles.editNoteText,
               ),
             ],
           ),
@@ -71,21 +60,12 @@ class NoteOptionsWidget extends StatelessWidget {
               Image.asset(
                 'assets/icons/note_pin.png',
               ),
-              const SizedBox(width: 10),
+              SizedBox(
+                width: 10.w,
+              ),
               Text(
                 'Закрепить',
-                style: GoogleFonts.robotoFlex(
-                  textStyle: const TextStyle(
-                    color: Color.fromRGBO(
-                      247,
-                      247,
-                      251,
-                      1,
-                    ),
-                    fontSize: 13,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
+                style: TextStyles.editNoteText,
               ),
             ],
           ),
@@ -124,18 +104,7 @@ class NoteOptionsWidget extends StatelessWidget {
                     },
                     child: Text(
                       'Отменить',
-                      style: GoogleFonts.robotoFlex(
-                        textStyle: const TextStyle(
-                          color: Color.fromRGBO(
-                            53,
-                            53,
-                            58,
-                            1,
-                          ),
-                          fontSize: 13,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
+                      style: TextStyles.popupItemText,
                     ),
                   ),
                   FilledButton(
@@ -148,12 +117,7 @@ class NoteOptionsWidget extends StatelessWidget {
                         ),
                       ),
                       backgroundColor: const MaterialStatePropertyAll(
-                        Color.fromRGBO(
-                          252,
-                          35,
-                          87,
-                          1,
-                        ),
+                        AppColors.buttonPink,
                       ),
                     ),
                     onPressed: () {
@@ -166,13 +130,7 @@ class NoteOptionsWidget extends StatelessWidget {
                     },
                     child: Text(
                       'Удалить',
-                      style: GoogleFonts.robotoFlex(
-                        textStyle: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 13,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
+                      style: TextStyles.popupItemCancelText,
                     ),
                   ),
                 ],
@@ -184,21 +142,12 @@ class NoteOptionsWidget extends StatelessWidget {
               Image.asset(
                 'assets/icons/note_delete.png',
               ),
-              const SizedBox(width: 10),
+              SizedBox(
+                width: 10.w,
+              ),
               Text(
                 'Удалить',
-                style: GoogleFonts.robotoFlex(
-                  textStyle: const TextStyle(
-                    color: Color.fromRGBO(
-                      247,
-                      247,
-                      251,
-                      1,
-                    ),
-                    fontSize: 13,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
+                style: TextStyles.editNoteText,
               ),
             ],
           ),

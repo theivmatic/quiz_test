@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 
 class AnswerTileWidget extends StatelessWidget {
@@ -20,7 +21,7 @@ class AnswerTileWidget extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
-          height: 43,
+          height: 43.h,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
             color: answerColor,

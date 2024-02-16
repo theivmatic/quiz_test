@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/core/screens/error_screen.dart';
 import 'package:quiz_test/src/feature/preparation/domain/bloc/preparation_bloc.dart';
@@ -48,7 +49,7 @@ class _PreparationsScreenState extends State<PreparationsScreen> {
               ),
               itemBuilder: (context, index) {
                 return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  padding: EdgeInsets.symmetric(horizontal: 10.w),
                   child: PreparationCardWidget(
                     title: state.preparationsLoaded.preparations?[index]
                         .preparationName,
@@ -79,24 +80,6 @@ class _PreparationsScreenState extends State<PreparationsScreen> {
             ),
         },
       ),
-
-      // GridView.count(
-      //   crossAxisCount: 2,
-      //   children: [
-      //     GestureDetector(
-      //       onTap: () {
-      //         Navigator.of(context).push(
-      //           MaterialPageRoute<dynamic>(
-      //             builder: (context) => const PreparationScreen(),
-      //           ),
-      //         );
-      //       },
-      //       child: Image.asset(
-      //         'assets/images/card_topic.png',
-      //       ),
-      //     ),
-      //   ],
-      // ),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 
 class NewsTileWidget extends StatelessWidget {
@@ -18,26 +19,34 @@ class NewsTileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
+      padding: EdgeInsets.symmetric(horizontal: 15.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(height: 10),
+          SizedBox(
+            height: 10.h,
+          ),
           Text(
             newsTitle ?? '',
             style: TextStyles.factNumber,
           ),
-          const SizedBox(height: 10),
+          SizedBox(
+            height: 10.h,
+          ),
           Text(
             newsText ?? '',
             style: TextStyles.factText,
           ),
-          const SizedBox(height: 10),
+          SizedBox(
+            height: 10.h,
+          ),
           if (imagePath != null)
             Center(child: Image.asset(imagePath!))
           else
             const SizedBox(),
-          const SizedBox(height: 5),
+          SizedBox(
+            height: 5.h,
+          ),
           Text(
             newsSubtext ?? '',
             style: TextStyles.factSubText,
