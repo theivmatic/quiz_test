@@ -1,6 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quiz_test/src/core/bloc/observer.dart';
 import 'package:quiz_test/src/core/router/navigation_screen.dart';
 // import 'package:quiz_test/src/core/screens/splash_screen.dart';
@@ -40,11 +41,16 @@ class MainApp extends StatelessWidget {
           create: (context) => QuizzesBloc(),
         ),
       ],
-      child: MaterialApp(
-        useInheritedMediaQuery: true,
-        locale: DevicePreview.locale(context),
-        builder: DevicePreview.appBuilder,
-        home: const NavigationScreen(),
+      child: ScreenUtilInit(
+        designSize: const Size(375, 812),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: (context, child) => MaterialApp(
+          useInheritedMediaQuery: true,
+          locale: DevicePreview.locale(context),
+          builder: DevicePreview.appBuilder,
+          home: const NavigationScreen(),
+        ),
       ),
     );
   }

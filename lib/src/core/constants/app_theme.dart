@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 const font = GoogleFonts.robotoFlex;
@@ -25,71 +26,71 @@ abstract class AppColors {
 
 abstract class TextStyles {
   static final startScreenText = font(
-    textStyle: const TextStyle(
-      fontSize: 19,
+    textStyle: TextStyle(
+      fontSize: 19.sp,
       fontWeight: FontWeight.w700,
       color: AppColors.textWhite,
     ),
   );
   static final bottomButtonText = font(
-    textStyle: const TextStyle(
-      fontSize: 14,
+    textStyle: TextStyle(
+      fontSize: 14.sp,
       fontWeight: FontWeight.w700,
       color: AppColors.textWhite,
     ),
   );
   static final appBarText = font(
-    textStyle: const TextStyle(
-      fontSize: 19,
+    textStyle: TextStyle(
+      fontSize: 19.sp,
       fontWeight: FontWeight.w700,
       color: AppColors.textWhite,
     ),
   );
   static final hintBigText = font(
-    textStyle: const TextStyle(
-      fontSize: 17,
+    textStyle: TextStyle(
+      fontSize: 17.sp,
       fontWeight: FontWeight.w500,
       color: AppColors.lightGray,
     ),
   );
   static final hintMediumText = font(
-    textStyle: const TextStyle(
-      fontSize: 14,
+    textStyle: TextStyle(
+      fontSize: 14.sp,
       fontWeight: FontWeight.w400,
       color: AppColors.lightGray,
     ),
   );
   static final errorText = font(
-    textStyle: const TextStyle(
-      fontSize: 12,
+    textStyle: TextStyle(
+      fontSize: 12.sp,
       fontWeight: FontWeight.w400,
       color: AppColors.textWhite,
     ),
   );
   static final factNumber = font(
-    textStyle: const TextStyle(
-      fontSize: 17,
+    textStyle: TextStyle(
+      fontSize: 17.sp,
       fontWeight: FontWeight.w500,
       color: AppColors.textWhite,
     ),
   );
   static final factText = font(
-    textStyle: const TextStyle(
-      fontSize: 16,
+    textStyle: TextStyle(
+      fontSize: 16.sp,
       fontWeight: FontWeight.w400,
       color: AppColors.textGrey,
     ),
   );
   static final factSubText = font(
-    textStyle: const TextStyle(
-      fontSize: 11,
+    textStyle: TextStyle(
+      fontSize: 11.sp,
       fontWeight: FontWeight.w400,
       color: AppColors.textGrey,
     ),
   );
   static final settingsTileText = font(
-    textStyle: const TextStyle(
-      fontSize: 16,
+    textStyle: TextStyle(
+      fontSize: 16.sp,
       fontWeight: FontWeight.w400,
       color: AppColors.textWhite,
     ),
@@ -100,86 +101,86 @@ abstract class TextStyles {
     ),
   );
   static final newsTileTitle = font(
-    textStyle: const TextStyle(
+    textStyle: TextStyle(
       fontWeight: FontWeight.w600,
-      fontSize: 14,
+      fontSize: 14.sp,
       color: AppColors.white,
     ),
   );
   static final newsTileDateTime = font(
-    textStyle: const TextStyle(
+    textStyle: TextStyle(
       fontWeight: FontWeight.w400,
-      fontSize: 12,
+      fontSize: 12.sp,
       color: AppColors.textGrey,
     ),
   );
   static final popupTitleText = font(
-    textStyle: const TextStyle(
+    textStyle: TextStyle(
       fontWeight: FontWeight.w400,
-      fontSize: 11,
+      fontSize: 11.sp,
       color: AppColors.textWhite,
     ),
   );
   static final feedbackTitleText = font(
-    textStyle: const TextStyle(
+    textStyle: TextStyle(
       fontWeight: FontWeight.w700,
-      fontSize: 16,
+      fontSize: 16.sp,
       color: AppColors.textWhite,
     ),
   );
   static final questionCounterText = font(
-    textStyle: const TextStyle(
+    textStyle: TextStyle(
       fontWeight: FontWeight.w700,
-      fontSize: 12,
+      fontSize: 12.sp,
       color: AppColors.textDarkGrey,
     ),
   );
   static final popupItemText = font(
-    textStyle: const TextStyle(
+    textStyle: TextStyle(
       fontWeight: FontWeight.w400,
-      fontSize: 13,
+      fontSize: 13.sp,
       color: AppColors.divider,
     ),
   );
   static final popupItemCancelText = font(
-    textStyle: const TextStyle(
+    textStyle: TextStyle(
       fontWeight: FontWeight.w400,
-      fontSize: 13,
+      fontSize: 13.sp,
       color: AppColors.white,
     ),
   );
   static final uploadImageText = font(
-    textStyle: const TextStyle(
+    textStyle: TextStyle(
       fontWeight: FontWeight.w500,
-      fontSize: 11,
+      fontSize: 11.sp,
       color: AppColors.lightGray,
     ),
   );
   static final quizResultText = font(
-    textStyle: const TextStyle(
+    textStyle: TextStyle(
       fontWeight: FontWeight.w400,
-      fontSize: 14,
+      fontSize: 14.sp,
       color: AppColors.textGrey,
     ),
   );
   static final quizCardTitleText = font(
-    textStyle: const TextStyle(
+    textStyle: TextStyle(
       fontWeight: FontWeight.w900,
-      fontSize: 22,
+      fontSize: 22.sp,
       color: AppColors.textWhite,
     ),
   );
   static final noteTitleText = font(
-    textStyle: const TextStyle(
+    textStyle: TextStyle(
       fontWeight: FontWeight.w500,
-      fontSize: 17,
+      fontSize: 17.sp,
       color: AppColors.textGrey,
     ),
   );
   static final noteUrlText = font(
-    textStyle: const TextStyle(
+    textStyle: TextStyle(
       fontWeight: FontWeight.w400,
-      fontSize: 14,
+      fontSize: 14.sp,
       color: AppColors.textUrl,
     ),
   );
