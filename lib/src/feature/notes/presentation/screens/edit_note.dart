@@ -16,12 +16,6 @@ class EditNoteScreen extends StatefulWidget {
 }
 
 class _EditNoteScreenState extends State<EditNoteScreen> {
-  // final TextEditingController _newTitle =
-  //     TextEditingController(text: '');
-  // final TextEditingController _newDuration = TextEditingController();
-  // final TextEditingController _newComment = TextEditingController();
-  // final TextEditingController _newUrl = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     final newTitle = TextEditingController(text: widget.note?.movieTitle);
@@ -118,7 +112,8 @@ class _EditNoteScreenState extends State<EditNoteScreen> {
                             newComment.text.isNotEmpty) {
                           context.read<NotesBloc>().add(
                                 UpdateNoteEvent(
-                                  note: Note(
+                                  updatedNote: Note(
+                                    id: widget.note?.id,
                                     movieTitle: newTitle.text,
                                     dutarion: newDuration.text,
                                     comment: newComment.text,

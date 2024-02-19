@@ -12,8 +12,12 @@ final class NotesBlocInitialState extends NotesBlocState {
 
 class DisplayNotes extends NotesBlocState {
   final List<Note> note;
+  final String imagePath;
 
-  const DisplayNotes({required this.note});
+  const DisplayNotes({
+    required this.note,
+    required this.imagePath,
+  });
 
   @override
   List<Object> get props => [note];
@@ -22,7 +26,9 @@ class DisplayNotes extends NotesBlocState {
 class DisplaySpecificNotes extends NotesBlocState {
   final Note note;
 
-  const DisplaySpecificNotes({required this.note});
+  const DisplaySpecificNotes({
+    required this.note,
+  });
 
   @override
   List<Object> get props => [note];

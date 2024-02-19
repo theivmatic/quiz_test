@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/feature/notes/domain/bloc/notes_bloc.dart';
 import 'package:quiz_test/src/feature/notes/domain/models/note_model.dart';
 import 'package:quiz_test/src/feature/notes/presentation/screens/note_details.dart';
@@ -42,53 +43,42 @@ class _NoteWidgetState extends State<NoteWidget> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              width: 76,
-              height: 76,
+              width: 76.w,
+              height: 76.h,
               constraints: BoxConstraints.loose(
-                const Size(76, 76),
+                Size(76.w, 76.h),
               ),
               decoration: BoxDecoration(
                 color: Colors.amber,
-                borderRadius: BorderRadius.circular(4),
+                borderRadius: BorderRadius.circular(4.r),
               ),
+              // child: Image.asset(widget.imagePath),
               // child: Image.file(
               //   widget.image ?? File(''),
               // ),
             ),
             SizedBox(
-              width: 211,
-              height: 77,
+              width: 211.w,
+              height: 77.h,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     widget.note.movieTitle,
-                    style: GoogleFonts.robotoFlex(
-                      textStyle: const TextStyle(
-                        color: Color.fromRGBO(247, 247, 251, 1),
-                        fontSize: 17,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
+                    style: TextStyles.factNumber,
                   ),
                   Text(
                     widget.note.comment,
                     maxLines: 3,
                     overflow: TextOverflow.ellipsis,
-                    style: GoogleFonts.robotoFlex(
-                      textStyle: const TextStyle(
-                        color: Color.fromRGBO(189, 193, 203, 1),
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
+                    style: TextStyles.newsTileDateTime,
                   ),
                 ],
               ),
             ),
             SizedBox(
-              height: 77,
+              height: 77.h,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [

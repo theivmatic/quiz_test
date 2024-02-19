@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 
 class PreparationCardWidget extends StatelessWidget {
@@ -21,7 +22,7 @@ class PreparationCardWidget extends StatelessWidget {
       onTap: onCardTap,
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(16.r),
         ),
         child: Stack(
           alignment: Alignment.center,
@@ -39,7 +40,7 @@ class PreparationCardWidget extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
+              padding: EdgeInsets.symmetric(horizontal: 25.w),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -47,8 +48,8 @@ class PreparationCardWidget extends StatelessWidget {
                     title ?? '',
                     style: TextStyles.quizCardTitleText,
                   ),
-                  const SizedBox(
-                    height: 10,
+                  SizedBox(
+                    height: 10.h,
                   ),
                   Text(
                     subtitle ?? '',

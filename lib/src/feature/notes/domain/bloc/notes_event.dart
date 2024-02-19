@@ -23,13 +23,22 @@ class AddNoteEvent extends NotesBlocEvent {
   });
 
   @override
-  List<Object?> get props =>
-      [movieTitle, dutarion, comment, url, movieImage, isPinned];
+  List<Object?> get props => [
+        movieTitle,
+        dutarion,
+        comment,
+        url,
+        movieImage,
+        isPinned,
+      ];
 }
 
 class UpdateNoteEvent extends NotesBlocEvent {
-  final Note note;
-  const UpdateNoteEvent({required this.note});
+  final Note updatedNote;
+
+  const UpdateNoteEvent({
+    required this.updatedNote,
+  });
 
   @override
   List<Object?> get props => [];
@@ -44,7 +53,10 @@ class FetchNotesEvent extends NotesBlocEvent {
 
 class FetchSpecificNoteEvent extends NotesBlocEvent {
   final int id;
-  const FetchSpecificNoteEvent({required this.id});
+
+  const FetchSpecificNoteEvent({
+    required this.id,
+  });
 
   @override
   List<Object?> get props => [id];
@@ -52,16 +64,11 @@ class FetchSpecificNoteEvent extends NotesBlocEvent {
 
 class DeleteNoteEvent extends NotesBlocEvent {
   final int id;
-  const DeleteNoteEvent({required this.id});
+
+  const DeleteNoteEvent({
+    required this.id,
+  });
 
   @override
   List<Object?> get props => [id];
-}
-
-class PinNoteEvent extends NotesBlocEvent {
-  final bool isPinned;
-  const PinNoteEvent({required this.isPinned});
-
-  @override
-  List<Object?> get props => [];
 }

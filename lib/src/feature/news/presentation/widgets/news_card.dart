@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 
 class NewsCardWidget extends StatelessWidget {
@@ -19,37 +20,46 @@ class NewsCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onCardTap,
-      child: Center(
-        child: Container(
-          width: 343,
-          height: 206,
-          decoration: BoxDecoration(
-            color: AppColors.popupMenuBackground,
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: Column(
-            children: [
-              Image.asset(imagePath ?? ''),
-              Padding(
-                padding: const EdgeInsets.all(10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title ?? '',
-                      style: TextStyles.newsTileTitle,
-                    ),
-                    const SizedBox(height: 5),
-                    Text(
-                      '$date • читать $timeToRead',
-                      style: TextStyles.newsTileDateTime,
-                    ),
-                  ],
+    return Padding(
+      padding: EdgeInsets.only(
+        bottom: 20.h,
+      ),
+      child: InkWell(
+        onTap: onCardTap,
+        child: Center(
+          child: Container(
+            width: 343.w,
+            decoration: BoxDecoration(
+              color: AppColors.popupMenuBackground,
+              borderRadius: BorderRadius.circular(8.r),
+            ),
+            child: Column(
+              children: [
+                Image.asset(
+                  imagePath ?? '',
+                  scale: 0.2.w,
                 ),
-              ),
-            ],
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title ?? '',
+                        style: TextStyles.newsTileTitle,
+                      ),
+                      SizedBox(
+                        height: 5.h,
+                      ),
+                      Text(
+                        '$date • читать $timeToRead',
+                        style: TextStyles.newsTileDateTime,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

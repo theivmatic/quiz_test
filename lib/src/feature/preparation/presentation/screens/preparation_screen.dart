@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/feature/preparation/domain/models/preparations_entity.dart';
 import 'package:quiz_test/src/feature/preparation/presentation/widgets/preparation_tile.dart';
@@ -43,7 +44,7 @@ class _PreparationScreenState extends State<PreparationScreen> {
             return Wrap(
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  padding: EdgeInsets.symmetric(horizontal: 15.w),
                   child: Text(
                     widget.preparation?.title ?? '',
                     style: TextStyles.appBarText,

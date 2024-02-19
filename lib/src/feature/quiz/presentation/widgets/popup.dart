@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/core/router/navigation_screen.dart';
 
@@ -9,7 +10,7 @@ class PopUpWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return PopupMenuButton(
       shape: BeveledRectangleBorder(
-        borderRadius: BorderRadius.circular(6),
+        borderRadius: BorderRadius.circular(6.r),
       ),
       color: AppColors.popupMenuBackground,
       child: const Icon(
@@ -32,11 +33,11 @@ class PopUpWidget extends StatelessWidget {
             );
           },
           child: Container(
-            width: 228,
-            height: 28,
+            width: 228.w,
+            height: 28.h,
             decoration: BoxDecoration(
               color: AppColors.iconGrey,
-              borderRadius: BorderRadius.circular(5),
+              borderRadius: BorderRadius.circular(5.r),
             ),
             child: Center(
               child: Text(
@@ -49,11 +50,11 @@ class PopUpWidget extends StatelessWidget {
         PopupMenuItem<dynamic>(
           onTap: () {},
           child: Container(
-            width: 228,
-            height: 28,
+            width: 228.w,
+            height: 28.h,
             decoration: BoxDecoration(
               color: AppColors.buttonPink,
-              borderRadius: BorderRadius.circular(5),
+              borderRadius: BorderRadius.circular(5.r),
             ),
             child: Center(
               child: Text(

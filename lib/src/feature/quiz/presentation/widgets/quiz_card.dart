@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/feature/quiz/presentation/widgets/quiz_difficulry.dart';
 
@@ -21,12 +22,12 @@ class QuizCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
       child: InkWell(
         onTap: onCardTap,
         child: Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(16.r),
           ),
           child: Stack(
             alignment: Alignment.bottomCenter,
@@ -34,13 +35,13 @@ class QuizCardWidget extends StatelessWidget {
               Center(
                 child: Image.asset(
                   imagePath ?? '',
-                  scale: 0.95,
+                  scale: 0.22.w,
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30),
+                padding: EdgeInsets.symmetric(horizontal: 30.w),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text(
                       title ?? '',

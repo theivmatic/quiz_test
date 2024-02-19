@@ -29,90 +29,92 @@ class _SettingsScreenState extends State<SettingsScreen> {
         backgroundColor: AppColors.darkBackground,
       ),
       backgroundColor: AppColors.darkBackground,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SettingsTileWidget(
-            tileText: 'Оценить приложение',
-            onTap: () async {
-              if (await inAppReview.isAvailable()) {
-                await inAppReview.requestReview();
-              }
-            },
-          ),
-          const Divider(
-            color: AppColors.settingsDivider,
-          ),
-          SettingsTileWidget(
-            tileText: 'О приложении',
-            onTap: () {},
-          ),
-          const Divider(
-            color: AppColors.settingsDivider,
-          ),
-          SettingsTileWidget(
-            tileText: 'Политика конфиденциальности',
-            onTap: () {
-              launchUrl(
-                AppUrls.privacyPolicy,
-                mode: LaunchMode.externalApplication,
-              );
-            },
-          ),
-          const Divider(
-            color: AppColors.settingsDivider,
-          ),
-          SettingsTileWidget(
-            tileText: 'Пользовательское соглашение',
-            onTap: () {
-              launchUrl(
-                AppUrls.userAgreement,
-                mode: LaunchMode.externalApplication,
-              );
-            },
-          ),
-          const Divider(
-            color: AppColors.settingsDivider,
-          ),
-          SettingsTileWidget(
-            tileText: 'Обратная связь',
-            onTap: () {
-              showCupertinoDialog<VoidCallback>(
-                barrierDismissible: true,
-                context: context,
-                builder: (_) => AlertDialog(
-                  backgroundColor: AppColors.popupMenuBackground,
-                  title: Text(
-                    'Обратная связь',
-                    style: TextStyles.feedbackTitleText,
-                  ),
-                  content: TextFormField(),
-                  actions: [
-                    FilledButton(
-                      onPressed: () {},
-                      child: const Text('Отправить'),
-                      style: const ButtonStyle(
-                        backgroundColor:
-                            MaterialStatePropertyAll(AppColors.buttonPink),
-                      ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SettingsTileWidget(
+              tileText: 'Оценить приложение',
+              onTap: () async {
+                if (await inAppReview.isAvailable()) {
+                  await inAppReview.requestReview();
+                }
+              },
+            ),
+            const Divider(
+              color: AppColors.settingsDivider,
+            ),
+            SettingsTileWidget(
+              tileText: 'О приложении',
+              onTap: () {},
+            ),
+            const Divider(
+              color: AppColors.settingsDivider,
+            ),
+            SettingsTileWidget(
+              tileText: 'Политика конфиденциальности',
+              onTap: () {
+                launchUrl(
+                  AppUrls.privacyPolicy,
+                  mode: LaunchMode.externalApplication,
+                );
+              },
+            ),
+            const Divider(
+              color: AppColors.settingsDivider,
+            ),
+            SettingsTileWidget(
+              tileText: 'Пользовательское соглашение',
+              onTap: () {
+                launchUrl(
+                  AppUrls.userAgreement,
+                  mode: LaunchMode.externalApplication,
+                );
+              },
+            ),
+            const Divider(
+              color: AppColors.settingsDivider,
+            ),
+            SettingsTileWidget(
+              tileText: 'Обратная связь',
+              onTap: () {
+                showCupertinoDialog<VoidCallback>(
+                  barrierDismissible: true,
+                  context: context,
+                  builder: (_) => AlertDialog(
+                    backgroundColor: AppColors.popupMenuBackground,
+                    title: Text(
+                      'Обратная связь',
+                      style: TextStyles.feedbackTitleText,
                     ),
-                  ],
-                  actionsAlignment: MainAxisAlignment.center,
-                ),
-              );
-            },
-          ),
-          const Divider(
-            color: AppColors.settingsDivider,
-          ),
-          SettingsTileWidget(
-            tileText: 'Сброс статистики',
-            onTap: () {},
-          ),
-          const Divider(
-            color: AppColors.settingsDivider,
-          ),
-        ],
+                    content: TextFormField(),
+                    actions: [
+                      FilledButton(
+                        onPressed: () {},
+                        child: const Text('Отправить'),
+                        style: const ButtonStyle(
+                          backgroundColor:
+                              MaterialStatePropertyAll(AppColors.buttonPink),
+                        ),
+                      ),
+                    ],
+                    actionsAlignment: MainAxisAlignment.center,
+                  ),
+                );
+              },
+            ),
+            const Divider(
+              color: AppColors.settingsDivider,
+            ),
+            SettingsTileWidget(
+              tileText: 'Сброс статистики',
+              onTap: () {},
+            ),
+            const Divider(
+              color: AppColors.settingsDivider,
+            ),
+          ],
+        ),
       ),
     );
   }

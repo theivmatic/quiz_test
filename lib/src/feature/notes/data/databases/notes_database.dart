@@ -24,7 +24,6 @@ class NotesDatabase {
       path,
       version: 1,
       onCreate: _createDB,
-      onUpgrade: _onUpgrade,
     );
   }
 
@@ -44,14 +43,6 @@ CREATE TABLE $tableNotes (
   ${NoteFields.isPinned} $boolType
 )
     ''');
-  }
-
-  void _onUpgrade(Database db, int oldVersion, int newVersion) {
-    if (oldVersion < 2) {
-      db.execute(
-        'ALTER TABLE $tableNotes ADD COLUMN isPinned BOOL DEFAULT false;',
-      );
-    }
   }
 
   Future<Note> create(Note note) async {
@@ -92,6 +83,17 @@ CREATE TABLE $tableNotes (
     return db.update(
       tableNotes,
       note.toJson(),
+      where: '${NoteFields.id} = ?',
+      whereArgs: [note.id],
+    );
+  }
+
+  Future<int> pinNote({required Note note}) async {
+    final db = await instance.database;
+
+    return db.update(
+      tableNotes,
+      {NoteFields.isPinned: note.isPinned ? 1 : 0},
       where: '${NoteFields.id} = ?',
       whereArgs: [note.id],
     );

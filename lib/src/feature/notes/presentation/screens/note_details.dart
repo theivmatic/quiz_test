@@ -1,6 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
+import 'package:quiz_test/src/feature/notes/data/databases/notes_database.dart';
 import 'package:quiz_test/src/feature/notes/domain/bloc/notes_bloc.dart';
 import 'package:quiz_test/src/feature/notes/domain/models/note_model.dart';
 
@@ -39,10 +42,15 @@ class _NoteDetailsScreenState extends State<NoteDetailsScreen> {
         ),
         actions: [
           IconButton(
-            onPressed: () {
-              setState(() {
-                widget.note.isPinned = !widget.note.isPinned;
-              });
+            onPressed: () async {
+              await NotesDatabase.instance.pinNote(note: widget.note);
+              if (widget.note.isPinned == false) {
+                widget.note.isPinned = true;
+              } else {
+                widget.note.isPinned = false;
+              }
+              log(widget.note.isPinned.toString());
+              setState(() {});
             },
             icon: Image.asset(
               'assets/icons/pin_icon.png',
@@ -129,74 +137,6 @@ class _NoteDetailsScreenState extends State<NoteDetailsScreen> {
                       focusedErrorBorder: InputBorder.none,
                     ),
                   ),
-                  // Image.file(_selectedImage),
-
-                  // GestureDetector(
-                  //   onTap: _pickImageFromGallery,
-                  //   child: Column(
-                  //     children: [
-                  //       Container(
-                  //         width: 88,
-                  //         height: 88,
-                  //         decoration: BoxDecoration(
-                  //           color: AppColors.answerBackground,
-                  //           borderRadius: BorderRadius.circular(8),
-                  //         ),
-                  //         child: const Center(
-                  //           child: Icon(Icons.photo_camera_outlined),
-                  //         ),
-                  //       ),
-                  //       if (_selectedImage != null)
-                  //         Image.file(_selectedImage!)
-                  //       else
-                  //         const SizedBox(),
-                  //       const SizedBox(
-                  //         height: 10,
-                  //       ),
-                  //       Text(
-                  //         'Загрузить файл',
-                  //         style: TextStyles.uploadImageText,
-                  //       ),
-                  //     ],
-                  //   ),
-                  // ),
-                  // BlocBuilder<NotesBloc, NotesBlocState>(
-                  //   builder: (context, state) {
-                  //     return BottomButtonWidget(
-                  //       buttonText: 'Сохранить',
-                  //       onPressed: () {
-                  //         if (_title.text.isNotEmpty && _comment.text.isNotEmpty) {
-                  //           context.read<NotesBloc>().add(
-                  //                 AddNoteEvent(
-                  //                   movieTitle: _title.text,
-                  //                   dutarion: _duration.text,
-                  //                   comment: _comment.text,
-                  //                   url: _url.text,
-                  //                   movieImage: '',
-                  //                 ),
-                  //               );
-                  //           context.read<NotesBloc>().add(
-                  //                 const FetchNotesEvent(),
-                  //               );
-                  //           Navigator.of(context).pop(
-                  //             MaterialPageRoute<dynamic>(
-                  //               builder: (context) => const NotesScreen(),
-                  //             ),
-                  //           );
-                  //         } else {
-                  //           ScaffoldMessenger.of(context).showSnackBar(
-                  //             SnackBar(
-                  //               content: Text(
-                  //                 'Поля название и комментарий должны быть заполнены'
-                  //                     .toUpperCase(),
-                  //               ),
-                  //             ),
-                  //           );
-                  //         }
-                  //       },
-                  //     );
-                  //   },
-                  // ),
                 ],
               ),
             );

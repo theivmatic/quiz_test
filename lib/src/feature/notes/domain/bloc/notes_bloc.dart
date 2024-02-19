@@ -25,23 +25,34 @@ class NotesBloc extends Bloc<NotesBlocEvent, NotesBlocState> {
 
     on<UpdateNoteEvent>((event, emit) async {
       await NotesDatabase.instance.update(
-        note: event.note,
+        note: event.updatedNote,
       );
     });
 
     on<FetchNotesEvent>((event, emit) async {
       notes = await NotesDatabase.instance.readAllNotes();
-      emit(DisplayNotes(note: notes));
+      emit(
+        DisplayNotes(
+          note: notes,
+          imagePath: NoteFields.movieImage,
+        ),
+      );
     });
 
     on<FetchSpecificNoteEvent>((event, emit) async {
       final note = await NotesDatabase.instance.readNote(id: event.id);
-      emit(DisplaySpecificNotes(note: note));
+      emit(
+        DisplaySpecificNotes(
+          note: note,
+        ),
+      );
     });
 
     on<DeleteNoteEvent>((event, emit) async {
       await NotesDatabase.instance.delete(id: event.id);
-      add(const FetchNotesEvent());
+      add(
+        const FetchNotesEvent(),
+      );
     });
   }
 }

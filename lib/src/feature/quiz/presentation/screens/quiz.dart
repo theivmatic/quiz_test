@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/feature/quiz/domain/models/quizzes_entity.dart';
 import 'package:quiz_test/src/feature/quiz/presentation/screens/quiz_result.dart';
@@ -34,10 +35,6 @@ class _QuizScreenState extends State<QuizScreen> {
       if (answerScore) {
         _totalScore++;
       }
-      // when quiz ends
-      // if (_questionIndex + 1 == quizLength) {
-      //   endOfQuiz = true;
-      // }
     });
   }
 
@@ -61,17 +58,8 @@ class _QuizScreenState extends State<QuizScreen> {
             ? widget.quiz!.questions!.length
             : 0)) {
       endOfQuiz = true;
-      // _resetQuiz();
     }
   }
-
-  // void _resetQuiz() {
-  //   setState(() {
-  //     _questionIndex = 0;
-  //     _totalScore = 0;
-  //     endOfQuiz = false;
-  //   });
-  // }
 
   @override
   void initState() {
@@ -100,7 +88,7 @@ class _QuizScreenState extends State<QuizScreen> {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Padding(
-              padding: const EdgeInsets.only(right: 15),
+              padding: EdgeInsets.only(right: 15.w),
               child: Text(
                 'Вопрос ${_questionIndex + 1} из $quizLength',
                 style: TextStyles.questionCounterText,
