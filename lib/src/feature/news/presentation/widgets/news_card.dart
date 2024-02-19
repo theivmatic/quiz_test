@@ -20,44 +20,46 @@ class NewsCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onCardTap,
-      child: Center(
-        child: Container(
-          // width: MediaQuery.of(context).size.width,
-          width: 343.w,
-          // height: 206.h,
-          // height: MediaQuery.of(context).size.aspectRatio,
-          decoration: BoxDecoration(
-            color: AppColors.popupMenuBackground,
-            borderRadius: BorderRadius.circular(8.r),
-          ),
-          child: Column(
-            children: [
-              Image.asset(
-                imagePath ?? '',
-                scale: 0.2.w,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title ?? '',
-                      style: TextStyles.newsTileTitle,
-                    ),
-                    SizedBox(
-                      height: 5.h,
-                    ),
-                    Text(
-                      '$date • читать $timeToRead',
-                      style: TextStyles.newsTileDateTime,
-                    ),
-                  ],
+    return Padding(
+      padding: EdgeInsets.only(
+        bottom: 20.h,
+      ),
+      child: InkWell(
+        onTap: onCardTap,
+        child: Center(
+          child: Container(
+            width: 343.w,
+            decoration: BoxDecoration(
+              color: AppColors.popupMenuBackground,
+              borderRadius: BorderRadius.circular(8.r),
+            ),
+            child: Column(
+              children: [
+                Image.asset(
+                  imagePath ?? '',
+                  scale: 0.2.w,
                 ),
-              ),
-            ],
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title ?? '',
+                        style: TextStyles.newsTileTitle,
+                      ),
+                      SizedBox(
+                        height: 5.h,
+                      ),
+                      Text(
+                        '$date • читать $timeToRead',
+                        style: TextStyles.newsTileDateTime,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
