@@ -60,16 +60,23 @@ class NoteOptionsWidget extends StatelessWidget {
         PopupMenuItem<dynamic>(
           onTap: () async {
             await NotesDatabase.instance.pinNote(note: widget.note);
-            // widget.note.isPinned = !widget.note.isPinned;
+            if (widget.note.isPinned == false) {
+              widget.note.isPinned = true;
+            } else {
+              widget.note.isPinned = false;
+            }
             log(widget.note.isPinned.toString());
           },
           child: Row(
             children: [
-              if (widget.note.isPinned) Image.asset(
-                'assets/icons/note_unpin.png',
-              ) else Image.asset(
-                'assets/icons/note_pin.png',
-              ),
+              if (widget.note.isPinned)
+                Image.asset(
+                  'assets/icons/note_unpin.png',
+                )
+              else
+                Image.asset(
+                  'assets/icons/note_pin.png',
+                ),
               SizedBox(
                 width: 10.w,
               ),
