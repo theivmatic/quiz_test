@@ -102,8 +102,7 @@ CREATE TABLE $tableNotes (
 
     return db.update(
       tableNotes,
-      // note.toJson(),
-      {NoteFields.isPinned : note.isPinned ? 1 : 0},
+      {NoteFields.isPinned: note.isPinned ? 1 : 0},
       where: '${NoteFields.id} = ?',
       whereArgs: [note.id],
     );

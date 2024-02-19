@@ -10,7 +10,7 @@ import 'package:quiz_test/src/feature/notes/domain/bloc/notes_bloc.dart';
 import 'package:quiz_test/src/feature/notes/presentation/screens/edit_note.dart';
 import 'package:quiz_test/src/feature/notes/presentation/widgets/note.dart';
 
-class NoteOptionsWidget extends StatelessWidget {
+class NoteOptionsWidget extends StatefulWidget {
   const NoteOptionsWidget({
     super.key,
     required this.widget,
@@ -18,6 +18,11 @@ class NoteOptionsWidget extends StatelessWidget {
 
   final NoteWidget widget;
 
+  @override
+  State<NoteOptionsWidget> createState() => _NoteOptionsWidgetState();
+}
+
+class _NoteOptionsWidgetState extends State<NoteOptionsWidget> {
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton(
@@ -33,13 +38,13 @@ class NoteOptionsWidget extends StatelessWidget {
           onTap: () {
             context.read<NotesBloc>().add(
                   FetchSpecificNoteEvent(
-                    id: widget.note.id ?? 0,
+                    id: widget.widget.note.id ?? 0,
                   ),
                 );
             Navigator.of(context).push(
               MaterialPageRoute<dynamic>(
                 builder: (context) => EditNoteScreen(
-                  note: widget.note,
+                  note: widget.widget.note,
                 ),
               ),
             );
@@ -59,17 +64,18 @@ class NoteOptionsWidget extends StatelessWidget {
         ),
         PopupMenuItem<dynamic>(
           onTap: () async {
-            await NotesDatabase.instance.pinNote(note: widget.note);
-            if (widget.note.isPinned == false) {
-              widget.note.isPinned = true;
+            await NotesDatabase.instance.pinNote(note: widget.widget.note);
+            if (widget.widget.note.isPinned == false) {
+              widget.widget.note.isPinned = true;
             } else {
-              widget.note.isPinned = false;
+              widget.widget.note.isPinned = false;
             }
-            log(widget.note.isPinned.toString());
+            log(widget.widget.note.isPinned.toString());
+            setState(() {});
           },
           child: Row(
             children: [
-              if (widget.note.isPinned)
+              if (widget.widget.note.isPinned)
                 Image.asset(
                   'assets/icons/note_unpin.png',
                 )
@@ -142,7 +148,7 @@ class NoteOptionsWidget extends StatelessWidget {
                     onPressed: () {
                       context.read<NotesBloc>().add(
                             DeleteNoteEvent(
-                              id: widget.note.id ?? 0,
+                              id: widget.widget.note.id ?? 0,
                             ),
                           );
                       Navigator.of(context).pop();

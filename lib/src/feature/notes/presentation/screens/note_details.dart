@@ -1,6 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
+import 'package:quiz_test/src/feature/notes/data/databases/notes_database.dart';
 import 'package:quiz_test/src/feature/notes/domain/bloc/notes_bloc.dart';
 import 'package:quiz_test/src/feature/notes/domain/models/note_model.dart';
 
@@ -39,10 +42,15 @@ class _NoteDetailsScreenState extends State<NoteDetailsScreen> {
         ),
         actions: [
           IconButton(
-            onPressed: () {
-              setState(() {
-                widget.note.isPinned = !widget.note.isPinned;
-              });
+            onPressed: () async {
+              await NotesDatabase.instance.pinNote(note: widget.note);
+              if (widget.note.isPinned == false) {
+                widget.note.isPinned = true;
+              } else {
+                widget.note.isPinned = false;
+              }
+              log(widget.note.isPinned.toString());
+              setState(() {});
             },
             icon: Image.asset(
               'assets/icons/pin_icon.png',

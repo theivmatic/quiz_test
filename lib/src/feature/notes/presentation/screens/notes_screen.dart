@@ -87,7 +87,6 @@ class _NotesScreenState extends State<NotesScreen> {
                   return NoteWidget(
                     note: state.note[index],
                     // imagePath: state.note[index].movieImage,
-                    
                   );
                 },
               );
@@ -98,20 +97,24 @@ class _NotesScreenState extends State<NotesScreen> {
           );
         },
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute<dynamic>(
-              builder: (context) => const AddNoteScreen(),
+      floatingActionButton: BlocBuilder<NotesBloc, NotesBlocState>(
+        builder: (context, state) {
+          return FloatingActionButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute<dynamic>(
+                  builder: (context) => const AddNoteScreen(),
+                ),
+              );
+            },
+            backgroundColor: AppColors.buttonPink,
+            child: const Icon(
+              Icons.add,
+              color: AppColors.iconGrey,
+              size: 24,
             ),
           );
         },
-        backgroundColor: AppColors.buttonPink,
-        child: const Icon(
-          Icons.add,
-          color: AppColors.iconGrey,
-          size: 24,
-        ),
       ),
     );
   }

@@ -44,9 +44,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
         ),
         actions: [
           IconButton(
-            onPressed: () {
-              setState(() {});
-            },
+            onPressed: () {},
             icon: Image.asset('assets/icons/pin_icon.png'),
           ),
           IconButton(
