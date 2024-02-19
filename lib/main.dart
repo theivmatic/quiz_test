@@ -17,6 +17,7 @@ void main() {
   runApp(
     DevicePreview(
       builder: (context) => const MainApp(),
+      // enabled: false,
     ),
   );
 }
@@ -46,6 +47,8 @@ class MainApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) => MaterialApp(
+          // showPerformanceOverlay: true,
+          // debugShowCheckedModeBanner: true,
           locale: DevicePreview.locale(context),
           builder: DevicePreview.appBuilder,
           home: const NavigationScreen(),
