@@ -107,6 +107,14 @@ CREATE TABLE $tableNotes (
     );
   }
 
+  // Future<int> pin({required int id, required bool isPinned}) async {
+  //   final db = await instance.database;
+
+  //   return db.execute(
+  //     '',
+  //   );
+  // }
+
   Future<dynamic> close() async {
     final db = await instance.database;
 

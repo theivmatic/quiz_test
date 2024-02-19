@@ -52,6 +52,7 @@ class _NoteWidgetState extends State<NoteWidget> {
                 color: Colors.amber,
                 borderRadius: BorderRadius.circular(4.r),
               ),
+              // child: Image.asset(widget.imagePath),
               // child: Image.file(
               //   widget.image ?? File(''),
               // ),

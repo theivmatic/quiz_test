@@ -142,54 +142,62 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                         ],
                       )
                     else
-                      Container(
-                        constraints: BoxConstraints.loose(
-                          Size(88.w, 88.h),
+                      Center(
+                        child: Container(
+                          margin: EdgeInsets.only(
+                            bottom: 20.h,
+                          ),
+                          constraints: BoxConstraints.loose(
+                            Size(343.w, 196.h),
+                          ),
+                          child: Image.file(selectedImage!),
                         ),
-                        child: Image.file(selectedImage!),
                       ),
                   ],
                 ),
               ),
               BlocBuilder<NotesBloc, NotesBlocState>(
                 builder: (context, state) {
-                  return BottomButtonWidget(
-                    buttonText: 'Сохранить',
-                    onPressed: () {
-                      if (_title.text.isNotEmpty && _comment.text.isNotEmpty) {
-                        context.read<NotesBloc>().add(
-                              AddNoteEvent(
-                                movieTitle: _title.text,
-                                dutarion: _duration.text,
-                                comment: _comment.text,
-                                url: _url.text,
-                                movieImage: selectedImage?.path ?? '',
-                                isPinned: false,
-                              ),
-                            );
-                        context.read<NotesBloc>().add(
-                              const FetchNotesEvent(),
-                            );
-                        Navigator.of(context).pop(
-                          MaterialPageRoute<dynamic>(
-                            builder: (context) => const NotesScreen(
-                                // image: selectedImage,
+                  return Center(
+                    child: BottomButtonWidget(
+                      buttonText: 'Сохранить',
+                      onPressed: () {
+                        if (_title.text.isNotEmpty &&
+                            _comment.text.isNotEmpty) {
+                          context.read<NotesBloc>().add(
+                                AddNoteEvent(
+                                  movieTitle: _title.text,
+                                  dutarion: _duration.text,
+                                  comment: _comment.text,
+                                  url: _url.text,
+                                  movieImage: selectedImage?.path ?? '',
+                                  isPinned: false,
                                 ),
-                          ),
-                        );
-                      } else {
-                        ScaffoldMessenger.of(context).clearSnackBars();
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            duration: const Duration(seconds: 2),
-                            content: Text(
-                              'Поля название и комментарий должны быть заполнены'
-                                  .toUpperCase(),
+                              );
+                          context.read<NotesBloc>().add(
+                                const FetchNotesEvent(),
+                              );
+                          Navigator.of(context).pop(
+                            MaterialPageRoute<dynamic>(
+                              builder: (context) => const NotesScreen(
+                                  // image: selectedImage,
+                                  ),
                             ),
-                          ),
-                        );
-                      }
-                    },
+                          );
+                        } else {
+                          ScaffoldMessenger.of(context).clearSnackBars();
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              duration: const Duration(seconds: 2),
+                              content: Text(
+                                'Поля название и комментарий должны быть заполнены'
+                                    .toUpperCase(),
+                              ),
+                            ),
+                          );
+                        }
+                      },
+                    ),
                   );
                 },
               ),
