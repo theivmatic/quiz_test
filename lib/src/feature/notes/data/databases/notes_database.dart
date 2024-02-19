@@ -97,6 +97,18 @@ CREATE TABLE $tableNotes (
     );
   }
 
+  Future<int> pinNote({required Note note}) async {
+    final db = await instance.database;
+
+    return db.update(
+      tableNotes,
+      // note.toJson(),
+      {NoteFields.isPinned : note.isPinned ? 1 : 0},
+      where: '${NoteFields.id} = ?',
+      whereArgs: [note.id],
+    );
+  }
+
   Future<int> delete({required int id}) async {
     final db = await instance.database;
 
@@ -106,14 +118,6 @@ CREATE TABLE $tableNotes (
       whereArgs: [id],
     );
   }
-
-  // Future<int> pin({required int id, required bool isPinned}) async {
-  //   final db = await instance.database;
-
-  //   return db.execute(
-  //     '',
-  //   );
-  // }
 
   Future<dynamic> close() async {
     final db = await instance.database;

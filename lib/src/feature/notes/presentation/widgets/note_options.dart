@@ -55,6 +55,9 @@ class NoteOptionsWidget extends StatelessWidget {
           ),
         ),
         PopupMenuItem<dynamic>(
+          onTap: () {
+            
+          },
           child: Row(
             children: [
               Image.asset(
