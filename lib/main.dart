@@ -48,7 +48,7 @@ class MainApp extends StatelessWidget {
         splitScreenMode: true,
         builder: (context, child) => MaterialApp(
           // showPerformanceOverlay: true,
-          // debugShowCheckedModeBanner: true,
+          // debugShowCheckedModeBanner: false,
           locale: DevicePreview.locale(context),
           builder: DevicePreview.appBuilder,
           home: const NavigationScreen(),
