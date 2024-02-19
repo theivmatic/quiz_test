@@ -1,8 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
+import 'package:quiz_test/src/feature/notes/data/databases/notes_database.dart';
 import 'package:quiz_test/src/feature/notes/domain/bloc/notes_bloc.dart';
 import 'package:quiz_test/src/feature/notes/presentation/screens/edit_note.dart';
 import 'package:quiz_test/src/feature/notes/presentation/widgets/note.dart';
@@ -55,12 +58,16 @@ class NoteOptionsWidget extends StatelessWidget {
           ),
         ),
         PopupMenuItem<dynamic>(
-          onTap: () {
-            
+          onTap: () async {
+            await NotesDatabase.instance.pinNote(note: widget.note);
+            // widget.note.isPinned = !widget.note.isPinned;
+            log(widget.note.isPinned.toString());
           },
           child: Row(
             children: [
-              Image.asset(
+              if (widget.note.isPinned) Image.asset(
+                'assets/icons/note_unpin.png',
+              ) else Image.asset(
                 'assets/icons/note_pin.png',
               ),
               SizedBox(
