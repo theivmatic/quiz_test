@@ -137,6 +137,12 @@ class _NoteDetailsScreenState extends State<NoteDetailsScreen> {
                       focusedErrorBorder: InputBorder.none,
                     ),
                   ),
+                  if (state.note.movieImage != '')
+                    Image.asset(
+                      state.note.movieImage,
+                    )
+                  else
+                    const SizedBox(),
                 ],
               ),
             );

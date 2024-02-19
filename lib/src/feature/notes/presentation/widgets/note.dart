@@ -9,10 +9,12 @@ import 'package:quiz_test/src/feature/notes/presentation/widgets/note_options.da
 
 class NoteWidget extends StatefulWidget {
   final Note note;
+  final String? imagePath;
 
   const NoteWidget({
     super.key,
     required this.note,
+    this.imagePath,
   });
 
   @override
@@ -49,13 +51,14 @@ class _NoteWidgetState extends State<NoteWidget> {
                 Size(76.w, 76.h),
               ),
               decoration: BoxDecoration(
-                color: Colors.amber,
                 borderRadius: BorderRadius.circular(4.r),
               ),
-              // child: Image.asset(widget.imagePath),
-              // child: Image.file(
-              //   widget.image ?? File(''),
-              // ),
+              child: Image.asset(
+                widget.imagePath == ''
+                    ? 'assets/images/placeholder.png'
+                    : widget.imagePath ?? 'assets/images/placeholder.png',
+                fit: BoxFit.fill,
+              ),
             ),
             SizedBox(
               width: 211.w,
