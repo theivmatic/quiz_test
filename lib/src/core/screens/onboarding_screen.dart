@@ -4,8 +4,8 @@ import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/core/router/navigation_screen.dart';
 import 'package:quiz_test/src/core/widgets/bottom_button.dart';
 
-class StartScreen extends StatelessWidget {
-  const StartScreen({super.key});
+class OnboardingScreen extends StatelessWidget {
+  const OnboardingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

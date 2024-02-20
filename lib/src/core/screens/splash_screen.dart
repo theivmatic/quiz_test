@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
-import 'package:quiz_test/src/core/screens/start_screen.dart';
+import 'package:quiz_test/src/core/screens/onboarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -15,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future<dynamic>.delayed(const Duration(seconds: 4)).then(
       (value) => Navigator.of(context).pushReplacement(
         MaterialPageRoute<dynamic>(
-          builder: (context) => const StartScreen(),
+          builder: (context) => const OnboardingScreen(),
         ),
       ),
     );
