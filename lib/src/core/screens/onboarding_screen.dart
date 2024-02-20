@@ -3,10 +3,16 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/core/router/navigation_screen.dart';
 import 'package:quiz_test/src/core/widgets/bottom_button.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class OnboardingScreen extends StatelessWidget {
+class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
 
+  @override
+  State<OnboardingScreen> createState() => _OnboardingScreenState();
+}
+
+class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,8 +35,12 @@ class OnboardingScreen extends StatelessWidget {
           const SizedBox(height: 30),
           BottomButtonWidget(
             buttonText: 'Продолжить',
-            onPressed: () {
-              Navigator.of(context).pushReplacement(
+            onPressed: () async {
+              final onboardingToken = await SharedPreferences.getInstance();
+              await onboardingToken.setBool('onboarding', true);
+
+              if (!mounted) return;
+              await Navigator.of(context).pushReplacement(
                 MaterialPageRoute<dynamic>(
                   builder: (context) => const NavigationScreen(),
                 ),
