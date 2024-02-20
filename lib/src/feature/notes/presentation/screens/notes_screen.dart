@@ -7,11 +7,8 @@ import 'package:quiz_test/src/feature/notes/presentation/screens/add_note_screen
 import 'package:quiz_test/src/feature/notes/presentation/widgets/note.dart';
 
 class NotesScreen extends StatefulWidget {
-  // final File? image;
-
   const NotesScreen({
     super.key,
-    // required this.image,
   });
 
   @override

@@ -43,12 +43,12 @@ class _NoteDetailsScreenState extends State<NoteDetailsScreen> {
         actions: [
           IconButton(
             onPressed: () async {
-              await NotesDatabase.instance.pinNote(note: widget.note);
               if (widget.note.isPinned == false) {
                 widget.note.isPinned = true;
               } else {
                 widget.note.isPinned = false;
               }
+              await NotesDatabase.instance.pinNote(note: widget.note);
               log(widget.note.isPinned.toString());
               setState(() {});
             },

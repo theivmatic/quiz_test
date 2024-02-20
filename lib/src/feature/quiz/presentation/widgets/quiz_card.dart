@@ -9,9 +9,7 @@ class QuizCardWidget extends StatelessWidget {
   final String? imagePath;
   final VoidCallback onCardTap;
 
-  final List<Icon> stars = [];
-
-  QuizCardWidget({
+  const QuizCardWidget({
     super.key,
     required this.title,
     required this.difficulty,

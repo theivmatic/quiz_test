@@ -64,12 +64,12 @@ class _NoteOptionsWidgetState extends State<NoteOptionsWidget> {
         ),
         PopupMenuItem<dynamic>(
           onTap: () async {
-            await NotesDatabase.instance.pinNote(note: widget.widget.note);
             if (widget.widget.note.isPinned == false) {
               widget.widget.note.isPinned = true;
             } else {
               widget.widget.note.isPinned = false;
             }
+            await NotesDatabase.instance.pinNote(note: widget.widget.note);
             log(widget.widget.note.isPinned.toString());
             setState(() {});
           },

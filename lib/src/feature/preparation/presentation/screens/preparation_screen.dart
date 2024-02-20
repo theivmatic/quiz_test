@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/feature/preparation/domain/models/preparations_entity.dart';
 import 'package:quiz_test/src/feature/preparation/presentation/widgets/preparation_tile.dart';
-// import 'package:quiz_test/src/feature/preparation/presentation/widgets/small_facts.dart';
 
 class PreparationScreen extends StatefulWidget {
   final Preparation? preparation;
@@ -70,5 +69,3 @@ class _PreparationScreenState extends State<PreparationScreen> {
     );
   }
 }
-
-      // TODO(theivmatic): разобраться как отрисовать здесь блок с фактами
