@@ -44,6 +44,7 @@ class _PreparationsScreenState extends State<PreparationsScreen> {
               itemCount: state.preparationsLoaded.preparations?.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
+                childAspectRatio: 1.45,
               ),
               itemBuilder: (context, index) {
                 return Padding(
