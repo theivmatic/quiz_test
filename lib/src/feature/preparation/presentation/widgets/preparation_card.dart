@@ -20,47 +20,39 @@ class PreparationCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onCardTap,
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16.r),
-        ),
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            Center(
-              child: Image.asset(
-                imagePath ?? '',
-                scale: 0.5,
-              ),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Image.asset(
+            imagePath ?? '',
+            scale: 0.5,
+          ),
+          Image.asset(
+            'assets/images/shadow.png',
+            scale: 0.5,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 25.w),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  title ?? '',
+                  style: TextStyles.quizCardTitleText,
+                ),
+                SizedBox(
+                  height: 10.h,
+                ),
+                Text(
+                  subtitle ?? '',
+                  style: TextStyles.popupItemCancelText,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
             ),
-            Center(
-              child: Image.asset(
-                'assets/images/shadow.png',
-                scale: 0.5,
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25.w),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    title ?? '',
-                    style: TextStyles.quizCardTitleText,
-                  ),
-                  SizedBox(
-                    height: 10.h,
-                  ),
-                  Text(
-                    subtitle ?? '',
-                    style: TextStyles.popupItemCancelText,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

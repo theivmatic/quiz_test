@@ -43,8 +43,6 @@ class _PreparationsScreenState extends State<PreparationsScreen> {
           PreparationsBlocLoadedState() => GridView.builder(
               itemCount: state.preparationsLoaded.preparations?.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                mainAxisSpacing: 0.1,
-                // crossAxisSpacing: 0.5,
                 crossAxisCount: 2,
               ),
               itemBuilder: (context, index) {
