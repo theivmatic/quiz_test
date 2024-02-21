@@ -138,8 +138,10 @@ class _NoteDetailsScreenState extends State<NoteDetailsScreen> {
                     ),
                   ),
                   if (state.note.movieImage != '')
-                    Image.asset(
-                      state.note.movieImage,
+                    Expanded(
+                      child: Image.asset(
+                        state.note.movieImage,
+                      ),
                     )
                   else
                     const SizedBox(),

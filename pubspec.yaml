@@ -20,6 +20,7 @@ dependencies:
   json_annotation: ^4.8.1
   meta: ^1.9.1
   url_launcher: ^6.2.4
+  image: ^4.1.7
   image_picker: ^1.0.7
   device_preview: ^1.1.0
   flutter_screenutil: ^5.9.0
@@ -47,6 +48,7 @@ flutter:
     - assets/jsons/
     - assets/icons/
     - assets/images/
+    - assets/images/saved_images/
     - assets/images/preparation_images/
     - assets/images/preparation_images/slovo_pacana/
     - assets/images/preparation_images/dva_holma/

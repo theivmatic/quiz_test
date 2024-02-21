@@ -1,9 +1,11 @@
+import 'dart:developer';
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:path/path.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:quiz_test/src/core/constants/app_theme.dart';
 import 'package:quiz_test/src/core/widgets/bottom_button.dart';
 import 'package:quiz_test/src/feature/notes/domain/bloc/notes_bloc.dart';
@@ -23,6 +25,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
   final TextEditingController _url = TextEditingController();
 
   File? selectedImage;
+  File? savedImage;
 
   @override
   Widget build(BuildContext context) {
@@ -169,6 +172,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                                   comment: _comment.text,
                                   url: _url.text,
                                   movieImage: selectedImage?.path ?? '',
+                                  // movieImage: savedImage?.path ?? '',
                                   isPinned: false,
                                 ),
                               );
@@ -177,9 +181,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                               );
                           Navigator.of(context).pop(
                             MaterialPageRoute<dynamic>(
-                              builder: (context) => const NotesScreen(
-                                  // image: selectedImage,
-                                  ),
+                              builder: (context) => const NotesScreen(),
                             ),
                           );
                         } else {
@@ -211,8 +213,12 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
         await ImagePicker().pickImage(source: ImageSource.gallery);
 
     if (returnedImage == null) return;
+
     setState(() {
       selectedImage = File(returnedImage.path);
+      
     });
+
+    log(selectedImage?.path ?? 'Nothing');
   }
 }
