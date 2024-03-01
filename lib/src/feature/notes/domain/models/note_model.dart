@@ -58,6 +58,7 @@ class Note {
         isPinned: isPinned ?? this.isPinned,
       );
 
+  // ignore: prefer_constructors_over_static_methods
   static Note fromJson(Map<String, Object?> json) => Note(
         id: json[NoteFields.id] as int?,
         movieTitle: json[NoteFields.movieTitle] as String,
